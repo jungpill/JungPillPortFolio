@@ -20,5 +20,5 @@ export default Main
 const MainContainer = styled.div`
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 60%;
 `
