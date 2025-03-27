@@ -22,7 +22,7 @@ const HeaderWrapper = styled.div`
 
 const TodayVisitorCount = styled.p`
     font-size 1rem;
-    color: skyblue;
+    color: red;
     font-weight: 500;
 `
 

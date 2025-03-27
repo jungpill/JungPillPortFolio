@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from '../source/1593669114745.gif'
 import MyProfile from "./myProfile/MyProfile";
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
@@ -20,9 +19,7 @@ const LayoutContainer = styled.div`
     display: flex;
     height: 100vh;
     width: 100vw;
-    background-image: url(${background});
-    background-repeat: no-repeat;
-    background-size: cover; 
+    background-color: skyblue;
     align-items: center;
     justify-content: center;
 `
@@ -36,5 +33,5 @@ const ContentContainer = styled.div`
     padding: 20px;
     width: 80%;
     height: 70%;
-
+     background-color: white;
 `
