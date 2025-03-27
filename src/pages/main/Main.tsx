@@ -1,12 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
-import News from "./News";
+import Title from "./Title";
+import Body from "./Body";
 
 const Main = () => {
 
     return(
     <MainContainer>
-        <News/>
+        <Title/>
+        <Body/>
     </MainContainer>
     )
 }

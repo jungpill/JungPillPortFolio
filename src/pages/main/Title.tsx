@@ -4,22 +4,21 @@ import styled from "styled-components";
 const News = () => {
 
     return(
-        <NewsContainer>
+        <TitleContainer>
             <Header>
                 <Title>
                 유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 입니다.
                 </Title>
             </Header>
             <Hr/>
-        </NewsContainer>
+        </TitleContainer>
     )
 }
 
 export default News
 
-const NewsContainer = styled.div`
+const TitleContainer = styled.div`
     width: 100%;
-    height: 100%;
 `
 
 const Header = styled.div`
