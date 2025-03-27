@@ -1,11 +1,11 @@
 import styled from "styled-components"
-
+import MyProfileHeader from "./Header"
 
 
 const MyProfile = () => {
     return(
         <MyProfileContainer>
-            ddsad
+            <MyProfileHeader/>
         </MyProfileContainer>
     )
 }
@@ -18,6 +18,6 @@ const MyProfileContainer = styled.div`
     height: 90%;
     background-color: white;
     border-radius: 25px;
-    padding: 40px;
+    padding: 30px;
     margin-right: 2%;
 `
