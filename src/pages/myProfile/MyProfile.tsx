@@ -1,12 +1,10 @@
 import styled from "styled-components"
-import MyProfileHeader from "./Header"
 import ProfileImageWrapper from './ProfileImage'
 import Info from "./Info"
 
 const MyProfile = () => {
     return(
         <MyProfileContainer>
-            <MyProfileHeader/>
             <ProfileImageWrapper/>
             <Info/>
         </MyProfileContainer>

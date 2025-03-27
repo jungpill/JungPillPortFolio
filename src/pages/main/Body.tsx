@@ -17,7 +17,7 @@ export default Body
 const BodyContainer = styled.div`
     margin-top: 3%;
     width: 100%;
-    height: 70%;
+    height: 75%;
 `
 
 const Img = styled.img`

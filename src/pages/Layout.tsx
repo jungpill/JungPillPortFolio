@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import MyProfile from "./myProfile/MyProfile";
+import Header from './myProfile/Header'
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <LayoutContainer>
             <ContentContainer>
-                <MyProfile/>
-                {children}
+                <Test>
+                    <Header/>
+                    <Test2>
+                        <MyProfile/>
+                        {children}
+                    </Test2>
+                </Test>
             </ContentContainer>
         </LayoutContainer>
     )
@@ -28,10 +34,23 @@ const ContentContainer = styled.div`
     display: flex;
     border: 1px solid black;
     border-radius: 20px;
-    align-items: center;
+    
     justify-content: Center;
     padding: 20px;
     width: 80%;
-    height: 70%;
-     background-color: white;
+    height: 80%;
+    background-color: white;
+`
+
+const Test = styled.div`
+    display: flex;
+    flex-direction: column;
+    hegiht: 100%;
+    width: 100%;
+`
+
+const Test2 = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
 `
