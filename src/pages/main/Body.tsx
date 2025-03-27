@@ -1,4 +1,4 @@
-import 미니홈피 from '../../source/미니홈피.png'
+import 싸이월드 from '../../source/싸이월드.jpg'
 import styled from 'styled-components'
 
 
@@ -7,7 +7,7 @@ const Body = () => {
 
     return(
         <BodyContainer>
-            <Img src = {미니홈피}/>
+            <Img src = {싸이월드}/>
         </BodyContainer>
     )
 }
@@ -15,12 +15,12 @@ const Body = () => {
 export default Body
 
 const BodyContainer = styled.div`
-    margin-top: 3%;
+    margin-top: 1%;
     width: 100%;
-    height: 75%;
+    height: 100%;
 `
 
 const Img = styled.img`
-    width: 100%;
+    width: 101%;
     height: 100%;
 `

@@ -6,13 +6,15 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <LayoutContainer>
             <ContentContainer>
-                <Test>
-                    <Header/>
-                    <Test2>
-                        <MyProfile/>
-                        {children}
-                    </Test2>
-                </Test>
+                <OutSideText>
+                    <DottedLine>
+                        <Header/> 
+                        <Book>
+                            <MyProfile/>
+                            {children}
+                        </Book>
+                    </DottedLine>
+                </OutSideText>
             </ContentContainer>
         </LayoutContainer>
     )
@@ -25,7 +27,10 @@ const LayoutContainer = styled.div`
     display: flex;
     height: 100vh;
     width: 100vw;
-    background-color: skyblue;
+    background-image: linear-gradient(white 1px, transparent 1px), 
+    linear-gradient(90deg, white 1px, transparent 1px);
+    background-color: darkgray;
+    background-size: 19px 19px;
     align-items: center;
     justify-content: center;
 `
@@ -34,23 +39,37 @@ const ContentContainer = styled.div`
     display: flex;
     border: 1px solid black;
     border-radius: 20px;
-    
-    justify-content: Center;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     width: 80%;
     height: 80%;
-    background-color: white;
+    background-color: skyblue;
 `
 
-const Test = styled.div`
+const OutSideText = styled.div`
     display: flex;
-    flex-direction: column;
-    hegiht: 100%;
+    justify-content: center;
+    height: 100%;
     width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
 `
 
-const Test2 = styled.div`
+const Book = styled.div`
     display: flex;
+    justify-content: center;
     flex-direction: row;
-    margin-top: 1%;
+    width: 100%;
+    height: 90%;
 `
+
+const DottedLine = styled.div`
+    border: 3px dashed black;
+    width: 100%;
+    height: 95%;
+    padding: 15px;
+`
+
+
