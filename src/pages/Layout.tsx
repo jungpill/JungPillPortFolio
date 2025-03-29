@@ -3,6 +3,8 @@ import MyProfile from "./myProfile/MyProfile";
 import Header from './myProfile/Header'
 import Gif from '../source/1593669114745.gif'
 import Ling from '../source/링.png'
+import Tab from "../component/Tab";
+
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <LayoutContainer>
@@ -18,6 +20,7 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             <BackGroundgray>
                 {children}
             </BackGroundgray>
+            <Tab/>
             </ContentContainer>
         </LayoutContainer>
     )
@@ -33,7 +36,7 @@ const LayoutContainer = styled.div`
     background-image: linear-gradient(black 1px, transparent 1px), 
                     linear-gradient(90deg, black 1px, transparent 1px);
     background-size: 20px 20px;
-    background-color: skyblue;
+    background-color: #78BEE4 ;
     align-items: center;
     justify-content: center;
 `
