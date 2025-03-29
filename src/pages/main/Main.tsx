@@ -16,12 +16,11 @@ export default Main
 
 const MainContainer = styled.div`
     display: flex;
-    width: 60%;
-    height: 90%;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: #D9D9D9;
+    border: 1px solid black;
+    border-radius: 10px;
     padding: 10px 2% 10px 2%;
-    margin-right: 2%;
     flex-direction: column;
 `

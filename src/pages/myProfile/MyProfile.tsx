@@ -15,12 +15,13 @@ export default MyProfile
 
 const MyProfileContainer = styled.div`
     display: flex;
-    width: 20%;
+    width: 90%;
     height: 90%;
     background-color: white;
     border: 2px solid black;
     border-radius: 25px;
-    padding: 10px 30px 10px 30px;
-    margin-right: 2%;
+    padding: 10px 10px 10px 10px;
+    
     flex-direction: column;
+    margin-left: 1%;
 `

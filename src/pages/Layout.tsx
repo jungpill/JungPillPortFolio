@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import MyProfile from "./myProfile/MyProfile";
 import Header from './myProfile/Header'
-
+import Gif from '../source/1593669114745.gif'
+import Ling from '../source/링.png'
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <LayoutContainer>
             <ContentContainer>
-                <OutSideText>
-                    <DottedLine>
-                        <Header/> 
-                        <Book>
-                            <MyProfile/>
-                            {children}
-                        </Book>
-                    </DottedLine>
-                </OutSideText>
+            <DottedLine>
+                <Header/>
+                <MyProfile/>
+            </DottedLine>
+            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '31%', top: '20%'}}/>
+            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '31%', top: '25%'}}/>
+            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '31%', top: '70%'}}/>
+            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '31%', top: '75%'}}/>
+            <BackGroundgray>
+                {children}
+            </BackGroundgray>
             </ContentContainer>
         </LayoutContainer>
     )
@@ -27,49 +30,42 @@ const LayoutContainer = styled.div`
     display: flex;
     height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(white 1px, transparent 1px), 
-    linear-gradient(90deg, white 1px, transparent 1px);
-    background-color: darkgray;
-    background-size: 19px 19px;
+    background-image: linear-gradient(black 1px, transparent 1px), 
+                    linear-gradient(90deg, black 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: skyblue;
     align-items: center;
     justify-content: center;
 `
 
 const ContentContainer = styled.div`
     display: flex;
-    border: 1px solid black;
+    border: 2px dashed white;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 5px;
     width: 80%;
     height: 80%;
-    background-color: skyblue;
+    
 `
 
-const OutSideText = styled.div`
+const BackGroundgray = styled.div`
     display: flex;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-    background-color: white;
-    border-radius: 20px;
-`
-
-const Book = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    height: 90%;
+    align-items: center;
+    height: 95%;
+    width: 70%;
+    border-radius: 5px;
 `
 
 const DottedLine = styled.div`
-    border: 3px dashed black;
-    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 25%;
     height: 95%;
-    padding: 15px;
+    padding: 10px;
+    background-color: white;
 `
 
 
