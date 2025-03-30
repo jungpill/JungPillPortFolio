@@ -1,12 +1,18 @@
 import { useState } from "react";
 import styled from "styled-components";
 import HOME from "./Home";
+import useTypeStore from "../../zustand/UseTypeStore";
+import Profile from "./Profile";
+
 
 const Main = () => {
 
+    const {type, setType} = useTypeStore()
+
     return(
     <MainContainer>
-        <HOME/>
+        {type === 'Home' && (<HOME/>)}
+        {type === 'Profile' && (<Profile/>)}
     </MainContainer>
     )
 }
@@ -23,4 +29,5 @@ const MainContainer = styled.div`
     border-radius: 10px;
     padding: 10px 2% 10px 2%;
     flex-direction: column;
+    overflow-y: auto;
 `

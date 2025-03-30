@@ -20,6 +20,6 @@ const BodyContainer = styled.div`
 `
 
 const Img = styled.img`
-    width: 101%;
+    width: 100%;
     height: 100%;
 `

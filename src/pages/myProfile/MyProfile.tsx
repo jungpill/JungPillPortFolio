@@ -20,7 +20,7 @@ const MyProfileContainer = styled.div`
     background-color: white;
     border: 2px solid black;
     border-radius: 25px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     
     flex-direction: column;
     margin-left: 1%;

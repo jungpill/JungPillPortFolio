@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useTabStore from "../zustand/UseTabStore";
+import useTabStore from "../zustand/UseTypeStore";
 
 
 const Tab = () => {
@@ -12,7 +12,7 @@ const Tab = () => {
 
         setType(target.getAttribute("data-type") as "Home" | "Profile")
     }
-    console.log('')
+    
     return(
         <TabContainer onClick = {handleTypeChange}>
            <Item data-type="Home">홈</Item>
