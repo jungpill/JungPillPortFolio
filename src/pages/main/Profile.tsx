@@ -57,7 +57,7 @@ const Profile = () => {
                 <Title>
                     교육
                 </Title>
-                <Content>
+                <Content style = {{marginBottom: '5%'}}>
                     성결대학교<br/>
                     졸업 | 대학교(학사) <br/>
                     컴퓨터공학과 2023. 03. ~ 2025. 02

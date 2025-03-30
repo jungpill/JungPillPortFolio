@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
 interface TabsProps {
-    readonly type: 'Home' | 'Profile';
-    readonly setType: (newType: "Home" | "Profile") => void;
+    readonly type: 'Home' | 'Profile' | 'CoverLetter' | 'GuestBook' | 'Project';
+    readonly setType: (newType: "Home" | "Profile" | 'CoverLetter' | 'GuestBook' |'Project') => void;
 }
 
 const useTabStore = create<TabsProps>((set) => ({

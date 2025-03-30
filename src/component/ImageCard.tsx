@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import test from '../source/React.png'
 
 const ImageCard = ({img}: {img:string}) => {
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import HOME from "./Home";
 import useTypeStore from "../../zustand/UseTypeStore";
 import Profile from "./Profile";
-
+import CoverLetter from "./CoverLetter";
 
 const Main = () => {
 
@@ -13,6 +13,7 @@ const Main = () => {
     <MainContainer>
         {type === 'Home' && (<HOME/>)}
         {type === 'Profile' && (<Profile/>)}
+        {type === 'CoverLetter' && (<CoverLetter/>)}
     </MainContainer>
     )
 }
