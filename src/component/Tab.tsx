@@ -1,16 +1,25 @@
 import styled from "styled-components";
-
+import useTabStore from "../zustand/UseTabStore";
 
 
 const Tab = () => {
     
+    const {type, setType} = useTabStore()
+
+    const handleTypeChange = (event: React.MouseEvent<HTMLUListElement>) => {
+        const target = (event.target as HTMLElement).closest("li");
+        if (!target) return;
+
+        setType(target.getAttribute("data-type") as "Home" | "Profile")
+    }
+
     return(
-        <TabContainer>
-           <Item>홈</Item>
-           <Item>프로필</Item>
-           <Item>자소서</Item>
-           <Item>프로젝트</Item>
-           <Item>방명록</Item>
+        <TabContainer onClick = {handleTypeChange}>
+           <Item data-type="Home">홈</Item>
+           <Item data-type="Profile">프로필</Item>
+           <Item data-type="자소서">자소서</Item>
+           <Item data-type="Project">프로젝트</Item>
+           <Item data-type="GuestBook">방명록</Item>
         </TabContainer>
     )
 }
