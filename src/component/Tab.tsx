@@ -6,9 +6,11 @@ const Tab = () => {
     
     return(
         <TabContainer>
-           <Item>ABOUT</Item>
-           <Item>dasd</Item>
-           <Item>dasd</Item>
+           <Item>홈</Item>
+           <Item>프로필</Item>
+           <Item>자기소개서</Item>
+           <Item>프로젝트</Item>
+           <Item>방명록</Item>
         </TabContainer>
     )
 }
@@ -32,11 +34,14 @@ const Item = styled.li`
     border-bottom: 1px solid black;
     background-color: #468baf;
     margin-bottom: 8%;
-    height: 40px;
+    height: 35px;
     color: white;
     border-radius: 5px;
-    
+    font-size: 0.8rem;
+    padding: 3px;
+
     &:hover {
     background-color: white;
+    color: #468baf;
   }
 `

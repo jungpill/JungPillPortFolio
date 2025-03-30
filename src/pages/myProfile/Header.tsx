@@ -21,6 +21,7 @@ const HeaderWrapper = styled.div`
     width: 100%;
     height: 20px;
     flex-direction: row;
+    margin-bottom: 2%;
 `
 
 const TodayVisitorCount = styled.p`
