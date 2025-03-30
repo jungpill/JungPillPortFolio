@@ -2,8 +2,7 @@ import 싸이월드 from '../../source/싸이월드.jpg'
 import styled from 'styled-components'
 
 
-const Body = () => {
-
+const HOME = () => {
 
     return(
         <BodyContainer>
@@ -12,7 +11,7 @@ const Body = () => {
     )
 }
 
-export default Body
+export default HOME
 
 const BodyContainer = styled.div`
     margin-top: 1%;

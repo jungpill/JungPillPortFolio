@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Body from "./Body";
+import HOME from "./Home";
 
 const Main = () => {
 
     return(
     <MainContainer>
-        <Body/>
+        <HOME/>
     </MainContainer>
     )
 }

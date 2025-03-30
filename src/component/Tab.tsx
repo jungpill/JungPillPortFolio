@@ -8,7 +8,7 @@ const Tab = () => {
         <TabContainer>
            <Item>홈</Item>
            <Item>프로필</Item>
-           <Item>자기소개서</Item>
+           <Item>자소서</Item>
            <Item>프로젝트</Item>
            <Item>방명록</Item>
         </TabContainer>
@@ -37,8 +37,8 @@ const Item = styled.li`
     height: 35px;
     color: white;
     border-radius: 5px;
-    font-size: 0.8rem;
-    padding: 3px;
+    font-size: 0.9rem;
+    padding: 5px;
 
     &:hover {
     background-color: white;
