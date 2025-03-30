@@ -10,6 +10,9 @@ import Zustand from '../../source/Zustand.png'
 import AntDesign from '../../source/AntDesign.png'
 import Jira from '../../source/Jira.png'
 import Confluence from '../../source/Confluence.png'
+import process from '../../source/진행현황2.png'
+import ImageCard from "../../component/ImageCard";
+
 
 const Profile = () => {
 
@@ -36,9 +39,21 @@ const Profile = () => {
                 <Title>
                     역량
                 </Title>
-                <Content>
+                    <Content>
+                        <Card>
+                        <ImageCard
+                        img={process}
+                        />
+                        <Text>협업 및 문서화</Text> 
+                        </Card>
 
-                </Content>
+                        <Card>
+                        <ImageCard
+                        img={process}
+                        />
+                        <Text>협업 및 문서화</Text> 
+                        </Card>
+                    </Content>
                 <Title>
                     교육
                 </Title>
@@ -59,7 +74,6 @@ const ProfileContainer = styled.div`
     display: flex;
     margin-top: 1%;
     width: 100%;
-    height: 100%;
     background-color: white;
     flex-direction: column;
     align-items: center;
@@ -81,10 +95,16 @@ const Title = styled.div`
     color: #007AFF;
 `
 
+const Text = styled.div`
+    font-weight: 600;
+    line-height: 2rem;
+    font-size: 1rem;
+    margin: 5% 0 2% 0;
+`
+
 const Content = styled.div`
     display: flex;
     width: 90%;
-    height: 60px;
     margin-left: 2%;
     line-height: 2rem;
 `
@@ -99,4 +119,10 @@ const Icon = styled.img`
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), 
                 var(--tw-ring-shadow, 0 0 #0000), 
                 var(--tw-shadow);
+`
+
+const Card = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 `
