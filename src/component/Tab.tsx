@@ -49,4 +49,5 @@ const Item = styled.li<{isActive: boolean}>`
     border-radius: 5px;
     font-size: 0.9rem;
     padding: 5px;
+    cursor: pointer;
 `

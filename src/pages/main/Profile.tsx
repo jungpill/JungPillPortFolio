@@ -74,9 +74,16 @@ const ProfileContainer = styled.div`
     display: flex;
     margin-top: 1%;
     width: 100%;
+    height: 100%;
     background-color: white;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+    width: 0px;
+  }
 `
 
 const ProfileWrapper = styled.div`
