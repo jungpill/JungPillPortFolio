@@ -33,7 +33,9 @@ const InfoUl = styled.ul`
 `
 
 const InfoLi = styled.li`
-    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
     list-style-type: none;
     font-weight: 600;
 `
@@ -41,4 +43,5 @@ const InfoLi = styled.li`
 const Image = styled.img`
     width: 20px;
     height: 20px;
+    margin-right: 1%;
 `
