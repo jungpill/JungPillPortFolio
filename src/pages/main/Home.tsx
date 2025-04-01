@@ -1,39 +1,38 @@
 import 싸이월드 from '../../source/싸이월드.jpg'
 import styled from 'styled-components'
-
+import {useState, useEffect} from 'react'
 
 const HOME = () => {
 
+    const [visitor, setVisitor] = useState({
+        today: '',
+        total: ''
+    })
 
-   const handleTest = () => {
-    fetch('http://localhost:7001/visitor/increment', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-          },
-        mode: 'cors',
-        body: JSON.stringify({})
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json(); // 응답이 성공적이면 JSON 데이터 반환
+    const Getvisitor = async () => {
+        try {
+          const response = await fetch('http://localhost:7001/visitor/increment/today', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            mode: 'cors',
+          });
+      
+          const data = await response.json();
+          
+          setVisitor(data)
+        } catch (error) {
+          console.error('Error:', error);
         }
-        throw new Error('Failed to increment visitor count');
-    })
-    .then(data => {
-        console.log('Visitor count incremented:', data);
-        // 방문자 수가 증가한 후, 필요한 처리를 여기서 할 수 있음 (예: UI 업데이트)
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        // 에러가 발생하면 사용자에게 알림을 주거나 에러 처리 로직을 추가할 수 있음
-    });
-}
+    };
+
+    useEffect(() => {
+        Getvisitor()
+    },[])
 
     return(
         <BodyContainer>
             <Img src = {싸이월드}/>
-            <Balloon onClick = {handleTest}>유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.</Balloon>
+            <Balloon>유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.</Balloon>
         </BodyContainer>
     )
 }
