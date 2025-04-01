@@ -3,6 +3,7 @@ import ProfileImageWrapper from './ProfileImage'
 import Info from "./Info"
 
 const MyProfile = () => {
+
     return(
         <MyProfileContainer>
             <ProfileImageWrapper/>

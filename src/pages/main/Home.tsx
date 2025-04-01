@@ -1,33 +1,8 @@
 import 싸이월드 from '../../source/싸이월드.jpg'
 import styled from 'styled-components'
-import {useState, useEffect} from 'react'
 
 const HOME = () => {
 
-    const [visitor, setVisitor] = useState({
-        today: '',
-        total: ''
-    })
-
-    const Getvisitor = async () => {
-        try {
-          const response = await fetch('http://localhost:7001/visitor/increment/today', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            mode: 'cors',
-          });
-      
-          const data = await response.json();
-          
-          setVisitor(data)
-        } catch (error) {
-          console.error('Error:', error);
-        }
-    };
-
-    useEffect(() => {
-        Getvisitor()
-    },[])
 
     return(
         <BodyContainer>
