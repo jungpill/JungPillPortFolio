@@ -27,8 +27,8 @@ const Img = styled.img`
 
 const Balloon = styled.div`
   position: absolute;
-  background: #553DF2;
-  color: white;
+  background: white;
+  color: black;
   padding: 30px;
   border-radius: 12px;
   max-width: 450px;
@@ -38,6 +38,10 @@ const Balloon = styled.div`
   text-align: center;
   top: 37%;
   left: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15), 
+              0px -4px 10px rgba(0, 0, 0, 0.10), 
+              4px 0px 10px rgba(0, 0, 0, 0.10), 
+              -4px 0px 10px rgba(0, 0, 0, 0.10);
 
   /* 말풍선 위쪽 삼각형 */
   &::after {
@@ -48,7 +52,7 @@ const Balloon = styled.div`
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: #553DF2;
+    border-top-color: white;
     border-bottom: 0;
     border-left: 0;
     margin-left: -10px;
