@@ -6,8 +6,13 @@ const HOME = () => {
 
 
    const handleTest = () => {
-    fetch('http://localhost:7000/visitor/increment', {
-        method: 'POST', // POST 방식으로 방문자 수를 증가시킨다고 가정
+    fetch('http://localhost:7001/visitor/increment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        mode: 'cors',
+        body: JSON.stringify({})
     })
     .then(response => {
         if (response.ok) {
