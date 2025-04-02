@@ -11,7 +11,7 @@ const MyProfileHeader = () => {
 
     const Getvisitor = async () => {
         try {
-          const response = await fetch('http://localhost:7001/visitor/increment/today', {
+          const response = await fetch('http://localhost:7001/visitor/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             mode: 'cors',
