@@ -16,7 +16,7 @@ const CoverLetter = () => {
                 </Title>
                 <Text>
                 졸업작품 설계때 팀장을 맡고 있었던 저는 팀원들과 회의를 통해 요구사항 분석 작업을 완료한 후 개발을 진행 하였습니다.
-                하지만 막상 개발에 들어가보니 회의당시 각자 이해한 내용이 조금씩 달랐고 
+                하지만 막상 개발을 시작하니 회의당시 각자 이해한 내용이 조금씩 달랐고 
                 정리한 내용에도 차이가 있었습니다. 이로인해 작은 기능 한 가지를
                 개발하게 되더라도 서로 의견이 달라 예상보다 더 많은 시간이 소요되었습니다. 결국 저는
                 팀원들에게 1주일간 개발을 중단하고 요구사항 분석을 다시 진행하는 것을 제안했고 모든 팀원들의 
@@ -44,6 +44,7 @@ const CoverLetterContainer = styled.div`
     background-color: white;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 2rem;
 `
 
 const CoverLetterWrapper = styled.div`

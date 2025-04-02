@@ -16,7 +16,6 @@ const ImageCardContainer = styled.div`
     display: flex;
     width: 95%;
     height: 80%;
-    border-radius: 10px;
 `
 
 const Img = styled.img`
@@ -24,4 +23,6 @@ const Img = styled.img`
     height: 100%;
     object-fit: contain;
     margin-right: 2%;
+    border: 2px solid black;
+     border-radius: 10px;
 `

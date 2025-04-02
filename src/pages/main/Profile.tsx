@@ -57,7 +57,7 @@ const Profile = () => {
                 <Title>
                     교육
                 </Title>
-                <Content style = {{marginBottom: '5%'}}>
+                <Content>
                     성결대학교<br/>
                     졸업 | 대학교(학사) <br/>
                     컴퓨터공학과 2023. 03. ~ 2025. 02
@@ -79,7 +79,7 @@ const ProfileContainer = styled.div`
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    overflow-x: hidden;
+    padding-bottom: 2rem;
 
     &::-webkit-scrollbar {
     width: 0px;

@@ -26,6 +26,25 @@ const Project = () => {
                         <Text>2024.09 ~ 2025.01</Text>
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
+
+                    <Card>
+                        <ImageCard
+                        img={Jaychis}
+                        />
+                        <Title>Jaychis</Title>
+                        <Text>2024.09 ~ 2025.01</Text>
+                        <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
+                    </Card>
+                    
+                    <Card>
+                        <ImageCard
+                        img={Jaychis}
+                        />
+                        <Title>Jaychis</Title>
+                        <Text>2024.09 ~ 2025.01</Text>
+                        <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
+                    </Card>
+                    
                 </Content>
             </ProjectWrapper>
         </ProjectContainer>
@@ -41,9 +60,13 @@ const ProjectContainer = styled.div`
     width: 100%;
     height: 100%;
     background-color: white;
-    overflow:hidden;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
+    padding-top: 5rem;
+    &::-webkit-scrollbar {
+    width: 0px;
+  }
 `
 
 const ProjectWrapper = styled.div`
@@ -59,16 +82,20 @@ const ProjectWrapper = styled.div`
 const Content = styled.div`
     display: flex;
     width: 100%;
+    margin-top: 2rem;
     line-height: 2rem;
-    margin-bottom: 15%;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+   
 `
 
 const Card = styled.div`
     display: flex;
-    margin-left: 3%;
+    margin: 1% 2%; 
     flex-direction: column;
-    width: 48%;
+    width: 45%;
+    cursor: pointer;
 `
 
 const Title = styled.div`
