@@ -3,7 +3,7 @@ const fs = require("fs-extra");
 const path = require("path");
 
 const inputDir = path.join(__dirname, "../src/source"); // 원본 이미지 폴더
-const outputDir = path.join(__dirname, "../source/webp"); // 변환된 이미지 저장 폴더
+const outputDir = path.join(__dirname, "../src/source/webp"); // 변환된 이미지 저장 폴더
 
 fs.ensureDirSync(outputDir); 
 

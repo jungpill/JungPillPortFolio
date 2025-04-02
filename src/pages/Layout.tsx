@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import MyProfile from "./myProfile/MyProfile";
 import Header from './myProfile/Header'
-import Gif from '../source/1593669114745.gif'
-import Ling from '../source/링.png'
+import Ling from '../source/webp/링.webp'
 import Tab from "../component/Tab";
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
