@@ -1,4 +1,4 @@
-import 싸이월드 from '../../source/싸이월드.jpg'
+import 싸이월드 from '../../source/webp/싸이월드.webp'
 import styled from 'styled-components'
 
 const HOME = () => {

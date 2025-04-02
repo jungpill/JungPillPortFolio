@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 
-
 const CoverLetter = () => {
-
 
 
     return(

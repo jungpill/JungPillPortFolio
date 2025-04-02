@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
-import Jaychis from '../../source/Jaychis.png'
+import Jaychis from '../../source/webp/Jaychis.webp'
 
 const Project = () => {
 
