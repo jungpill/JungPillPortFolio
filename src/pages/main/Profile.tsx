@@ -28,7 +28,7 @@ const Profile = () => {
                     기술 스택 및 도구
                 </Title>
                 <Content>
-                    <Icon src = {JavaScript}/>
+                    <Icon src = {JavaScript}/> 
                     <Icon src = {TypeScript}/>
                     <Icon src = {React}/>
                     <Icon src = {Redux}/>
