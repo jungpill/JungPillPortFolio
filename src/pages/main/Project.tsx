@@ -22,18 +22,19 @@ const Project = () => {
                         <ImageCard
                         img={Jaychis}
                         />
-                        <Title>Jaychis</Title>
-                        <Text>2024.09 ~ 2025.01</Text>
-                        <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
+                        <Title>싹둑싹둑</Title>
+                        <Text>2024.02 ~ 2024.06</Text>
+                        <Text>판매자와 디자이너의 매칭을 통해 의류 구매 및 리폼을 동시에 진행 가능한 웹 플랫폼
+                        </Text>
                     </Card>
 
                     <Card>
                         <ImageCard
                         img={Jaychis}
                         />
-                        <Title>Jaychis</Title>
-                        <Text>2024.09 ~ 2025.01</Text>
-                        <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
+                        <Title>싸이월드 포트폴리오</Title>
+                        <Text>2025.04 ~ 2025.04</Text>
+                        <Text>포트폴리오를 웹으로 구현 </Text>
                     </Card>
                     
                     <Card>
