@@ -1,13 +1,40 @@
 import 싸이월드 from '../../source/webp/싸이월드.webp'
 import styled from 'styled-components'
+import { motion } from "framer-motion";
 
 const HOME = () => {
 
+    const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";
+
+    const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.05 }, // 0.1초 간격으로 하나씩 등장
+    },
+    };
+
+    const letterVariants = {
+    hidden: { opacity: 0, y: 10 }, // 처음에는 아래에 있고 투명함
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // 부드럽게 올라오면서 나타남
+    };
 
     return(
         <BodyContainer>
             <Img src = {싸이월드}/>
-            <Balloon>유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.</Balloon>
+            <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            >
+                <Balloon>
+                {text.split("").map((char, index) => (
+                    <motion.span key={index} variants={letterVariants}>
+                    {char}
+                    </motion.span>
+                ))}
+                </Balloon>
+            </motion.div>
         </BodyContainer>
     )
 }
@@ -25,7 +52,7 @@ const BodyContainer = styled.div`
 const Img = styled.img`
     width: 100%;
     height: 96%;
-    margin-top: 2%;
+    margin-top: 2%; 
     border-radius: 10px;
 `
 
