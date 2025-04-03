@@ -1,30 +1,22 @@
-import React, {useState} from "react";
-import styled from "styled-components";
+import React from "react";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css"; 
 
-interface TooltipProps {
-  title: string;
+interface Props {
+  readonly title: string;
+  readonly position: 'top' | 'bottom';
+  readonly children:React.ReactElement;
 }
 
-const CustomTooltip = ({title}: TooltipProps) => {
-
-  const [active, setActive] = useState<boolean>(false);
-
+const CustomTooltip = ({title,position,children}:Props) => {
   return (
-    <TooltipContainer
-    active={active}
-    onMouseEnter={() => {setActive(true)}}
-    onMouseLeave={() => {setActive(false)}}
-    >
-      {title}
-    </TooltipContainer>
+    <div style={{ width: '50px', height: '50px', marginRight: '1.5%', fontSize: '0.8rem', fontWeight: '400', lineHeight: '1.5rem'}}>
+      <Tippy content = {title} placement={position}>
+        {children}
+      </Tippy>
+    </div>
   );
 };
 
 export default CustomTooltip;
 
-const TooltipContainer = styled.div<{active: boolean}>`
-  background-color: #222222BF;
-  line-height: 1.25rem;
-  font-weight: 400;
-  display: ${(props) => props.active ? 'flex' : 'none'}
-`

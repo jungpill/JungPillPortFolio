@@ -13,9 +13,9 @@ import Confluence from '../../source/webp/Confluence.webp'
 import process from '../../source/webp/진행현황2.webp'
 import ImageCard from "../../component/ImageCard";
 import { motion } from "framer-motion";
+import CustomTooltip from "../../component/CustomTooltip";
 
 const Profile = () => {
-
 
     return(
         <ProfileContainer
@@ -28,17 +28,18 @@ const Profile = () => {
                     기술 스택 및 도구
                 </Title>
                 <Content>
-                    <Icon src = {JavaScript}/> 
-                    <Icon src = {TypeScript}/>
-                    <Icon src = {React}/>
-                    <Icon src = {Redux}/>
-                    <Icon src = {Styled}/>
-                    <Icon src = {ReactQuery}/>
-                    <Icon src = {GitHub}/>
-                    <Icon src = {Zustand}/>
-                    <Icon src = {AntDesign}/>
-                    <Icon src = {Confluence}/>
-                    <Icon src = {Jira}/>
+
+                <CustomTooltip title="JavaScript" position="bottom" children={<Icon src={JavaScript} />} />
+                <CustomTooltip title="TypeScript" position="bottom" children={<Icon src={TypeScript} />} />
+                <CustomTooltip title="React" position="bottom" children={<Icon src={React} />} />
+                <CustomTooltip title="Redux" position="bottom" children={<Icon src={Redux} />} />
+                <CustomTooltip title="Styled Components" position="bottom" children={<Icon src={Styled} />} />
+                <CustomTooltip title="React Query" position="bottom" children={<Icon src={ReactQuery} />} />
+                <CustomTooltip title="GitHub" position="bottom" children={<Icon src={GitHub} />} />
+                <CustomTooltip title="Zustand" position="bottom" children={<Icon src={Zustand} />} />
+                <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} />} />
+                <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} />} />
+                <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} />} />
                 </Content>
                 <Title>
                     역량
@@ -122,9 +123,8 @@ const Content = styled.div`
 `
 
 const Icon = styled.img`
-    width: 50px;
-    height: 50px;
-    margin-right: 1.5%;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
