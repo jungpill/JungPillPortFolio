@@ -4,9 +4,7 @@ import email from '../../source/icons8-gmail-logo-30.png'
 import home from '../../source/icons8-집-50.png'
 import github from '../../source/icons8-github의-30.png'
 
-
 const Info = () => {
-
 
     return(
         <InfoContainer>
@@ -14,7 +12,7 @@ const Info = () => {
                 <InfoLi><Image src = {call}/> 010-5628-7623</InfoLi>
                 <InfoLi><Image src = {email}/> wjdvlf99@naver.com</InfoLi>
                 <InfoLi><Image src = {home}/> 경기도 안양시 석수동</InfoLi>
-                <InfoLi><Image src = {github}/> https://github.com/jungpill</InfoLi>
+                <a href = 'https://github.com/jungpill'><InfoLi><Image src = {github}/> https://github.com/jungpill</InfoLi></a>
             </InfoUl>
         </InfoContainer>
     )
@@ -26,6 +24,7 @@ const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+
 `
 
 const InfoUl = styled.ul`

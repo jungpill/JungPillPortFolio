@@ -49,14 +49,14 @@ export default CoverLetter;
 const CoverLetterContainer = styled.div`
     display: flex;
     width: 100%;
-    height: 100%;
+    margin-top: 3%;
+    height: 96%;
     background-color: white;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    margin-top: 1%;
     border-radius: 10px;
-    
+
     &::-webkit-scrollbar {
     width: 0px;
   }

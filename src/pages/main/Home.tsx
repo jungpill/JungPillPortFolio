@@ -15,6 +15,7 @@ const HOME = () => {
 export default HOME
 
 const BodyContainer = styled.div`
+    display: flex;
     margin-top: 1%;
     width: 100%;
     height: 100%;
@@ -23,7 +24,8 @@ const BodyContainer = styled.div`
 
 const Img = styled.img`
     width: 100%;
-    height: 100%;
+    height: 96%;
+    margin-top: 2%;
     border-radius: 10px;
 `
 
