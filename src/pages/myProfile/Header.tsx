@@ -32,9 +32,8 @@ const MyProfileHeader = () => {
     return(
         <HeaderWrapper>
             <TodayVisitorCount>
-                Today.. {visitor.today} | Total.. {visitor.total}
+                <VisitorSpan>Today..</VisitorSpan> {visitor.today} <VisitorSpan>| Total..</VisitorSpan> {visitor.total}
             </TodayVisitorCount>
-            
         </HeaderWrapper>
     )
 }
@@ -44,28 +43,22 @@ export default MyProfileHeader
 const HeaderWrapper = styled.div`
     display: flex;
     width: 100%;
-    height: 20px;
+    height: 30px;
     flex-direction: row;
-    margin-bottom: 2%;
+    justify-content: center; 
 `
 
 const TodayVisitorCount = styled.p`
     display: flex;
-    font-size: 12px;
     color: red;
-    font-weight: 500;
-    margin-left: 3.5%;
-    align-items: center;
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+    margin: 10px 0 0 0;
 `
 
-const Hr = styled.hr`
-   
-`
-
-const Text = styled.p`
-    display: flex;
-    font-size: 1.2rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 700;
+const VisitorSpan = styled.span`
+    color: black;
+    margin-right: 5px;
+    margin-left: 5px;
 `

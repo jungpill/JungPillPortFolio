@@ -18,11 +18,13 @@ const BodyContainer = styled.div`
     margin-top: 1%;
     width: 100%;
     height: 100%;
+    border-radius: 20px;
 `
 
 const Img = styled.img`
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 `
 
 const Balloon = styled.div`

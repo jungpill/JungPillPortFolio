@@ -80,6 +80,8 @@ const ProfileContainer = styled.div`
     align-items: center;
     overflow-y: scroll;
     padding-bottom: 2rem;
+    border-radius: 10px;
+   
 
     &::-webkit-scrollbar {
     width: 0px;

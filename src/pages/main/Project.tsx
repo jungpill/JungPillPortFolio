@@ -63,6 +63,7 @@ const ProjectContainer = styled.div`
     background-color: white;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
     overflow-y: scroll;
     padding-top: 5rem;
     &::-webkit-scrollbar {
@@ -88,7 +89,6 @@ const Content = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-   
 `
 
 const Card = styled.div`

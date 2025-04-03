@@ -55,6 +55,7 @@ const CoverLetterContainer = styled.div`
     align-items: center;
     overflow-y: scroll;
     margin-top: 1%;
+    border-radius: 10px;
     
     &::-webkit-scrollbar {
     width: 0px;
