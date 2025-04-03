@@ -1,11 +1,16 @@
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 
 const CoverLetter = () => {
 
 
     return(
-        <CoverLetterContainer>
+        <CoverLetterContainer
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        transition={{ duration: 0.5 }}
+        >
             <CoverLetterWrapper>
                 <Title>
                     노력하면 된다
@@ -46,7 +51,7 @@ const CoverLetter = () => {
 export default CoverLetter;
 
 
-const CoverLetterContainer = styled.div`
+const CoverLetterContainer = styled(motion.div)`
     display: flex;
     width: 100%;
     margin-top: 3%;

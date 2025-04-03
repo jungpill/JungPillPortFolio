@@ -12,13 +12,17 @@ import Jira from '../../source/webp/Jira.webp'
 import Confluence from '../../source/webp/Confluence.webp'
 import process from '../../source/webp/진행현황2.webp'
 import ImageCard from "../../component/ImageCard";
-
+import { motion } from "framer-motion";
 
 const Profile = () => {
 
 
     return(
-        <ProfileContainer>
+        <ProfileContainer
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        transition={{ duration: 0.5 }}>
             <ProfileWrapper>
                 <Title>
                     기술 스택 및 도구
@@ -70,7 +74,7 @@ const Profile = () => {
 export default Profile
 
 
-const ProfileContainer = styled.div`
+const ProfileContainer = styled(motion.div)`
     display: flex;
     margin-top: 3%;
     height: 90%;
@@ -81,7 +85,6 @@ const ProfileContainer = styled.div`
     overflow-y: scroll;
     padding-bottom: 2rem;
     border-radius: 10px;
-   
 
     &::-webkit-scrollbar {
     width: 0px;

@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
 import Jaychis from '../../source/webp/Jaychis.webp'
-
+import { motion } from "framer-motion"
+;
 const Project = () => {
 
-
     return(
-        <ProjectContainer>
+        <ProjectContainer
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        transition={{ duration: 0.5 }}
+        >
             <ProjectWrapper>
                 <Content>
                     <Card>
@@ -55,7 +60,7 @@ const Project = () => {
 export default Project
 
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled(motion.div)`
     display: flex;
     width: 100%;
     margin-top: 3%;

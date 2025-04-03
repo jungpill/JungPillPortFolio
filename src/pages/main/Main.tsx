@@ -5,7 +5,6 @@ import Profile from "./Profile";
 import CoverLetter from "./CoverLetter";
 import Project from './Project'
 
-
 const Main = () => {
 
     const {type, setType} = useTypeStore()
