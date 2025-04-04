@@ -4,6 +4,7 @@ import useTypeStore from "../../zustand/UseTypeStore";
 import Profile from "./Profile";
 import CoverLetter from "./CoverLetter";
 import Project from './Project'
+import GuestBook from "./GuestBook";
 
 const Main = () => {
 
@@ -15,6 +16,7 @@ const Main = () => {
         {type === 'Profile' && (<Profile/>)}
         {type === 'CoverLetter' && (<CoverLetter/>)}
         {type === 'Project' && (<Project/>)}
+        {type === 'GuestBook' && (<GuestBook/>)}
     </MainContainer>
     )
 }
