@@ -6,10 +6,17 @@ const CommentField = () => {
 
     return(
     <CommentFieldContainer>
-        <CommentArea/>
-        <SubmitButton>
-            확인
-        </SubmitButton>
+        <RowWrapper style = {{marginBottom: '1rem'}}>
+            <VisitorInput placeholder="아이디"/>
+            <VisitorInput placeholder="패스워드"/>
+        </RowWrapper>
+        
+        <RowWrapper>
+            <CommentArea placeholder="피드백은 언제나 환영입니다! 많은 조언 부탁드려요"/>
+            <SubmitButton>
+                확인
+            </SubmitButton>
+        </RowWrapper>
     </CommentFieldContainer>
     )
 }
@@ -18,6 +25,7 @@ export default CommentField;
 
 const CommentFieldContainer = styled.div`
     display: flex;
+    flex-direction: column;
     position: fixed;
     bottom: 15%;
     width: 45%;
@@ -40,7 +48,17 @@ const SubmitButton = styled.button`
     margin-left: 1rem;
     background-color: white;
     border-radius: 5px;
+`
+
+const RowWrapper = styled.div`
+    display: flex;
     
+`
+
+const VisitorInput = styled.input`
+    width: 8rem;
+    height: 1.2rem;
+    margin-right: 1rem;
 `
 
 
