@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import 사진푸른배경 from '../../source/webp/사진 푸른배경.webp'
+import CommentField from "../../component/CommentField";
+
 const GuestBook = () => {
 
 
@@ -14,6 +16,7 @@ const GuestBook = () => {
                     <ProfileImage src = {사진푸른배경}/>
                     <Text>댓글입니다.</Text>
                 </RowWrapper>
+                <CommentField/>
             </GuestWrapper>
         </GuestBookContainer>
     )
