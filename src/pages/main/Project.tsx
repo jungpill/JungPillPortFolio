@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
-import Jaychis from '../../source/webp/Jaychis.webp'
-import { motion } from "framer-motion"
-;
+import Jaychis from '../../source/webp/Jaychis.webp';
+import { motion } from "framer-motion";
+import Modal from "../../component/Modal";
+import { useState } from "react";
+
 const Project = () => {
+
+    type ModalType = 'Jaychis' | null
+
+    const [activeModal, setActiveModal] = useState<ModalType>(null);
 
     return(
         <ProjectContainer
@@ -14,7 +20,7 @@ const Project = () => {
         >
             <ProjectWrapper>
                 <Content>
-                    <Card>
+                    <Card onClick = {() => {setActiveModal('Jaychis')}}>
                         <ImageCard
                         img={Jaychis}
                         />
@@ -22,7 +28,7 @@ const Project = () => {
                         <Text>2024.09 ~ 2025.01</Text>
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
-                    
+                    {(activeModal === 'Jaychis' && (<Modal/>))}
                     <Card>
                         <ImageCard
                         img={Jaychis}
