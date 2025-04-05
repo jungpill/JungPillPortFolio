@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
-import Jaychis from '../../source/webp/Jaychis.webp';
+import JaychisImg from '../../source/webp/Jaychis.webp';
 import { motion } from "framer-motion";
 import Modal from "../../component/Modal";
 import { useState } from "react";
+import Jaychis from "../project/Jaychis";
 
 const Project = () => {
 
@@ -22,16 +23,16 @@ const Project = () => {
                 <Content>
                     <Card onClick = {() => {setActiveModal('Jaychis')}}>
                         <ImageCard
-                        img={Jaychis}
+                        img={JaychisImg}
                         />
                         <Title>Jaychis</Title>
                         <Text>2024.09 ~ 2025.01</Text>
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
-                    {(activeModal === 'Jaychis' && (<Modal/>))}
+                    {(activeModal === 'Jaychis' && (<Modal children ={<Jaychis/>} />))}
                     <Card>
                         <ImageCard
-                        img={Jaychis}
+                        img={JaychisImg}
                         />
                         <Title>싹둑싹둑</Title>
                         <Text>2024.02 ~ 2024.06</Text>
@@ -41,7 +42,7 @@ const Project = () => {
 
                     <Card>
                         <ImageCard
-                        img={Jaychis}
+                        img={JaychisImg}
                         />
                         <Title>싸이월드 포트폴리오</Title>
                         <Text>2025.04 ~ 2025.04</Text>
@@ -50,7 +51,7 @@ const Project = () => {
                     
                     <Card>
                         <ImageCard
-                        img={Jaychis}
+                        img={JaychisImg}
                         />
                         <Title>Jaychis</Title>
                         <Text>2024.09 ~ 2025.01</Text>

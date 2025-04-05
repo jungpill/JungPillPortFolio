@@ -2,13 +2,13 @@ import { useState } from "react";
 import styled from "styled-components";
 
 
-const Modal = () => {
+const Modal = ({children}:{readonly children: React.ReactNode}) => {
 
 
     return(
         <ModalContainer>
             <ModalWrapper>
-                asdasdsad
+                {children}
             </ModalWrapper>
         </ModalContainer>
     )
@@ -29,7 +29,9 @@ const ModalContainer = styled.div`
     align-items: center;
 `
 
-const ModalWrapper = styled.div`
+const ModalWrapper = styled.div`    
+    display: flex;
+    justify-content: center;
     background: white;
     height: 80%;
     width: 40%;
