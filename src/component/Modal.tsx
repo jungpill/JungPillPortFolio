@@ -1,15 +1,19 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import useOutsideClick from "../hook/UseOutSideClick";
+import close from '../../src/source/webp/close.webp'
+import useProjectTypeStore from "../zustand/UseProjectTypeStore";
 
 const Modal = ({children}:{readonly children: React.ReactNode}) => {
 
     const ref = useRef<HTMLDivElement>(null);
+    const {setProjectType} = useProjectTypeStore()
     useOutsideClick({ref:ref})
 
     return(
         <ModalContainer>
             <ModalWrapper ref = {ref}>
+                <img src = {close} width='30px' height='30px' style={{marginLeft: 'auto'}} onClick={() => {setProjectType(null)}}/>
                 {children}
             </ModalWrapper>
         </ModalContainer>
@@ -33,6 +37,7 @@ const ModalContainer = styled.div`
 
 const ModalWrapper = styled.div`    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background: white;
     height: 80%;
