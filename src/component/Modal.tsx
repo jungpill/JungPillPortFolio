@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useState,useRef, useEffect } from "react";
 import styled from "styled-components";
-
+import useProjectTypeStore from "../zustand/UseProjectTypeStore";
 
 const Modal = ({children}:{readonly children: React.ReactNode}) => {
 
+    const ref = useRef<HTMLDivElement>(null);
+    const {projectType, setProjectType} = useProjectTypeStore()
+
+    useEffect(() => {
+        const clickOutSide = (e: MouseEvent) => {
+          const target = e.target as Node;
+          if (ref.current && !ref.current.contains(target)) {
+            setProjectType(null);
+          }
+        };
+    
+        document.addEventListener('mousedown', clickOutSide);
+        return () => {
+          document.removeEventListener('mousedown', clickOutSide);
+        };
+      }, []);
 
     return(
         <ModalContainer>
-            <ModalWrapper>
+            <ModalWrapper ref = {ref}>
                 {children}
             </ModalWrapper>
         </ModalContainer>

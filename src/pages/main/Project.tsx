@@ -3,15 +3,15 @@ import ImageCard from "../../component/ImageCard";
 import JaychisImg from '../../source/webp/Jaychis.webp';
 import { motion } from "framer-motion";
 import Modal from "../../component/Modal";
-import { useState } from "react";
 import Jaychis from "../project/Jaychis";
+import useProjectTypeStore from "../../zustand/UseProjectTypeStore";
 
 const Project = () => {
 
     type ModalType = 'Jaychis' | null
 
-    const [activeModal, setActiveModal] = useState<ModalType>(null);
-
+    const {projectType, setProjectType} = useProjectTypeStore();
+    
     return(
         <ProjectContainer
         initial={{ opacity: 0, x: 40 }}
@@ -21,7 +21,7 @@ const Project = () => {
         >
             <ProjectWrapper>
                 <Content>
-                    <Card onClick = {() => {setActiveModal('Jaychis')}}>
+                    <Card onClick = {() => {setProjectType('Jaychis')}}>
                         <ImageCard
                         img={JaychisImg}
                         />
@@ -29,7 +29,7 @@ const Project = () => {
                         <Text>2024.09 ~ 2025.01</Text>
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
-                    {(activeModal === 'Jaychis' && (<Modal children ={<Jaychis/>} />))}
+                    {(projectType === 'Jaychis' && (<Modal children ={<Jaychis/>} />))}
                     <Card>
                         <ImageCard
                         img={JaychisImg}
