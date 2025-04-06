@@ -9,17 +9,15 @@ import { axiosInstance } from "../../api/axios";
 const GuestBook = () => {
 
     const [GuestBookData, setGuestBookData] = useState();
-    const [submitData, setSubmitData] = useState([{userId: '', password: '', content: ''}]);
 
     useEffect(() => {
         console.log('tt')
     })
 
-    
     return(
         <GuestBookContainer>
             <GuestWrapper>
-                <Header >
+                <Header>
                     nickname (2025.02.05 17:58)
                 </Header>
                 <RowWrapper>
