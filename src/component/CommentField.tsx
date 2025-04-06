@@ -27,10 +27,10 @@ const CommentFieldContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: fixed;
-    bottom: 15%;
+    bottom: 14%;
     width: 45%;
     background-color: #F2F2F2;
-    padding: 20px;
+    padding: 15px;
 `
 
 const CommentArea = styled.textarea`

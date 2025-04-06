@@ -1,25 +1,11 @@
-import { useState,useRef, useEffect } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
-import useProjectTypeStore from "../zustand/UseProjectTypeStore";
+import useOutsideClick from "../hook/UseOutSideClick";
 
 const Modal = ({children}:{readonly children: React.ReactNode}) => {
 
     const ref = useRef<HTMLDivElement>(null);
-    const {projectType, setProjectType} = useProjectTypeStore()
-
-    useEffect(() => {
-        const clickOutSide = (e: MouseEvent) => {
-          const target = e.target as Node;
-          if (ref.current && !ref.current.contains(target)) {
-            setProjectType(null);
-          }
-        };
-    
-        document.addEventListener('mousedown', clickOutSide);
-        return () => {
-          document.removeEventListener('mousedown', clickOutSide);
-        };
-      }, []);
+    useOutsideClick({ref:ref})
 
     return(
         <ModalContainer>
