@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import stop from '../../src/source/webp/stop.webp'
 import next from '../../src/source/webp/next.webp'
-import squeare from '../../src/source/webp/square.webp'
+import square from '../../src/source/webp/square.webp'
 import play from '../../src/source/webp/play.webp'
 import { useState } from "react";
 
@@ -10,16 +10,36 @@ const MusicBar = () => {
 
     const [active, setActive] = useState<boolean>(true);
 
+    const handleRemote = (e:React.MouseEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement;
+        const type = target.getAttribute('data-type');
+        switch(type){
+            case 'play':
+                setActive(false);
+                break;
+            case 'stop':
+                setActive(true);
+                break;
+            case 'square':
+                break;
+            case 'next':
+                break;
+            case 'back':
+                break;
+                
+        }
+    }
+
     return(
         <MusicBarContainer>
             <TitleBox>
                 거북이
             </TitleBox>
-            <IconBox>
-                <Icon src = {active ? play : squeare}/>
-                <Icon src = {stop}/>
-                <Icon src = {next} style = {{transform: 'rotate(180deg)'}} />
-                <Icon src = {next}/>
+            <IconBox onClick = {handleRemote}>
+                <Icon data-type = 'play' src = {active ? play : stop}/>
+                <Icon data-type = 'square' src = {square}/>
+                <Icon data-type = 'next' src = {next} style = {{transform: 'rotate(180deg)'}} />
+                <Icon data-type = 'back' src = {next}/>
             </IconBox>
         </MusicBarContainer>
     )
