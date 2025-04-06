@@ -2,28 +2,50 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import 사진푸른배경 from '../../source/webp/사진 푸른배경.webp'
 import CommentField from "../../component/CommentField";
-import { AxiosInstance } from "axios";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../api/axios";
 
+interface GuestbookEntry {
+    id: number;
+    userId: string;
+    password: string;
+    content: string;
+    date: string; 
+  }
+
 const GuestBook = () => {
 
-    const [GuestBookData, setGuestBookData] = useState();
+    const [GuestBookData, setGuestBookData] = useState<GuestbookEntry[]>([]);
 
     useEffect(() => {
-        console.log('tt')
-    })
+        const getGuestBookData = async () => {
+            try{
+                const response = await axiosInstance.get('guestbook')
+                setGuestBookData(response.data)
+                console.log(response.data)
+            }catch(err){
+                console.error(err)
+            }
+        }
+        getGuestBookData()
+    },[])
 
     return(
         <GuestBookContainer>
             <GuestWrapper>
-                <Header>
-                    nickname (2025.02.05 17:58)
-                </Header>
-                <RowWrapper>
-                    <ProfileImage src = {사진푸른배경}/>
-                    <Text>댓글입니다.</Text>
-                </RowWrapper>
+                {GuestBookData ? GuestBookData.map((GuestBook,index) => {
+                    return(
+                        <>
+                        <Header>
+                            {GuestBook.userId} {GuestBook.date}
+                        </Header>
+                        <RowWrapper>
+                            <ProfileImage src = {사진푸른배경}/>
+                            <Text>{GuestBook.content}</Text>
+                        </RowWrapper>
+                </>
+                    )
+                }) : '아직 등록된 방명록이 없습니다.'}
                 <CommentField/>
             </GuestWrapper>
         </GuestBookContainer>
