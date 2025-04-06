@@ -13,11 +13,19 @@ const CommentField = () => {
     const [submitData, setSubmitData] = useState<SubmitType>({userId: '', password: '', content: ''});
 
     const handleSubmit = async() => {
-        const response = await axiosInstance.post('/guestbook', {
-            "userId": submitData.userId,
-            "password": submitData.password,
-            "content": submitData.content
-          })
+        if(!submitData.content || !submitData.password || !submitData.userId) {
+            return alert('모든 정보를 입력해주세요')
+        }
+        try{
+            const response = await axiosInstance.post('/guestbook', {
+                "userId": submitData.userId,
+                "password": submitData.password,
+                "content": submitData.content
+            })
+            setSubmitData({userId: '', password: '', content: ''})
+        }catch(err){
+            console.log(err)
+        }
     }
 
     return(
