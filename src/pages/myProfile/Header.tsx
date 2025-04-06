@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {useState, useEffect} from 'react'
-
+import { axiosInstance } from "../../api/axios";
 
 const MyProfileHeader = () => {
 
@@ -11,20 +11,13 @@ const MyProfileHeader = () => {
 
     const Getvisitor = async () => {
         try {
-          const response = await fetch('http://localhost:7001/visitor/increment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            mode: 'cors',
-          });
-      
-          const data = await response.json();
+          const response = await axiosInstance.post('/visitor/increment')
           
-          setVisitor(data)
+          setVisitor(response.data)
         } catch (error) {
           console.error('Error:', error);
         }
     };
-
     useEffect(() => {
         Getvisitor()
     },[])

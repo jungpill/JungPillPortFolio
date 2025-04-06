@@ -2,14 +2,24 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import 사진푸른배경 from '../../source/webp/사진 푸른배경.webp'
 import CommentField from "../../component/CommentField";
+import { AxiosInstance } from "axios";
+import { useState, useEffect } from "react";
+import { axiosInstance } from "../../api/axios";
 
 const GuestBook = () => {
 
+    const [GuestBookData, setGuestBookData] = useState();
+    const [submitData, setSubmitData] = useState([{userId: '', password: '', content: ''}]);
 
+    useEffect(() => {
+        console.log('tt')
+    })
+
+    
     return(
         <GuestBookContainer>
             <GuestWrapper>
-                <Header>
+                <Header >
                     nickname (2025.02.05 17:58)
                 </Header>
                 <RowWrapper>
