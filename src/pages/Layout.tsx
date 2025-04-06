@@ -3,10 +3,12 @@ import MyProfile from "./myProfile/MyProfile";
 import Header from './myProfile/Header'
 import Ling from '../source/webp/링.webp'
 import Tab from "../component/Tab";
+import MusicBar from "../component/MusicBar";
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <LayoutContainer>
+            <MusicBar/>
             <ContentContainer>
             <DottedLine>
                 <Header/>
