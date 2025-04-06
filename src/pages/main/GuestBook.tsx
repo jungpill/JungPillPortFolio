@@ -36,8 +36,8 @@ const GuestBook = () => {
                 {GuestBookData ? GuestBookData.map((GuestBook,index) => {
                     return(
                         <>
-                        <Header>
-                            {GuestBook.userId} {GuestBook.date}
+                        <Header key = {index}>
+                        <MarginSpan>NO.{GuestBook.id}</MarginSpan> <MarginSpan>{GuestBook.userId}</MarginSpan> ({GuestBook.date})
                         </Header>
                         <RowWrapper>
                             <ProfileImage src = {사진푸른배경}/>
@@ -84,7 +84,7 @@ const Header = styled.div`
     align-items: center;
     padding: 5px;
     margin-top: 5%;
-    font-size: 1rem;
+    font-size: .8rem;
     background-color: #F2F2F2;
     height: 30px;
 `
@@ -109,5 +109,9 @@ const Text = styled.div`
     white-space: normal; /* 공백을 정리하면서 줄바꿈 적용 */
     text-align: justify;
     margin: 5% 0 0 2%;
+`
+
+const MarginSpan = styled.span`
+    margin-right: .5rem;
 `
 
