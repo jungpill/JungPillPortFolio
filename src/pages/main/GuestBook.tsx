@@ -4,6 +4,7 @@ import 사진푸른배경 from '../../source/webp/사진 푸른배경.webp'
 import CommentField from "../../component/CommentField";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../api/axios";
+import InputModal from "../../component/InputModal";
 
 interface GuestbookEntry {
     id: number;
@@ -40,6 +41,7 @@ const GuestBook = () => {
 
     return(
         <GuestBookContainer>
+            
             <GuestWrapper>
                 {GuestBookData ? GuestBookData.map((GuestBook,index) => {
                     return(
@@ -96,7 +98,7 @@ const Header = styled.div`
     margin-top: 5%;
     font-size: .8rem;
     background-color: #F2F2F2;
-    width: 72%;
+    width: 85%;
     height: 30px;
 `
 
