@@ -54,7 +54,6 @@ const CommentFieldContainer = styled.div`
     bottom: 14%;
     width: 45%;
     background-color: #F2F2F2;
-    padding: 15px;
 `
 
 const CommentArea = styled.textarea`
