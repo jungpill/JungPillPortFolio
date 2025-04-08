@@ -7,6 +7,7 @@ import Jaychis from "../project/Jaychis";
 import useProjectTypeStore from "../../zustand/UseProjectTypeStore";
 import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
 import PortFolilImg from '../../source/webp/PortFolio.webp'
+import Cut from "../project/Cut";
 
 const Project = () => {
 
@@ -30,7 +31,7 @@ const Project = () => {
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
                     {(projectType === 'Jaychis' && (<Modal children ={<Jaychis/>} />))}
-                    <Card>
+                    <Card onClick = {() => {setProjectType('싹둑싹둑')}}>
                         <ImageCard
                         img={싹둑싹둑Img}
                         />
@@ -39,7 +40,7 @@ const Project = () => {
                         <Text>판매자와 디자이너의 매칭을 통해 의류 구매 및 리폼을 동시에 진행 가능한 웹 플랫폼
                         </Text>
                     </Card>
-
+                    {(projectType === '싹둑싹둑' && (<Modal children ={<Cut/>} />))}
                     <Card>
                         <ImageCard
                         img={PortFolilImg}

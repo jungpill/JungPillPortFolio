@@ -5,7 +5,8 @@ import Zustand from '../../source/webp/Zustand.webp'
 import Tail from '../../source/webp/Tailwind.webp' 
 import Antd from '../../source/webp/AntDesign.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import JavaScript from '../../source/webp/JavaScript.webp'
+import Javascript from '../../source/webp/JavaSCript.webp'
+import ReactQuery from '../../source/webp/react-query.webp'
 
 const Cut = () => {
 
@@ -16,7 +17,7 @@ const Cut = () => {
                 프로젝트명
             </Title>
             <Content>
-                Jaychis 
+                싹둑싹둑
             </Content>
             <Wrapper>
                 <Wrapper>
@@ -58,7 +59,7 @@ const Cut = () => {
                 <CustomTooltip title="React" position="bottom"><Icon src = {React}/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {JavaScript}/></CustomTooltip>
+                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {Javascript}/></CustomTooltip>
             </Content>
             <Content>
                 <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand}/></CustomTooltip>
@@ -68,6 +69,9 @@ const Cut = () => {
             </Content>
             <Content>
                 <CustomTooltip title="Tailwind-css" position="bottom"><Icon src = {Tail}/></CustomTooltip>
+            </Content>
+            <Content>
+                <CustomTooltip title = 'ReactQuery' position="bottom"><Icon src = {ReactQuery}/></CustomTooltip>
             </Content>
             </Wrapper>
             <Hr/>
