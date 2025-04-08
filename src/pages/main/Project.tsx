@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Modal from "../../component/Modal";
 import Jaychis from "../project/Jaychis";
 import useProjectTypeStore from "../../zustand/UseProjectTypeStore";
+import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
 
 const Project = () => {
 
@@ -32,7 +33,7 @@ const Project = () => {
                     {(projectType === 'Jaychis' && (<Modal children ={<Jaychis/>} />))}
                     <Card>
                         <ImageCard
-                        img={JaychisImg}
+                        img={싹둑싹둑Img}
                         />
                         <Title>싹둑싹둑</Title>
                         <Text>2024.02 ~ 2024.06</Text>
