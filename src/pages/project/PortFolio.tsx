@@ -2,17 +2,16 @@ import styled from "styled-components";
 import 싹둑싹둑 from '../../source/webp/싹둑싹둑.webp'
 import React from '../../source/webp/React.webp'
 import Zustand from '../../source/webp/Zustand.webp'
-import Tail from '../../source/webp/Tailwind.webp' 
-import Antd from '../../source/webp/AntDesign.webp'
+import styledComponent from '../../source/webp/styledcomponents.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import Javascript from '../../source/webp/JavaSCript.webp'
-import ReactQuery from '../../source/webp/react-query.webp'
+import TpyeScript from '../../source/webp/TypeScript.webp'
+import PortFolioImg from '../../source/webp/PortFolio.webp'
 
 const PortFolio = () => {
 
     return(
         <JaychisContainer>
-            <img src = {싹둑싹둑} width='100%' height='50%' style = {{marginTop: '1rem'}}/>
+            <img src = {PortFolioImg} width='100%' height='50%' style = {{marginTop: '1rem'}}/>
             <Title>
                 프로젝트명
             </Title>
@@ -59,20 +58,15 @@ const PortFolio = () => {
                 <CustomTooltip title="React" position="bottom"><Icon src = {React}/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {Javascript}/></CustomTooltip>
+                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TpyeScript}/></CustomTooltip>
             </Content>
             <Content>
                 <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand}/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd}/></CustomTooltip>
+                <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent}/></CustomTooltip>
             </Content>
-            <Content>
-                <CustomTooltip title="Tailwind-css" position="bottom"><Icon src = {Tail}/></CustomTooltip>
-            </Content>
-            <Content>
-                <CustomTooltip title = 'ReactQuery' position="bottom"><Icon src = {ReactQuery}/></CustomTooltip>
-            </Content>
+            
             </Wrapper>
             <Hr/>
             <Title style = {{marginBottom:'1rem'}}>
