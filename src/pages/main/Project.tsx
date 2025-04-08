@@ -49,7 +49,7 @@ const Project = () => {
                         <Text>2025.04 ~ 2025.04</Text>
                         <Text>포트폴리오를 웹으로 구현 </Text>
                     </Card>
-                    
+                    {(projectType === 'PortFolio' && (<Modal children ={<Cut/>} />))}
                     <Card>
                         <ImageCard
                         img={JaychisImg}
