@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import 싹둑싹둑 from '../../source/webp/싹둑싹둑.webp'
+import FramerMotion from '../../source/webp/framer-motion.webp'
 import React from '../../source/webp/React.webp'
 import Zustand from '../../source/webp/Zustand.webp'
 import styledComponent from '../../source/webp/styledcomponents.webp'
@@ -66,6 +66,9 @@ const PortFolio = () => {
             <Content>
                 <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent}/></CustomTooltip>
             </Content>
+            <Content>
+                <CustomTooltip title="Framer-Motion" position="bottom"><Icon src = {FramerMotion}/></CustomTooltip>
+            </Content>
             
             </Wrapper>
             <Hr/>
@@ -73,24 +76,21 @@ const PortFolio = () => {
                 상세내용
             </Title>
             <Content>
-                1.좋아요 응답시간 99% 개선<br/>
+                1.프로젝트 내 이미지 webp로 자동 변환환<br/>
             </Content>
             <Li>
-            좋아요 API 평균 응답 시간이 351ms로, 사용자 인터랙션 후 UI 반응이 지연되는 문제가 발생했습니다
+            모든 이미지를 webp로 변환 후 사용하는 과정으로 개발 효율성이 저하되는 것을 인지하였습니다.
             </Li>
             <Li>
-            사용자가 좋아요 버튼을 클릭할 때 서버 응답을 기다리지 로컬 상태에서 즉시 좋아요 수를 증가 / 감소시켜 API 호출 수를 최적화하고 처리 속도를 99% 향상시켰습니다.
+            sharp 활용하여 빌드시 자동으로 이미지를 webp로 변환하여 사용할 수 있도록 변경하였습니다.
             </Li>
             <br/>
 
             <Content>
-                2.아토믹 디자인 패턴
+                2.애니메이션 적용 
             </Content>
             <Li>
-            컴포넌트 재사용성을 높이기 위해 아토믹 디자인 패턴을 적용했습니다.
-            </Li>
-            <Li>
-            컴포넌트를 최대한 Atoms, Molecules, Organisms로 구분하였고 복잡한 UI를 가진 폼의 경우 단일 Template으로 통합 하였습니다.
+            더 좋은 UI와 사용자 경험을 위해 Framer-Motion을 이용하여 애니메이션을 적용하였습니다.
             </Li>
             <br/>
 
@@ -105,35 +105,6 @@ const PortFolio = () => {
             </Li>
             <br/>
 
-            <Content>
-                4.Zustand를 통한 전역 상태관리
-            </Content>
-            <Li>
-            프로젝트의 규모가 크지 않아 복잡한 상태 관리나 다단계 상태 변화가 필요한 상황이 아니었기에  Redux나 Recoil보다는 보일러 플레이트 코드가 적고 가벼운 Zustand가 더 적합하다고 판단하였습니다.
-            </Li>
-            <Li>
-                동적 로딩을 통한 메인번들 사이즈 감소, Tree Shaking를 통한 불필요한 코드 제거 
-            </Li>
-            <Li>
-                Font Swap속성을 통한 렌더링 완료시 폰트 적용 
-            </Li>
-            <br/>
-
-            <Content>
-                5.문서화
-            </Content>
-            <Li>
-            요구사항과 복잡한 로직을 가진 기능들을 이해하기 쉽게 하기 위해 UseCaseDiagram, Sequence, System Architecture 등 문서화 작업을 진행했습니다
-            </Li>
-            <br/>
-
-            <Content>
-                6.이미지 최적화
-            </Content>
-            <Li>
-            인터셉터를 사용해 액세스 토큰이 만료된 상태로 API 요청시 401 에러를 감지하여 리프레시 토큰을 이용해 새로운 액세스 토큰을 발급
-            </Li>
-            <br/>
         </JaychisContainer>
     )
 }
