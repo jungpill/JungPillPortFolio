@@ -8,7 +8,20 @@ interface SubmitType {
     readonly content: string;
 }
 
-const CommentField = () => {
+interface GuestbookEntry {
+    id: number;
+    userId: string;
+    password: string;
+    content: string;
+    date: string; 
+  }
+
+interface CommentFieldProps {
+    setGuestBookData: React.Dispatch<React.SetStateAction<GuestbookEntry[]>>;
+    guestBookData: GuestbookEntry[];
+  }
+
+const CommentField = ({ guestBookData,setGuestBookData }: CommentFieldProps) => {
 
     const [submitData, setSubmitData] = useState<SubmitType>({userId: '', password: '', content: ''});
 
@@ -23,6 +36,7 @@ const CommentField = () => {
                 "content": submitData.content
             })
             setSubmitData({userId: '', password: '', content: ''})
+            setGuestBookData([...guestBookData, response.data])
         }catch(err){
             console.log(err)
         }

@@ -9,12 +9,7 @@ interface CancelOrderModalProps {
 
 const InputModal = ({ title,eventHandler, setIsOpen }: CancelOrderModalProps) => {
 
-    const [reason, setReason] = useState("");
     const [password, setPassword] = useState('')
-
-    const handleSubmit = () => {
-        eventHandler(password);
-    };
  
   return (
         <ModalContainer>
