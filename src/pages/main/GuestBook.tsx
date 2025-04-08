@@ -5,7 +5,7 @@ import CommentField from "../../component/CommentField";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
-
+import Alert from "../../component/Alert";
 interface GuestbookEntry {
     id: number;
     userId: string;
@@ -18,6 +18,7 @@ const GuestBook = () => {
 
     const [GuestBookData, setGuestBookData] = useState<GuestbookEntry[]>([]);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [showAlert, setShowAlert] = useState<boolean>(false)
 
     useEffect(() => {
         const getGuestBookData = async () => {
@@ -37,8 +38,8 @@ const GuestBook = () => {
             const response = await axiosInstance.patch(`/guestbook/${index}`, {password: password})
             setGuestBookData(GuestBookData.filter((item) => item.id !== index))
         }catch(err){
+            setShowAlert(true)
             console.log(err)
-            console.log(index, password)
         }
         finally{setIsOpen(false)}
     }
@@ -50,11 +51,15 @@ const GuestBook = () => {
 
     return(
         <GuestBookContainer>
-            {isOpen ? <InputModal title={'삭제하시겠습니까?'} 
+            {isOpen ? 
+            <InputModal title={'삭제하시겠습니까?'} 
             eventHandler={(password:any) => {
             const index = Number(sessionStorage.getItem("deleteKey"));
             handleDelete(index, password);
-            }} setIsOpen={setIsOpen}/> : null}
+            }} 
+            setIsOpen={setIsOpen}/> : 
+            null}
+            {showAlert ? <Alert onClose={setShowAlert}/> : null}
             <GuestWrapper>
                 {GuestBookData ? GuestBookData.map((GuestBook,index) => {
                     return(

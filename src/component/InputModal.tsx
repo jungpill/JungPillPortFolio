@@ -1,10 +1,11 @@
 import React, { SetStateAction, useState } from "react";
 import styled from "styled-components";
+import Alert from "./Alert";
 
 interface CancelOrderModalProps {
     eventHandler: (password: string) => void;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  title: string;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    title: string;
 }
 
 const InputModal = ({ title,eventHandler, setIsOpen }: CancelOrderModalProps) => {
