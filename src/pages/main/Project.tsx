@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
-import JaychisImg from '../../source/webp/Jaychis.webp';
+import JaychisImg from '../../source/webp/JaychisImg.webp';
 import { motion } from "framer-motion";
 import Modal from "../../component/Modal";
 import Jaychis from "../project/Jaychis";
 import useProjectTypeStore from "../../zustand/UseProjectTypeStore";
 import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
+import PortFolilImg from '../../source/webp/PortFolio.webp'
 
 const Project = () => {
-
-    type ModalType = 'Jaychis' | null
 
     const {projectType, setProjectType} = useProjectTypeStore();
     
@@ -43,7 +42,7 @@ const Project = () => {
 
                     <Card>
                         <ImageCard
-                        img={JaychisImg}
+                        img={PortFolilImg}
                         />
                         <Title>싸이월드 포트폴리오</Title>
                         <Text>2025.04 ~ 2025.04</Text>
