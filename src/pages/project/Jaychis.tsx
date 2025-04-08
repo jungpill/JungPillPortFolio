@@ -71,7 +71,7 @@ const Jaychis = () => {
             </Content>
             </Wrapper>
             <Hr/>
-            <Title>
+            <Title style = {{marginBottom:'1rem'}}>
                 상세내용
             </Title>
             <Content>
