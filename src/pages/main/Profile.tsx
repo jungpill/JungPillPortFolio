@@ -14,6 +14,7 @@ import process from '../../source/webp/진행현황2.webp'
 import ImageCard from "../../component/ImageCard";
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
+import FramerMotion from '../../source/webp/framer-motion.webp'
 
 const Profile = () => {
 
@@ -40,6 +41,7 @@ const Profile = () => {
                 <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} />} />
                 <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} />} />
                 <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} />} />
+                <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion}/>}/>
                 </Content>
                 <Title>
                     역량
