@@ -17,6 +17,7 @@ interface GuestbookEntry {
 const GuestBook = () => {
 
     const [GuestBookData, setGuestBookData] = useState<GuestbookEntry[]>([]);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const getGuestBookData = async () => {
@@ -31,23 +32,45 @@ const GuestBook = () => {
         getGuestBookData()
     },[])
 
-    const handleDelete = async (index: number) => {
-        const response = await axiosInstance.patch(`/guestbook/${index}`, {password: '134'})
+    const handleDelete = async (index: number, password: string) => {
+        try{
+            const response = await axiosInstance.patch(`/guestbook/${index}`, {password: password})
+            setGuestBookData(GuestBookData.filter((item) => item.id !== index))
+        }catch(err){
+            console.log(err)
+            console.log(index, password)
+        }
+        finally{setIsOpen(false)}
     }
 
-    const InputPassword = (e:KeyboardEvent) => {
-
+    const handleIsOpen = (e:any) => {
+        sessionStorage.setItem('deleteKey', e)
+        setIsOpen(true)
     }
 
     return(
         <GuestBookContainer>
-            
+            {isOpen ? <InputModal title={'삭제하시겠습니까?'} 
+            eventHandler={(password:any) => {
+            const index = Number(sessionStorage.getItem("deleteKey"));
+            handleDelete(index, password);
+            }} setIsOpen={setIsOpen}/> : null}
             <GuestWrapper>
                 {GuestBookData ? GuestBookData.map((GuestBook,index) => {
                     return(
                         <>
                         <Header key = {index}>
-                        <MarginSpan>NO.{GuestBook.id}</MarginSpan> <MarginSpan>{GuestBook.userId}</MarginSpan> ({GuestBook.date}) <span style = {{marginLeft: 'auto', marginRight: '5px', cursor: 'pointer'}} >삭제</span>
+                        <MarginSpan>NO.{GuestBook.id}</MarginSpan> 
+                        <MarginSpan>{GuestBook.userId}</MarginSpan> 
+                        ({GuestBook.date}) 
+                        <span style = {{
+                            marginLeft: 'auto', 
+                            marginRight: '5px', 
+                            cursor: 'pointer'
+                            }} 
+                            onClick={() => {handleIsOpen(GuestBook.id)}}>
+                            삭제
+                        </span>
                         </Header>
                         <RowWrapper>
                             <ProfileImage src = {사진푸른배경}/>

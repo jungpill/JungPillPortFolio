@@ -1,34 +1,53 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import styled from "styled-components";
-import Modal from "./Modal";
 
 interface CancelOrderModalProps {
-  onConfirm?: (reason: string) => void;
-  onCancel?: () => void;
+    eventHandler: (password: string) => void;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   title: string;
 }
 
-const InputModal = ({ title,onConfirm, onCancel }: CancelOrderModalProps) => {
-  const [reason, setReason] = useState("");
+const InputModal = ({ title,eventHandler, setIsOpen }: CancelOrderModalProps) => {
 
+    const [reason, setReason] = useState("");
+    const [password, setPassword] = useState('')
+
+    const handleSubmit = () => {
+        eventHandler(password);
+    };
  
   return (
-      <ModalBox>
-        <Title>{title}</Title>
-        <Input
-          placeholder="Enter reason..."
-          value={reason}
-          onChange={(e) => setReason(e.target.value)}
-        />
-        <ButtonGroup>
-          <OkButton >확인</OkButton>
-          <CancelButton onClick={onCancel}>아니오</CancelButton>
-        </ButtonGroup>
-      </ModalBox>
+        <ModalContainer>
+            <ModalBox>
+            <Title>{title}</Title>
+            <Input
+            placeholder="비밀번호를 입력하세요"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+            <ButtonGroup>
+            <OkButton onClick = {() => {eventHandler(password)}}>확인</OkButton>
+            <CancelButton onClick={() => {setIsOpen(false)}}>아니오</CancelButton>
+            </ButtonGroup>
+            </ModalBox>
+        </ModalContainer>
   );
 };
 
 export default InputModal;
+
+const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+`;
 
 const ModalBox = styled.div`
   background: white;
@@ -36,6 +55,7 @@ const ModalBox = styled.div`
   border-radius: 8px;
   width: 300px;
   text-align: center;
+  z-index: 1002;
 `;
 
 const Title = styled.h2`
@@ -49,8 +69,9 @@ const Input = styled.input`
   padding: 8px;
   font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   margin-bottom: 20px;
+  width: 90%;
 `;
 
 const ButtonGroup = styled.div`
