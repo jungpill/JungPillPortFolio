@@ -48,7 +48,7 @@ const ContentContainer = styled.div`
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 20px;
     width: 80%;
     height: 80%;
     background-color: skyblue;

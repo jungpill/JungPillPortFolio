@@ -1,6 +1,7 @@
 import 싸이월드 from '../../source/webp/싸이월드.webp'
 import styled from 'styled-components'
 import { motion } from "framer-motion";
+import 미니홈피 from '../../source/미니홈피.png'
 
 const HOME = () => {
 
@@ -21,7 +22,8 @@ const HOME = () => {
 
     return(
         <BodyContainer>
-            <Img src = {싸이월드}/>
+           
+            <Img src = {미니홈피}/>
             <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -45,13 +47,18 @@ const BodyContainer = styled.div`
     display: flex;
     margin-top: 1%;
     width: 100%;
-    height: 100%;
+    height: 90%;
     border-radius: 20px;
+    background-color: white;
+     align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
 `
 
 const Img = styled.img`
-    width: 100%;
-    height: 96%;
+    width: 90%;
+    height: 80%;
     margin-top: 2%; 
     border-radius: 10px;
 `
@@ -62,13 +69,13 @@ const Balloon = styled.div`
   color: black;
   padding: 30px;
   border-radius: 12px;
-  max-width: 450px;
-  height: 50px;
-  font-size: 1.6rem;
+  max-width: 350px;
+  height: 40px;
+  font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
-  top: 37%;
-  left: 50%;
+  top: 33%;
+  left: 56%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15), 
               0px -4px 10px rgba(0, 0, 0, 0.10), 
               4px 0px 10px rgba(0, 0, 0, 0.10), 
@@ -90,3 +97,13 @@ const Balloon = styled.div`
     margin-bottom: -20px;
   }
 `;
+
+const Im = styled.div`
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: auto;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    color: #007AFF;
+`
