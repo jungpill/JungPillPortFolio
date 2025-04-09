@@ -58,9 +58,9 @@ const Project = () => {
                         <ImageCard
                         img={JaychisImg}
                         />
-                        <Title>Jaychis</Title>
-                        <Text>2024.09 ~ 2025.01</Text>
-                        <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
+                        <Title>중독</Title>
+                        <Text>2025.04 ~ 진행중</Text>
+                        <Text>중독 개선을 돕는 앱을 개발 합니다. 처음에는 금연을 주요 카테고리로 시작하며 추후에는 다양한 중독 문제를 해결할 수 있는 서비스로 확장할 예정입니다.</Text>
                     </Card>
                     
                 </Content>
