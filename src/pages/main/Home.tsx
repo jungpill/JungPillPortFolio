@@ -50,6 +50,7 @@ const BodyContainer = styled.div`
     justify-content: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex-direction: column;
+    padding-bottom: 2rem;
 `
 
 const Img = styled.img`
@@ -68,13 +69,13 @@ const Balloon = styled.div`
   color: black;
   padding: 10px;
   border-radius: 12px;
-  width: 12rem;
-  height: 35px;
-  font-size: 1.4rem;
+  width: 10rem;
+  height: 25px;
+  font-size: 1rem;
   font-weight: 500;
   text-align: center;
   top: 44%;
-  right: 17%;
+  right: 18%;
   white-space: pre-wrap;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15),
               0px -4px 10px rgba(0, 0, 0, 0.10),

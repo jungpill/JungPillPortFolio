@@ -25,7 +25,7 @@ const PortFolio = () => {
                             개발인원
                         </Title>
                         <Content>
-                            1명명
+                            1명
                         </Content>
                     </Column>
 

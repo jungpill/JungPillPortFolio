@@ -21,7 +21,6 @@ const ImageCardContainer = styled.div`
 const Img = styled.img`
     width: 100%;
     height: 97%;
-    object-fit: contain;
     border: 2px solid black;
     
     border-radius: 10px;

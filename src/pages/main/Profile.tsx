@@ -15,6 +15,7 @@ import ImageCard from "../../component/ImageCard";
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
 import FramerMotion from '../../source/webp/framer-motion.webp'
+import Profile1 from '../../source/webp/프로필1.webp'
 
 const Profile = () => {
 
@@ -36,38 +37,26 @@ const Profile = () => {
                 <CustomTooltip title="Redux" position="bottom" children={<Icon src={Redux} />} />
                 <CustomTooltip title="Styled Components" position="bottom" children={<Icon src={Styled} />} />
                 <CustomTooltip title="React Query" position="bottom" children={<Icon src={ReactQuery} />} />
-                <CustomTooltip title="GitHub" position="bottom" children={<Icon src={GitHub} />} />
+                <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion}/>}/>
                 <CustomTooltip title="Zustand" position="bottom" children={<Icon src={Zustand} />} />
                 <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} />} />
                 <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} />} />
                 <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} />} />
-                <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion}/>}/>
+                <CustomTooltip title="GitHub" position="bottom" children={<Icon src={GitHub} />} />
+                
                 </Content>
-                <Title>
-                    역량
-                </Title>
-                    <Content>
-                        <Card>
-                        <ImageCard
-                        img={process}
-                        />
-                        <Text>협업 및 문서화</Text> 
-                        </Card>
-
-                        <Card>
-                        <ImageCard
-                        img={process}
-                        />
-                        <Text>협업 및 문서화</Text> 
-                        </Card>
-                    </Content>
+                    
                 <Title>
                     교육
                 </Title>
-                <Content>
-                    성결대학교<br/>
-                    졸업 | 대학교(학사) <br/>
-                    컴퓨터공학과 2023. 03. ~ 2025. 02
+                <Content style = {{display: 'flex', flexDirection: 'column'}} >
+                <Text>성결대학교</Text><br/>
+                졸업 | 대학교(학사) <br/>
+                컴퓨터공학과 2023. 03. ~ 2025. 02
+                </Content><br/>
+                <Content style = {{display: 'flex', flexDirection: 'column'}} >
+                   <Text> ICT 한이음 멘토링</Text><br/>
+                    정부사업 한이음을 통해 약 8개월간 멘토링 진행(24.03 ~ 24.11) 
                 </Content>
             </ProfileWrapper>
         </ProfileContainer>
@@ -110,11 +99,10 @@ const Title = styled.div`
     color: #007AFF;
 `
 
-const Text = styled.div`
+const Text = styled.p`
     font-weight: 600;
-    line-height: 2rem;
     font-size: 1rem;
-    margin: 5% 0 2% 0;
+    margin-bottom: -1.5rem;
 `
 
 const Content = styled.div`
@@ -133,10 +121,4 @@ const Icon = styled.img`
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), 
                 var(--tw-ring-shadow, 0 0 #0000), 
                 var(--tw-shadow);
-`
-
-const Card = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 `
