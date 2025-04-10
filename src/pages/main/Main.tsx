@@ -30,7 +30,7 @@ const MainContainer = styled.div`
     height: 100%;
     background-color: #F2F2F2;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 10px 2% 10px 2%;
     flex-direction: column;
     overflow-y: auto;

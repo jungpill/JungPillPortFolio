@@ -10,14 +10,14 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
         <LayoutContainer>
             <MusicBar/>
             <ContentContainer>
-            <DottedLine style = {{marginRight: '.3rem'}} >
+            <DottedLine>
                 <Header/>
                 <MyProfile/>
             </DottedLine>
-            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '30.8%', top: '20%'}}/>
-            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '30.8%', top: '25%'}}/>
-            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '30.8%', top: '70%'}}/>
-            <img src = {Ling} width='55px' height='60px' style = {{position: 'absolute', left: '30.8%', top: '75%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '20%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '25%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '70%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '75%'}}/>
             <BackGroundgray>
                 {children}
             </BackGroundgray>
@@ -50,7 +50,7 @@ const ContentContainer = styled.div`
     justify-content: center;
     padding: 20px;
     width: 80%;
-    height: 80%;
+    height: 85%;
     background-color: skyblue;
 `
 
@@ -65,7 +65,7 @@ const BackGroundgray = styled.div`
 
 const DottedLine = styled.div`
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 30px;
     width: 25%;
     height: 95%;
     padding: 10px;

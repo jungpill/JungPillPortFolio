@@ -56,7 +56,7 @@ const Profile = () => {
                 </Content><br/>
                 <Content style = {{display: 'flex', flexDirection: 'column'}} >
                    <Text> ICT 한이음 멘토링</Text><br/>
-                    정부사업 한이음을 통해 약 8개월간 멘토링 진행(24.03 ~ 24.11) 
+                    정부사업 한이음을 통해 약 8개월간 SW 기업전문가(멘토)와 팀을 이루어 프로젝트를 수행(24.03 ~ 24.11) 
                 </Content>
             </ProfileWrapper>
         </ProfileContainer>
