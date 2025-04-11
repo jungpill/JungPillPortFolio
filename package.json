@@ -28,11 +28,14 @@
   },
   "scripts": {
     "start": "npm run convert-images && react-scripts start",
-    "build": "node scripts/convertToWebP && react-scripts build",
+    "build": "npm run convert-images && react-scripts build",
     "test": "react-scripts test",
     "convert-images": "node scripts/convertImages.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://jungpill.github.io/PortFolio",
   "eslintConfig": {
     "extends": [
       "react-app",

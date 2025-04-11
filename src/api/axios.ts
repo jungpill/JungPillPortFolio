@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:7001",
-    timeout: 1000,
+    baseURL: "https://jungpillportfolio-bxc4hncjgcd9b9ha.japaneast-01.azurewebsites.net/",
     headers: {
       'X-Custom-Header': 'foobar',
       'Content-Type': 'application/json',

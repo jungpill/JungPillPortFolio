@@ -12,7 +12,7 @@ const MyProfileHeader = () => {
     const Getvisitor = async () => {
         try {
           const response = await axiosInstance.post('/visitor/increment')
-          
+          console.log(response)
           setVisitor(response.data)
         } catch (error) {
           console.error('Error:', error);
