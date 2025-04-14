@@ -24,7 +24,7 @@ const useOutsideClick = <T extends HTMLElement>({callBack, ref}: useOutsideClick
         return () => {
           document.removeEventListener('mousedown', handleClickOutside);
         };
-    },[])
+    },[ref])
 }
 
 export default useOutsideClick;
