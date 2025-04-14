@@ -10,12 +10,9 @@ import Zustand from '../../source/webp/Zustand.webp'
 import AntDesign from '../../source/webp/AntDesign.webp'
 import Jira from '../../source/webp/Jira.webp'
 import Confluence from '../../source/webp/Confluence.webp'
-import process from '../../source/webp/진행현황2.webp'
-import ImageCard from "../../component/ImageCard";
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
 import FramerMotion from '../../source/webp/framer-motion.webp'
-import Profile1 from '../../source/webp/프로필1.webp'
 
 const Profile = () => {
 

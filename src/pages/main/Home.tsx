@@ -1,7 +1,5 @@
-import 싸이월드 from '../../source/webp/싸이월드.webp'
 import styled from 'styled-components'
 import { motion } from "framer-motion";
-import 미니홈피 from '../../source/미니홈피.png'
 import test from '../../source/test.gif'
 const HOME = () => {
 

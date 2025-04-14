@@ -1,6 +1,5 @@
-import React, { SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import Alert from "./Alert";
 
 interface CancelOrderModalProps {
     eventHandler: (password: string) => void;
