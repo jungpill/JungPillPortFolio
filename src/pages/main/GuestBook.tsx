@@ -26,7 +26,6 @@ const GuestBook = () => {
             try{
                 const response = await axiosInstance.get('guestbook')
                 setGuestBookData(response.data)
-                console.log(response.data)
             }catch(err){
                 console.error(err)
             }
