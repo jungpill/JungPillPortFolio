@@ -62,7 +62,7 @@ const BodyContainer = styled.div`
 
 const Img = styled.img`
     width: 85%;
-    height: 65%;
+    height: 70%;
     margin-top: 2%; 
     border-radius: 10px;
 `
