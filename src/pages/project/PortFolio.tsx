@@ -43,7 +43,7 @@ const PortFolio = () => {
                             깃허브 링크
                         </Title>
                         <Content >
-                            <a href = 'https://github.com/jungpill/PortFolio' target='_blank'>
+                            <a href = 'https://github.com/jungpill/PortFolio' target='_blank' rel="noreferrer">
                             https://github.com/jungpill/PortFolio
                             </a>
                         </Content>

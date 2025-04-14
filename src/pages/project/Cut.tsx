@@ -44,7 +44,7 @@ const Cut = () => {
                             깃허브 링크
                         </Title>
                         <Content >
-                            <a href = 'https://github.com/jjsOrganization' target='_blank'>
+                            <a href = 'https://github.com/jjsOrganization' target='_blank' rel="noreferrer">
                             https://github.com/jjsOrganization
                             </a>
                         </Content>

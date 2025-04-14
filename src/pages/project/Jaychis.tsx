@@ -43,7 +43,7 @@ const Jaychis = () => {
                             깃허브 링크
                         </Title>
                         <Content >
-                            <a href = 'https://github.com/jaychis/nest-front' target='_blank'>
+                            <a href = 'https://github.com/jaychis/nest-front' target='_blank' rel="noreferrer">
                             'https://github.com/jaychis/nest-front'
                             </a>
                         </Content>
