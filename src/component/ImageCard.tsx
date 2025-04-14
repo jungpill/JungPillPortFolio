@@ -4,7 +4,7 @@ const ImageCard = ({img}: {img:string}) => {
 
     return(
         <ImageCardContainer>
-            <Img src = {img}/>
+            <Img src = {img} alt = '이미지 로드중'/>
         </ImageCardContainer>
     )
 }

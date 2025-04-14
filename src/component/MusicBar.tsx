@@ -35,11 +35,11 @@ const MusicBar = () => {
             <TitleBox>
                 거북이
             </TitleBox>
-            <IconBox onClick = {handleRemote}>
-                <Icon data-type = 'play' src = {active ? play : stop}/>
-                <Icon data-type = 'square' src = {square}/>
-                <Icon data-type = 'next' src = {next} style = {{transform: 'rotate(180deg)'}} />
-                <Icon data-type = 'back' src = {next}/>
+            <IconBox onClick = {handleRemote} >
+                <Icon data-type = 'play' src = {active ? play : stop} alt = '이미지 로드중'/>
+                <Icon data-type = 'square' src = {square} alt = '이미지 로드중'/>
+                <Icon data-type = 'next' src = {next} style = {{transform: 'rotate(180deg)'}} alt = '이미지 로드중'/>
+                <Icon data-type = 'back' src = {next} alt = '이미지 로드중'/>
             </IconBox>
         </MusicBarContainer>
     )

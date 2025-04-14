@@ -11,7 +11,7 @@ const PortFolio = () => {
 
     return(
         <JaychisContainer>
-            <img src = {PortFolioImg} width='100%' height='50%' style = {{marginTop: '1rem'}}/>
+            <img src = {PortFolioImg} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
             <Title>
                 프로젝트명
             </Title>
@@ -55,19 +55,19 @@ const PortFolio = () => {
             </Title>
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React}/></CustomTooltip>
+                <CustomTooltip title="React" position="bottom"><Icon src = {React} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TpyeScript}/></CustomTooltip>
+                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TpyeScript} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand}/></CustomTooltip>
+                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent}/></CustomTooltip>
+                <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Framer-Motion" position="bottom"><Icon src = {FramerMotion}/></CustomTooltip>
+                <CustomTooltip title="Framer-Motion" position="bottom"><Icon src = {FramerMotion} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             
             </Wrapper>

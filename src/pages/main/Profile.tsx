@@ -31,18 +31,18 @@ const Profile = () => {
                 </Title>
                 <Content>
 
-                <CustomTooltip title="JavaScript" position="bottom" children={<Icon src={JavaScript} />} />
-                <CustomTooltip title="TypeScript" position="bottom" children={<Icon src={TypeScript} />} />
-                <CustomTooltip title="React" position="bottom" children={<Icon src={React} />} />
-                <CustomTooltip title="Redux" position="bottom" children={<Icon src={Redux} />} />
-                <CustomTooltip title="Styled Components" position="bottom" children={<Icon src={Styled} />} />
-                <CustomTooltip title="React Query" position="bottom" children={<Icon src={ReactQuery} />} />
-                <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion}/>}/>
-                <CustomTooltip title="Zustand" position="bottom" children={<Icon src={Zustand} />} />
-                <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} />} />
-                <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} />} />
-                <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} />} />
-                <CustomTooltip title="GitHub" position="bottom" children={<Icon src={GitHub} />} />
+                <CustomTooltip title="JavaScript" position="bottom" children={<Icon src={JavaScript} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="TypeScript" position="bottom" children={<Icon src={TypeScript} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="React" position="bottom" children={<Icon src={React}alt = '이미지 로드중' />} />
+                <CustomTooltip title="Redux" position="bottom" children={<Icon src={Redux} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="Styled Components" position="bottom" children={<Icon src={Styled} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="React Query" position="bottom" children={<Icon src={ReactQuery} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion} alt = '이미지 로드중'/>}/>
+                <CustomTooltip title="Zustand" position="bottom" children={<Icon src={Zustand} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} alt = '이미지 로드중'/>} />
+                <CustomTooltip title="GitHub" position="bottom" children={<Icon src={GitHub} alt = '이미지 로드중'/>} />
                 
                 </Content>
                     

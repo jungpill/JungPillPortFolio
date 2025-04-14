@@ -11,7 +11,7 @@ const Jaychis = () => {
 
     return(
         <JaychisContainer>
-            <img src = {제이치스} width='100%' height='50%' style = {{marginTop: '1rem'}}/>
+            <img src = {제이치스} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
             <Title>
                 프로젝트명
             </Title>
@@ -55,19 +55,19 @@ const Jaychis = () => {
             </Title>
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React}/></CustomTooltip>
+                <CustomTooltip title="React" position="bottom"><Icon src = {React} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="TypeScript" position="bottom"><Icon src = {TypeScript}/></CustomTooltip>
+                <CustomTooltip title="TypeScript" position="bottom"><Icon src = {TypeScript} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Redux" position="bottom"><Icon src = {Redux}/></CustomTooltip>
+                <CustomTooltip title="Redux" position="bottom"><Icon src = {Redux} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd}/></CustomTooltip>
+                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Styled-Component" position="bottom"><Icon src = {Styled}/></CustomTooltip>
+                <CustomTooltip title="Styled-Component" position="bottom"><Icon src = {Styled} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             </Wrapper>
             <Hr/>

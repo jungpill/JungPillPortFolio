@@ -12,7 +12,7 @@ const Cut = () => {
 
     return(
         <JaychisContainer>
-            <img src = {싹둑싹둑} width='100%' height='50%' style = {{marginTop: '1rem'}}/>
+            <img src = {싹둑싹둑} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
             <Title>
                 프로젝트명
             </Title>
@@ -56,22 +56,22 @@ const Cut = () => {
             </Title>
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React}/></CustomTooltip>
+                <CustomTooltip title="React" position="bottom"><Icon src = {React} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {Javascript}/></CustomTooltip>
+                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {Javascript} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand}/></CustomTooltip>
+                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd}/></CustomTooltip>
+                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Tailwind-css" position="bottom"><Icon src = {Tail}/></CustomTooltip>
+                <CustomTooltip title="Tailwind-css" position="bottom"><Icon src = {Tail} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title = 'ReactQuery' position="bottom"><Icon src = {ReactQuery}/></CustomTooltip>
+                <CustomTooltip title = 'ReactQuery' position="bottom"><Icon src = {ReactQuery} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             </Wrapper>
             <Hr/>

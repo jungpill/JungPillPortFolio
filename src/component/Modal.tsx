@@ -13,7 +13,7 @@ const Modal = ({children}:{readonly children: React.ReactNode}) => {
     return(
         <ModalContainer>
             <ModalWrapper ref = {ref}>
-                <img src = {close} width='30px' height='30px' style={{marginLeft: 'auto', cursor: 'pointer'}} onClick={() => {setProjectType(null)}}/>
+                <img src = {close} width='30px' height='30px' style={{marginLeft: 'auto', cursor: 'pointer'}} onClick={() => {setProjectType(null)}} alt = '이미지 로드중' />
                 {children}
             </ModalWrapper>
         </ModalContainer>

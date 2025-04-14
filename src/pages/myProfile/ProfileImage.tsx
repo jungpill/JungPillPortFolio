@@ -5,7 +5,7 @@ const ProfileImage = () => {
 
     return(
         <ProfileImageWrapper>
-            <Image src = {image}/>
+            <Image src = {image} alt = '이미지 로드중'/>
         </ProfileImageWrapper>
     )
 }

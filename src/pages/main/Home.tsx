@@ -33,7 +33,7 @@ const HOME = () => {
                 </motion.span>
             ))}
             </motion.div>
-            <Img src = {test}/>
+            <Img src = {test} alt = '이미지 로드중'/>
             <motion.div
             >
                 <Balloon>
