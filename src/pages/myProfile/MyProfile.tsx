@@ -19,7 +19,7 @@ const MyProfileContainer = styled.div`
     width: 90%;
     height: 90%;
     background-color: white;
-    border: 2px solid black;
+   border: 2px solid skyblue;
     border-radius: 25px;
     padding: 10px;
     

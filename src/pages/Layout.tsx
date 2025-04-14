@@ -14,10 +14,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
                 <Header/>
                 <MyProfile/>
             </DottedLine>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '20%'}}/>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '25%'}}/>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '70%'}}/>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '31.2%', top: '75%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '20%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '25%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '70%'}}/>
+            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '75%'}}/>
             <BackGroundgray>
                 {children}
             </BackGroundgray>
@@ -49,8 +49,8 @@ const ContentContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 20px;
-    width: 80%;
-    height: 85%;
+    width: 85%;
+    height: 90%;
     background-color: skyblue;
 `
 

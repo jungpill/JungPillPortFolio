@@ -15,6 +15,7 @@ export default ProfileImage
 const ProfileImageWrapper = styled.div`
     width: 100%;
     height: 70%;
+    margin-top: 1rem;
 `
 
 const Image = styled.img`

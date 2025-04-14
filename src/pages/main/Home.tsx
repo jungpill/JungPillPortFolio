@@ -2,10 +2,10 @@ import 싸이월드 from '../../source/webp/싸이월드.webp'
 import styled from 'styled-components'
 import { motion } from "framer-motion";
 import 미니홈피 from '../../source/미니홈피.png'
-
+import test from '../../source/test.gif'
 const HOME = () => {
 
-    const text = "할 수 있다 화이팅!!";
+    const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";
 
     const containerVariants = {
     hidden: { opacity: 1 },
@@ -22,12 +22,19 @@ const HOME = () => {
 
     return(
         <BodyContainer>
-            <Im>유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.</Im>
-            <Img src = {미니홈피}/>
             <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
+            >
+            {text.split("").map((char, index) => (
+                <motion.span key={index} variants={letterVariants} style ={{fontSize: '1.45rem', fontWeight: '700',}} >
+                {char}
+                </motion.span>
+            ))}
+            </motion.div>
+            <Img src = {test}/>
+            <motion.div
             >
                 <Balloon>
                 할 수 있다 화이팅!!
@@ -48,14 +55,14 @@ const BodyContainer = styled.div`
     background-color: white;
      align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid skyblue;
     flex-direction: column;
     padding-bottom: 2rem;
 `
 
 const Img = styled.img`
-    width: 90%;
-    height: 80%;
+    width: 85%;
+    height: 65%;
     margin-top: 2%; 
     border-radius: 10px;
 `
@@ -100,6 +107,5 @@ const Im = styled.div`
     font-weight: 600;
     margin-right: auto;
     margin-left: 5%;
-    margin-bottom: 2%;
     color: #007AFF;
 `
