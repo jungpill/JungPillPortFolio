@@ -13,8 +13,31 @@ import Confluence from '../../source/webp/Confluence.webp'
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
 import FramerMotion from '../../source/webp/framer-motion.webp'
+import { useEffect, useState } from "react";
 
 const Profile = () => {
+
+    useEffect(() => {
+        const images = [
+            JavaScript,
+            TypeScript,
+            React,
+            Redux,
+            Styled,
+            ReactQuery,
+            GitHub,
+            Zustand,
+            AntDesign,
+            Jira,
+            Confluence,
+            FramerMotion,
+        ];
+    
+        images.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
 
     return(
         <ProfileContainer

@@ -9,8 +9,18 @@ import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
 import PortFolilImg from '../../source/webp/PortFolio.webp'
 import Cut from "../project/Cut";
 import PortFolio from "../project/PortFolio";
+import { useEffect,useState } from "react";
 
 const Project = () => {
+
+    useEffect(() => {
+        const images = [JaychisImg, 싹둑싹둑Img, PortFolilImg];
+
+        images.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
 
     const {projectType, setProjectType} = useProjectTypeStore();
     
