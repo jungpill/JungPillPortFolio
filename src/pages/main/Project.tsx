@@ -11,6 +11,7 @@ import Cut from "../project/Cut";
 import PortFolio from "../project/PortFolio";
 import { useEffect,useState } from "react";
 import 중독 from '../../source/webp/중독.webp'
+import Poisoning from "../project/Poisoning";
 
 const Project = () => {
 
@@ -73,7 +74,7 @@ const Project = () => {
                         <Text>2025.04 ~ 진행중</Text>
                         <Text>중독 개선을 돕는 앱을 개발 합니다. 처음에는 금연을 주요 카테고리로 시작하며 추후에는 다양한 중독 문제를 해결할 수 있는 서비스로 확장할 예정입니다.</Text>
                     </Card>
-                    {(projectType === '중독' && (<Modal children ={<PortFolio/>} />))}
+                    {(projectType === '중독' && (<Modal children ={<Poisoning/>} />))}
                 </Content>
             </ProjectWrapper>
         </ProjectContainer>
