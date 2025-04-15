@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef,useEffect } from "react";
 import styled from "styled-components";
 import useOutsideClick from "../hook/UseOutSideClick";
 import close from '../../src/source/webp/close.webp'
@@ -9,6 +9,12 @@ const Modal = ({children}:{readonly children: React.ReactNode}) => {
     const ref = useRef<HTMLDivElement>(null);
     const {setProjectType} = useProjectTypeStore()
     useOutsideClick({ref:ref})
+
+    useEffect(() => {
+        const image = close
+        const img = new Image()
+        img.src = image
+    })
 
     return(
         <ModalContainer>

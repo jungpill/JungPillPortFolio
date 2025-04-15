@@ -3,16 +3,25 @@ import call from '../../source/icons8-전화-30.png'
 import email from '../../source/icons8-gmail-logo-30.png'
 import home from '../../source/icons8-집-50.png'
 import github from '../../source/icons8-github의-30.png'
+import { useEffect } from "react";
 
 const Info = () => {
+
+    useEffect(() => {
+        const images = [call,email,home,github];
+        const img = new Image()
+        images.forEach((element) => {
+            img.src = element
+        })
+    })
 
     return(
         <InfoContainer>
             <InfoUl>
-                <InfoLi><Image src = {call} alt = '이미지 로드중'/> 010-5628-7623</InfoLi>
-                <InfoLi><Image src = {email} alt = '이미지 로드중'/> wjdvlf99@naver.com</InfoLi>
-                <InfoLi><Image src = {home} alt = '이미지 로드중'/> 경기도 안양시 석수동</InfoLi>
-                <a href = 'https://github.com/jungpill' target="_blank" rel="noreferrer"><InfoLi><Image src = {github} alt = '이미지 로드중'/> https://github.com/jungpill</InfoLi></a>
+                <InfoLi><StyledImage src = {call} alt = '이미지 로드중'/> 010-5628-7623</InfoLi>
+                <InfoLi><StyledImage src = {email} alt = '이미지 로드중'/> wjdvlf99@naver.com</InfoLi>
+                <InfoLi><StyledImage src = {home} alt = '이미지 로드중'/> 경기도 안양시 석수동</InfoLi>
+                <a href = 'https://github.com/jungpill' target="_blank" rel="noreferrer"><InfoLi><StyledImage src = {github} alt = '이미지 로드중'/> https://github.com/jungpill</InfoLi></a>
             </InfoUl>
         </InfoContainer>
     )
@@ -39,7 +48,7 @@ const InfoLi = styled.li`
     font-weight: 600;
 `
 
-const Image = styled.img`
+const StyledImage = styled.img`
     width: 20px;
     height: 20px;
     margin-right: 1%;
