@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PortFolio/static/css/main.cdc4b000.css",
-    "main.js": "/PortFolio/static/js/main.74d9be36.js",
+    "main.js": "/PortFolio/static/js/main.23ba6bbc.js",
     "static/js/453.ed3810f9.chunk.js": "/PortFolio/static/js/453.ed3810f9.chunk.js",
     "static/media/사진 푸른배경.jpg": "/PortFolio/static/media/사진 푸른배경.e94ca21d8ee94dc4c9c3.jpg",
     "static/media/PortFolio.webp": "/PortFolio/static/media/PortFolio.ab3052f04ced1ddae142.webp",
@@ -31,11 +31,11 @@
     "static/media/play.webp": "/PortFolio/static/media/play.7bc202bf9569f4a7ea74.webp",
     "static/media/square.webp": "/PortFolio/static/media/square.6071e67117253f423b79.webp",
     "main.cdc4b000.css.map": "/PortFolio/static/css/main.cdc4b000.css.map",
-    "main.74d9be36.js.map": "/PortFolio/static/js/main.74d9be36.js.map",
+    "main.23ba6bbc.js.map": "/PortFolio/static/js/main.23ba6bbc.js.map",
     "453.ed3810f9.chunk.js.map": "/PortFolio/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cdc4b000.css",
-    "static/js/main.74d9be36.js"
+    "static/js/main.23ba6bbc.js"
   ]
 }
