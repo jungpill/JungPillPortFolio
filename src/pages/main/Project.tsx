@@ -10,11 +10,12 @@ import PortFolilImg from '../../source/webp/PortFolio.webp'
 import Cut from "../project/Cut";
 import PortFolio from "../project/PortFolio";
 import { useEffect,useState } from "react";
+import 중독 from '../../source/webp/중독.webp'
 
 const Project = () => {
 
     useEffect(() => {
-        const images = [JaychisImg, 싹둑싹둑Img, PortFolilImg];
+        const images = [JaychisImg, 싹둑싹둑Img, PortFolilImg, 중독];
 
         images.forEach((src) => {
             const img = new Image();
@@ -66,13 +67,13 @@ const Project = () => {
 
                     <Card>
                         <ImageCard
-                        img={JaychisImg}
+                        img={중독}
                         />
                         <Title>중독</Title>
                         <Text>2025.04 ~ 진행중</Text>
                         <Text>중독 개선을 돕는 앱을 개발 합니다. 처음에는 금연을 주요 카테고리로 시작하며 추후에는 다양한 중독 문제를 해결할 수 있는 서비스로 확장할 예정입니다.</Text>
                     </Card>
-                    
+                    {(projectType === '중독' && (<Modal children ={<PortFolio/>} />))}
                 </Content>
             </ProjectWrapper>
         </ProjectContainer>
