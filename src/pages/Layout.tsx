@@ -4,10 +4,12 @@ import Header from './myProfile/Header'
 import Ling from '../source/webp/링.webp'
 import Tab from "../component/Tab";
 import MusicBar from "../component/MusicBar";
+import DownloadButton from "../component/DownloadButton";
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <LayoutContainer>
+            <DownloadButton/>
             <MusicBar/>
             <ContentContainer>
             <DottedLine>
