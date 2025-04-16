@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { motion } from "framer-motion";
 import test from '../../source/test.gif'
 import { useEffect } from 'react';
+import DownloadButton from '../../component/DownloadButton';
 
 const HOME = () => {
 
@@ -29,6 +30,7 @@ const HOME = () => {
 
     return(
         <BodyContainer>
+            <DownloadButton/>
             <motion.div
             variants={containerVariants}
             initial="hidden"
