@@ -1,12 +1,57 @@
 import styled from "styled-components";
-
+import 중독 from '../../source/webp/중독.webp'
+import CustomTooltip from "../../component/CustomTooltip";
+import TypeScript from '../../source/webp/TypeScript.webp'
+import Zustand from '../../source/webp/Zustand.webp'
 
 const Poisoning = () => {
 
 
     return(
         <PoisoningContainer>
-            <Li>아직 개발이 진행중인 프로젝트 입니다.</Li>
+            <img src = {중독} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
+            <Title>
+                프로젝트명
+            </Title>
+            <Content>
+                Poisoning 
+            </Content>
+            <Wrapper>
+                <Wrapper>
+                    <Column>
+                        <Title>
+                            개발인원
+                        </Title>
+                        <Content>
+                            3명
+                        </Content>
+                    </Column>
+
+                    <Column>
+                        <Title>
+                            개발기간
+                        </Title>
+                        <Content>
+                            진행중
+                        </Content>
+                    </Column>
+
+                    <Column>
+                        <Title>
+                            깃허브 링크
+                        </Title>
+                        <Content >
+                            <a href = 'https://github.com/addiction1215' target='_blank' rel="noreferrer">
+                            https://github.com/addiction1215
+                            </a>
+                        </Content>
+                    </Column>
+                </Wrapper>
+            </Wrapper>
+            <Hr/>
+            <Li style = {{marginTop: '50px'}}>
+                아직 개발이 진행중인 프로젝트 입니다.
+            </Li>
         </PoisoningContainer>
     )
 }
@@ -19,7 +64,7 @@ const PoisoningContainer = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    align-items: center;
+    
 
 
      &::-webkit-scrollbar {
