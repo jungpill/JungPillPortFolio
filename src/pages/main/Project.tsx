@@ -6,7 +6,7 @@ import Modal from "../../component/Modal";
 import Jaychis from "../project/Jaychis";
 import useProjectTypeStore from "../../zustand/UseProjectTypeStore";
 import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
-import PortFolilImg from '../../source/webp/PortFolio.webp'
+import PortFolilImg from '../../source/webp/PortFoilo.webp'
 import Cut from "../project/Cut";
 import PortFolio from "../project/PortFolio";
 import { useEffect,useState } from "react";

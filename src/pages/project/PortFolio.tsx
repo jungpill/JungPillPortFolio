@@ -5,7 +5,7 @@ import Zustand from '../../source/webp/Zustand.webp'
 import styledComponent from '../../source/webp/styledcomponents.webp'
 import CustomTooltip from "../../component/CustomTooltip";
 import TpyeScript from '../../source/webp/TypeScript.webp'
-import PortFolioImg from '../../source/webp/PortFolio.webp'
+import PortFolioImg from '../../source/webp/PortFoilo.webp'
 
 const PortFolio = () => {
 
