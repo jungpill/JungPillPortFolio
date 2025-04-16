@@ -6,7 +6,7 @@ const Poisoning = () => {
 
     return(
         <PoisoningContainer>
-            아직 개발이 진행중인 프로젝트 입니다.
+            <Li>아직 개발이 진행중인 프로젝트 입니다.</Li>
         </PoisoningContainer>
     )
 }
@@ -19,6 +19,9 @@ const PoisoningContainer = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    align-items: center;
+
+
      &::-webkit-scrollbar {
     width: 0px;
   }
@@ -68,9 +71,10 @@ const Hr = styled.hr`
 
 const Li = styled.li`
     font-weight: 700;
-    font-size: .8rem;
+    font-size: 1.8rem;
     line-height: 1.5rem;
     margin-left: .5rem;
     color: #22222280;
     margin-right: 3rem;
-`
+    margin-top: 30%;    
+`   

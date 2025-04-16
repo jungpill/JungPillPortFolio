@@ -66,7 +66,7 @@ const Project = () => {
                     </Card>
                     {(projectType === 'PortFolio' && (<Modal children ={<PortFolio/>} />))}
 
-                    <Card>
+                    <Card onClick = {() => {setProjectType('중독')}}>
                         <ImageCard
                         img={중독}
                         />
