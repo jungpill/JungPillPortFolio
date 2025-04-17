@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { sizes } from "../styles/BreakPoints";
 
 const ImageCard = ({img}: {img:string}) => {
 
@@ -16,6 +17,11 @@ const ImageCardContainer = styled.div`
     display: flex;
     width: 350px;
     height: 200px;
+
+    @media(max-width: ${sizes.laptop}){
+    width: 280px;
+    height: 200px;
+    }
 `
 
 const Img = styled.img`

@@ -12,6 +12,7 @@ import PortFolio from "../project/PortFolio";
 import { useEffect,useState } from "react";
 import 중독 from '../../source/webp/중독.webp'
 import Poisoning from "../project/Poisoning";
+import { sizes } from "../../styles/BreakPoints";
 
 const Project = () => {
 
@@ -95,9 +96,14 @@ const ProjectContainer = styled(motion.div)`
     border-radius: 10px;
     overflow-y: scroll;
     padding-top: 5rem;
+
     &::-webkit-scrollbar {
     width: 0px;
   }
+
+  @media(max-width: ${sizes.laptop}){
+    padding-top: 1rem;
+    }
 `
 
 const ProjectWrapper = styled.div`
@@ -108,6 +114,11 @@ const ProjectWrapper = styled.div`
     padding: 10px;
     justify-content: center;
     align-items: center;
+
+    @media(max-width: ${sizes.laptop}){
+    align-items: flex-start;
+    justify-content: flex-start;
+    }
 `
 
 const Content = styled.div`
@@ -118,6 +129,11 @@ const Content = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media(max-width: ${sizes.laptop}){
+    align-items: flex-start;
+    justify-content: flex-start;
+    }
 `
 
 const Card = styled.div`
@@ -126,6 +142,11 @@ const Card = styled.div`
     flex-direction: column;
     width: 45%;
     cursor: pointer;
+
+    @media(max-width: ${sizes.laptop}){
+    width: 30%;
+    margin-right: 100px;
+    }
 `
 
 const Title = styled.div`

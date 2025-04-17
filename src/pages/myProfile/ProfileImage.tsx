@@ -20,10 +20,8 @@ const ProfileImage = () => {
 export default ProfileImage
 
 const ProfileImageWrapper = styled.div`
-    display: flex;
-    justify-content: center;
     width: 100%;
-    height: 50%;
+    height: 60%;
     margin-top: 1rem;
 `
 
@@ -31,4 +29,5 @@ const StyledImage = styled.img`
     width: 100%;
     height: 100%;
     border-radius: 20px;
+    object-fit: cover;
 `
