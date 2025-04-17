@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import ProfileImageWrapper from './ProfileImage'
 import Info from "./Info"
-
+import EmotionDropdown from "../../component/Dropdown"
 const MyProfile = () => {
 
     return(
@@ -9,6 +9,7 @@ const MyProfile = () => {
             <Wrapper>
             <ProfileImageWrapper/>
             <Info/>
+            <EmotionDropdown/>
             </Wrapper>
         </MyProfileContainer>
     )
