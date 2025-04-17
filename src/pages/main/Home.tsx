@@ -67,10 +67,10 @@ const BodyContainer = styled.div`
 `
 
 const Img = styled.img`
-    width: 85%;
-    height: 70%;
+    width: 90%;
+    height: 75%;
     margin-top: 2%; 
-    border-radius: 10px;
+    
 `
 
 const Balloon = styled.div`

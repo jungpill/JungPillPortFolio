@@ -33,7 +33,7 @@ const MusicBar = () => {
     return(
         <MusicBarContainer>
             <TitleBox>
-                거북이
+                김종국 - 사랑스러워
             </TitleBox>
             <IconBox onClick = {handleRemote} >
                 <Icon data-type = 'play' src = {active ? play : stop} alt = '이미지 로드중'/>

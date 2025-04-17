@@ -71,7 +71,7 @@ const GuestBook = () => {
                         </span>
                         </Header>
                         <RowWrapper>
-                            <ProfileImage src = {image[index % 2]} alt = '이미지 로드중'/>
+                            <ProfileImage src = {image[index % 3]} alt = '이미지 로드중'/>
                             <Text>{GuestBook.content}</Text>
                         </RowWrapper>
                 </>
