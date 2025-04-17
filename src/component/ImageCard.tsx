@@ -15,7 +15,7 @@ export default ImageCard
 
 const ImageCardContainer = styled.div`
     display: flex;
-    width: 350px;
+    width: 100%;
     height: 200px;
 
     @media(max-width: ${sizes.laptop}){
