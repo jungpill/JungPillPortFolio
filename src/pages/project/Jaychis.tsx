@@ -6,8 +6,15 @@ import Styled from '../../source/webp/styledcomponents.webp'
 import Antd from '../../source/webp/AntDesign.webp'
 import CustomTooltip from "../../component/CustomTooltip";
 import TypeScript from '../../source/webp/TypeScript.webp'
+import { useEffect } from "react";
 
 const Jaychis = () => {
+
+    useEffect(() => {
+        const image = 제이치스
+        const img = new Image()
+        img.src = image
+    },[])
 
     return(
         <JaychisContainer>
@@ -75,15 +82,21 @@ const Jaychis = () => {
                 상세내용
             </Title>
             <Content>
-                1.카카오 API 사용을 통한 로그인 및 공유하기 기능<br/>
+                1.카카오 API 사용을 통한 로그인 및 공유하기 기능
             </Content>
+            <Li>
+            카카오 OAuth 인증을 기반으로 기존 계정 존재 여부에 따라 로그인 성공 또는 회원가입 페이지로 유도하여 초기 진입장벽을 낮췄습니다
+            </Li>
+            <Li>
+            카카오 공유하기를 통해 사용자가 게시글을 쉽게 공유할 수 있도록 하였습니다.
+            </Li>
             <br/>
 
             <Content>
                 2.에러 전역 관리
             </Content>
             <Li>
-            개발자의 실수로 인한 에러와 네트워크 에러를 일관성 있게 처리하기 위해 에러 Context와 에러 Modal을 통해 에러를 전역적으로 관리
+            개발자의 실수로 인한 에러와 네트워크 에러를 일관성 있게 처리하기 위해 에러 Context와 에러 Modal을 통해 에러를 전역적으로 관리하였습니다.
             </Li>
             <br/>
 
@@ -91,7 +104,7 @@ const Jaychis = () => {
                 3.무한 스크롤
             </Content>
             <Li>
-           react-virtualized 라이브러리를 활용하여 가상화된 스크롤을 통해 화면에 보이는 DOM 요소만 렌더링 하는 방식으로 무한 스크롤을 구현하여 렌더링 시간이 15ms에서 2.8ms로 단축 
+           react-virtualized 라이브러리를 활용하여 가상화된 스크롤을 통해 화면에 보이는 DOM 요소만 렌더링 하는 방식으로 무한 스크롤을 구현하여 렌더링 시간이 15ms에서 2.8ms로 단축 시켰습니다.
             </Li>
             <br/>
 
@@ -116,7 +129,7 @@ const Jaychis = () => {
             로컬 환경에서는 괜찮았지만 배포 이후 버그가 발생하거나 예상과 다른 UI가 적용될 수 있다는 점을 인지
             </Li>
             <Li>
-            서버를 stage와 prod로 분리하여 stage 서버에서 테스트를 거친 후 prod로 배포
+            서버를 stage와 prod로 분리하여 stage 서버에서 테스트를 거친 후 prod로 배포하여 버그를 최소화하고 사용자 경험을 개선시켰습니다.
             </Li>
             <br/>
 
@@ -127,7 +140,7 @@ const Jaychis = () => {
             이미지 용량 문제로 초기 로딩 속도가 저하되는 문제가 발생
             </Li>
             <Li>
-            이미지를 s3에 업로드하기 전 webp 형식으로 변환하는 기능을 구현하여 이미지 용량 30%압축
+            이미지를 s3에 업로드하기 전 webp 형식으로 변환하는 기능을 구현하여 이미지 용량을 30%압축 하였습니다.
             </Li>
             <br/>
 
@@ -208,10 +221,21 @@ const Hr = styled.hr`
 `
 
 const Li = styled.li`
-    font-weight: 700;
-    font-size: .8rem;
+  position: relative;
+  padding-left: 1.2em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 3rem;
+  color: black;
+  list-style: none;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
     line-height: 1.5rem;
-    margin-left: .5rem;
-    color: #22222280;
-    margin-right: 3rem;
-`
+  }
+`;
