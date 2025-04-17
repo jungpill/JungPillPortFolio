@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
 import Alert from "../../component/Alert";
+import { useGuestBookStore } from "../../zustand/useGuestBookStore";
 
 interface GuestbookEntry {
     id: number;
@@ -19,28 +20,16 @@ interface GuestbookEntry {
 
 const GuestBook = () => {
 
-    const [GuestBookData, setGuestBookData] = useState<GuestbookEntry[]>([]);
+    const { guestBookData, setGuestBookData } = useGuestBookStore();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [showAlert, setShowAlert] = useState<boolean>(false)
 
     const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3]
 
-    useEffect(() => {
-        const getGuestBookData = async () => {
-            try{
-                const response = await axiosInstance.get('guestbook')
-                setGuestBookData(response.data)
-            }catch(err){
-                console.error(err)
-            }
-        }
-        getGuestBookData()
-    },[])
-
     const handleDelete = async (index: number, password: string) => {
         try{
             const response = await axiosInstance.patch(`/guestbook/${index}`, {password: password})
-            setGuestBookData(GuestBookData.filter((item) => item.id !== index))
+            setGuestBookData(guestBookData.filter((item) => item.id !== index))
         }catch(err){
             setShowAlert(true)
             console.log(err)
@@ -65,7 +54,7 @@ const GuestBook = () => {
             null}
             {showAlert ? <Alert onClose={setShowAlert}/> : null}
             <GuestWrapper>
-                {GuestBookData ? GuestBookData.map((GuestBook,index) => {
+                {guestBookData ? guestBookData.map((GuestBook,index) => {
                     return(
                         <>
                         <Header key = {index}>
@@ -90,7 +79,7 @@ const GuestBook = () => {
                 }) : '아직 등록된 방명록이 없습니다.'}
                 <CommentField
                 setGuestBookData={setGuestBookData}
-                guestBookData={GuestBookData}
+                guestBookData={guestBookData}
                 />
             </GuestWrapper>
         </GuestBookContainer>

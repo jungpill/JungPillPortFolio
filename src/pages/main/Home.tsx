@@ -9,7 +9,6 @@ const HOME = () => {
         const image = test;
         const img = new Image()
         img.src = image
-        
     },[])
 
     const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";

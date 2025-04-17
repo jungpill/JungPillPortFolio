@@ -17,7 +17,7 @@ interface GuestbookEntry {
   }
 
 interface CommentFieldProps {
-    setGuestBookData: React.Dispatch<React.SetStateAction<GuestbookEntry[]>>;
+    setGuestBookData: (data: GuestbookEntry[]) => void;
     guestBookData: GuestbookEntry[];
   }
 
