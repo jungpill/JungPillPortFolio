@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import useTabStore from "../zustand/UseTypeStore";
 import { useState } from "react";
+import { sizes } from "../styles/BreakPoints";
 
 const Tab = () => {
     
@@ -35,6 +36,10 @@ const TabContainer = styled.ul`
     height: 250px;
     right: 6%;
     top: 20%;
+
+    @media(max-width: ${sizes.laptop}){
+    right: 3%;
+    }
 `
 
 const Item = styled.li<{isActive: boolean}>`

@@ -5,6 +5,7 @@ import next from '../../src/source/webp/next.webp'
 import square from '../../src/source/webp/square.webp'
 import play from '../../src/source/webp/play.webp'
 import { useState } from "react";
+import { sizes } from "../styles/BreakPoints";
 
 const MusicBar = () => {
 
@@ -59,6 +60,12 @@ const MusicBarContainer = styled(motion.div)`
     right: 0.8%;
     top: 10%;
     font-size: 10px;
+
+    @media(max-width: ${sizes.laptop}){
+        right: 0;
+        width: 6rem;
+        font-size: 8px;
+    }
 `
 
 const TitleBox = styled.div`
