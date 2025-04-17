@@ -46,7 +46,7 @@ const HOME = () => {
             ))}
             </motion.div>
             <Img src = {test} alt = '이미지 로드중'/>
-            <Npc src = {test2}/>
+            
             <motion.div
             >
                 <Balloon>
