@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -10,11 +10,26 @@ const emotions = [
 ];
 
 const EmotionDropdown = () => {
-  const [selectedEmotion, setSelectedEmotion] = useState(emotions[0]);
-  const [open, setOpen] = useState(false);
+    
+    const [selectedEmotion, setSelectedEmotion] = useState(emotions[0]);
+    const [open, setOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const handleClickOutside = (e:MouseEvent) => {
+            const target = e.target as Node
+            if(ref.current && !ref.current.contains(target)){
+                setOpen(false)
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+    },[ref])
 
   return (
-    <Wrapper>
+    <Wrapper ref = {ref}>
       <Label>TODAY IS...</Label>
       <EmotionSelector onClick={() => setOpen(prev => !prev)}>
         <span>{selectedEmotion.emoji}</span>
@@ -31,9 +46,10 @@ const EmotionDropdown = () => {
               {emotions.map((emotion, index) => (
                 <DropdownItem
                   key={index}
-                  onClick={() => {
+                  onClick={(e) => {
                     setSelectedEmotion(emotion);
                     setOpen(false);
+                    e.stopPropagation();
                   }}
                 >
                   {emotion.emoji} {emotion.label}
