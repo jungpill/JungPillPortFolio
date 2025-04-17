@@ -27,7 +27,12 @@ const HOME = () => {
     };
 
     return(
-        <BodyContainer>
+        <BodyContainer
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        transition={{ duration: 0.5 }}
+        >
             <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -52,18 +57,18 @@ const HOME = () => {
 
 export default HOME
 
-const BodyContainer = styled.div`
+const BodyContainer = styled(motion.div)`
     display: flex;
     margin-top: 1%;
     width: 100%;
     height: 90%;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: white;
-     align-items: center;
+    align-items: center;
     justify-content: center;
     border: 2px solid skyblue;
     flex-direction: column;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 `
 
 const Img = styled.img`

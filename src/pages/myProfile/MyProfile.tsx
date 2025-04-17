@@ -24,11 +24,11 @@ const MyProfileContainer = styled.div`
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
-    padding: 10px;
+    padding: 5px;
     align-items: center;
     flex-direction: column;
     margin-left: 1%;
-    padding-bottom: 1rem;
+    padding-bottom: .8rem;
 `
 
 const Wrapper = styled.div`

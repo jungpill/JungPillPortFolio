@@ -97,7 +97,8 @@ const ProfileContainer = styled(motion.div)`
     overflow-y: scroll;
     padding-bottom: 2rem;
     border-radius: 10px;
-
+    border: 2px solid skyblue;
+    
     &::-webkit-scrollbar {
     width: 0px;
   }

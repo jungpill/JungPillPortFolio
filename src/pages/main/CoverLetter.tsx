@@ -61,7 +61,8 @@ const CoverLetterContainer = styled(motion.div)`
     align-items: center;
     overflow-y: scroll;
     border-radius: 10px;
-
+    border: 2px solid skyblue;
+    
     &::-webkit-scrollbar {
     width: 0px;
   }

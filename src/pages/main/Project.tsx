@@ -96,7 +96,8 @@ const ProjectContainer = styled(motion.div)`
     border-radius: 10px;
     overflow-y: scroll;
     padding-top: 5rem;
-
+    border: 2px solid skyblue;
+    
     &::-webkit-scrollbar {
     width: 0px;
   }
@@ -129,6 +130,7 @@ const Content = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    border: 2px solid skyblue;
 
     @media(max-width: ${sizes.laptop}){
     align-items: flex-start;
