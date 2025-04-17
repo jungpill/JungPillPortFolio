@@ -11,6 +11,7 @@ import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
 import Alert from "../../component/Alert";
 import { useGuestBookStore } from "../../zustand/useGuestBookStore";
+import dayjs from 'dayjs';
 
 interface GuestbookEntry {
     id: number;
@@ -68,7 +69,7 @@ const GuestBook = () => {
                         <Header key = {index}>
                         <MarginSpan>NO.{GuestBook.id}</MarginSpan> 
                         <MarginSpan>{GuestBook.userId}</MarginSpan> 
-                        ({GuestBook.date}) 
+                        ({dayjs(GuestBook.date).format('YYYY.MM.DD HH:mm')}) 
                         <span style = {{
                             marginLeft: 'auto', 
                             marginRight: '5px', 

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { motion } from "framer-motion";
 import test from '../../source/test.gif'
 import { useEffect } from 'react';
+import test2 from '../../source/test2.png'
 
 const HOME = () => {
 
@@ -45,6 +46,7 @@ const HOME = () => {
             ))}
             </motion.div>
             <Img src = {test} alt = '이미지 로드중'/>
+            <Npc src = {test2}/>
             <motion.div
             >
                 <Balloon>
@@ -112,11 +114,11 @@ const Balloon = styled.div`
   }
 `;
 
-const Im = styled.div`
-    display: flex;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-right: auto;
-    margin-left: 5%;
-    color: #007AFF;
+const Npc = styled.img`
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    z-index: 1005;
+    bottom: 20%;
+    left: 60%;
 `
