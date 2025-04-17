@@ -43,7 +43,12 @@ const GuestBook = () => {
     }
 
     return(
-        <GuestBookContainer>
+        <GuestBookContainer
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        transition={{ duration: 0.5 }}
+        >
             {isOpen ? 
             <InputModal title={'삭제하시겠습니까?'} 
             eventHandler={(password:any) => {
