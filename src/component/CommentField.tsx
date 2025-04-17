@@ -45,7 +45,7 @@ const CommentField = ({ guestBookData,setGuestBookData }: CommentFieldProps) => 
     return(
     <CommentFieldContainer>
         <RowWrapper style = {{marginBottom: '1rem'}}>
-            <VisitorInput placeholder="아이디" value={submitData.userId} onChange = {(e) => {setSubmitData({...submitData, userId: e.target.value})}} type='text'/>
+            <VisitorInput placeholder="닉네임" value={submitData.userId} onChange = {(e) => {setSubmitData({...submitData, userId: e.target.value})}} type='text'/>
             <VisitorInput placeholder="패스워드" value={submitData.password}  onChange = {(e) => {setSubmitData({...submitData, password: e.target.value})}} type="password"/>
         </RowWrapper>
         

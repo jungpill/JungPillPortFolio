@@ -4,6 +4,7 @@ import email from '../../source/icons8-gmail-logo-30.png'
 import home from '../../source/icons8-집-50.png'
 import github from '../../source/icons8-github의-30.png'
 import { useEffect } from "react";
+import profileImage from '../../source/webp/GuestBookImage.webp'
 
 const Info = () => {
 
@@ -33,7 +34,8 @@ const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-
+    justify-content: center;
+    margin-top: 1rem;
 `
 
 const InfoUl = styled.ul`

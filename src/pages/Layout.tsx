@@ -66,12 +66,15 @@ const BackGroundgray = styled.div`
 `
 
 const DottedLine = styled.div`
+    display: flex;
+    align-items: center;
     border: 1px solid black;
     border-radius: 30px;
     width: 25%;
     height: 95%;
     padding: 10px;
     background-color: #F2F2F2;
+    flex-direction: column;
 `
 
 const Test = styled.div`
