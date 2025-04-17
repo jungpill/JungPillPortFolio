@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import GuestBookImage1 from '../../source/GuestBookImage.png'
-import GuestBookImage2 from '../../source/GuestBookImage2.png'
-import GuestBookImage3 from '../../source/GuestBookImage3.png'
+import GuestBookImage1 from '../../source/webp/GuestBookImage.webp'
+import GuestBookImage2 from '../../source/webp/GuestBookImage2.webp'
+import GuestBookImage3 from '../../source/webp/GuestBookImage3.webp'
+import GuestBookImage4 from '../../source/webp/GuestBookImage4.webp'
+import GuestBookImage5 from '../..//source/webp/GuestBookImage5.webp'
 import CommentField from "../../component/CommentField";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../api/axios";
@@ -24,7 +26,7 @@ const GuestBook = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [showAlert, setShowAlert] = useState<boolean>(false)
 
-    const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3]
+    const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3,GuestBookImage5,GuestBookImage4]
 
     const handleDelete = async (index: number, password: string) => {
         try{
@@ -76,7 +78,7 @@ const GuestBook = () => {
                         </span>
                         </Header>
                         <RowWrapper>
-                            <ProfileImage src = {image[index % 3]} alt = '이미지 로드중'/>
+                            <ProfileImage src = {image[index % 5]} alt = '이미지 로드중'/>
                             <Text>{GuestBook.content}</Text>
                         </RowWrapper>
                 </>
