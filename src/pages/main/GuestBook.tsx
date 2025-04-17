@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import 사진푸른배경 from '../../source/webp/사진 푸른배경.webp'
+import GuestBookImage1 from '../../source/GuestBookImage.png'
+import GuestBookImage2 from '../../source/GuestBookImage2.png'
+import GuestBookImage3 from '../../source/GuestBookImage3.png'
 import CommentField from "../../component/CommentField";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../api/axios";
@@ -20,6 +22,8 @@ const GuestBook = () => {
     const [GuestBookData, setGuestBookData] = useState<GuestbookEntry[]>([]);
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [showAlert, setShowAlert] = useState<boolean>(false)
+
+    const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3]
 
     useEffect(() => {
         const getGuestBookData = async () => {
@@ -78,7 +82,7 @@ const GuestBook = () => {
                         </span>
                         </Header>
                         <RowWrapper>
-                            <ProfileImage src = {사진푸른배경} alt = '이미지 로드중'/>
+                            <ProfileImage src = {image[index % 2]} alt = '이미지 로드중'/>
                             <Text>{GuestBook.content}</Text>
                         </RowWrapper>
                 </>
@@ -141,6 +145,8 @@ const ProfileImage = styled.img`
     width: 130px;
     height: 130px;
     margin-top: 2%;
+    border: 1px solid black;
+    border-radius: 20px;
 `
 
 const Text = styled.div`
