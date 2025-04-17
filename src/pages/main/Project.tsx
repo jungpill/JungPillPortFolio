@@ -130,7 +130,6 @@ const Content = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid skyblue;
 
     @media(max-width: ${sizes.laptop}){
     align-items: flex-start;
