@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 const emotions = [
   { emoji: '😊', label: '행복' },
   { emoji: '😢', label: '슬픔' },
-  { emoji: '😠', label: '화남' },
+  { emoji: '😡', label: '화남' },
   { emoji: '😐', label: '무덤덤' },
+  {emoji: '🥱', label: '피곤'}
 ];
 
 const EmotionDropdown = () => {
@@ -72,6 +73,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 90%;
   margin-right: auto;  
+  margin-top: 1rem;
 `;
 
 const Label = styled.span`

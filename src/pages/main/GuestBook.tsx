@@ -45,6 +45,7 @@ const GuestBook = () => {
     }
 
     return(
+        <>
         <GuestBookContainer
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -84,12 +85,13 @@ const GuestBook = () => {
                 </>
                     )
                 }) : '아직 등록된 방명록이 없습니다.'}
-                <CommentField
-                setGuestBookData={setGuestBookData}
-                guestBookData={guestBookData}
-                />
             </GuestWrapper>
         </GuestBookContainer>
+        <CommentField
+        setGuestBookData={setGuestBookData}
+        guestBookData={guestBookData}
+        />
+        </>
     )
 }
 

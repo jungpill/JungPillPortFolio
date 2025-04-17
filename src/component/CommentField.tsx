@@ -64,8 +64,9 @@ export default CommentField;
 const CommentFieldContainer = styled.div`
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     bottom: 11%;
+    right: 20%;
     width: 45%;
     background-color: #F2F2F2;
 `

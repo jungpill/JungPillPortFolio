@@ -8,8 +8,8 @@ const MyProfile = () => {
         <MyProfileContainer>
             <Wrapper>
             <ProfileImageWrapper/>
-            <Info/>
             <EmotionDropdown/>
+            <Info/>
             </Wrapper>
         </MyProfileContainer>
     )

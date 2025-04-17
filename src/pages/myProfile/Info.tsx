@@ -35,7 +35,7 @@ const InfoContainer = styled.div`
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    margin-top: 1rem;
+    
 `
 
 const InfoUl = styled.ul`
