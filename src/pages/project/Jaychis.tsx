@@ -51,7 +51,7 @@ const Jaychis = () => {
                         </Title>
                         <Content >
                             <a href = 'https://github.com/jaychis/nest-front' target='_blank' rel="noreferrer">
-                            'https://github.com/jaychis/nest-front'
+                            https://github.com/jaychis/nest-front
                             </a>
                         </Content>
                     </Column>

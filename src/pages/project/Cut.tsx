@@ -132,14 +132,6 @@ const Cut = () => {
             요구사항과 복잡한 로직을 가진 기능들을 이해하기 쉽게 하기 위해 UseCaseDiagram, Sequence, System Architecture 등 문서화 작업을 진행했습니다
             </Li>
             <br/>
-
-            <Content>
-                6.이미지 최적화
-            </Content>
-            <Li>
-            인터셉터를 사용해 액세스 토큰이 만료된 상태로 API 요청시 401 에러를 감지하여 리프레시 토큰을 이용해 새로운 액세스 토큰을 발급
-            </Li>
-            <br/>
         </JaychisContainer>
     )
 }
