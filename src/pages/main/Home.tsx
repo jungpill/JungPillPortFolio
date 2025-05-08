@@ -90,7 +90,7 @@ const Balloon = styled.div`
   padding: 10px;
   border-radius: 12px;
   width: 10rem;
-  height: 25px;
+  height: 2rem;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -113,12 +113,3 @@ const Balloon = styled.div`
     border-top: 10px solid white;
   }
 `;
-
-const Npc = styled.img`
-    position: absolute;
-    width: 50px;
-    height: 100px;
-    z-index: 1005;
-    bottom: 20%;
-    left: 60%;
-`

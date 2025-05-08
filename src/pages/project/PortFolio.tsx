@@ -58,7 +58,7 @@ const PortFolio = () => {
                 <CustomTooltip title="React" position="bottom"><Icon src = {React} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TpyeScript} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="TypeScript" position="bottom"><Icon src = {TpyeScript} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
             <Content>
                 <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand} alt = '이미지 로드중'/></CustomTooltip>

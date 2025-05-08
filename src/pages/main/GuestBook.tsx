@@ -134,7 +134,6 @@ const Header = styled.div`
     font-size: .8rem;
     background-color: #F2F2F2;
     width: 85%;
-    height: 30px;
 `
 
 const RowWrapper =styled.div`

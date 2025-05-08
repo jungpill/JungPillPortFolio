@@ -3,6 +3,8 @@ import 중독 from '../../source/webp/중독.webp'
 import CustomTooltip from "../../component/CustomTooltip";
 import TypeScript from '../../source/webp/TypeScript.webp'
 import Zustand from '../../source/webp/Zustand.webp'
+import styledComponent from '../../source/webp/styledcomponents.webp'
+import React from '../../source/webp/React.webp'
 
 const Poisoning = () => {
 
@@ -47,6 +49,24 @@ const Poisoning = () => {
                         </Content>
                     </Column>
                 </Wrapper>
+            </Wrapper>
+            <Title>
+                기술 스택
+            </Title>
+            <Wrapper>
+            <Content>
+                <CustomTooltip title="React-Native" position="bottom"><Icon src = {React} alt = '이미지 로드중'/></CustomTooltip>
+            </Content>
+            <Content>
+                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TypeScript} alt = '이미지 로드중'/></CustomTooltip>
+            </Content>
+            <Content>
+                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand} alt = '이미지 로드중'/></CustomTooltip>
+            </Content>
+            <Content>
+                <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent} alt = '이미지 로드중'/></CustomTooltip>
+            </Content>
+            
             </Wrapper>
             <Hr/>
             <Li style = {{marginTop: '50px'}}>

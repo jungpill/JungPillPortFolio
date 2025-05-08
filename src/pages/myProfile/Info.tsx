@@ -35,7 +35,6 @@ const InfoContainer = styled.div`
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    
 `
 
 const InfoUl = styled.ul`
@@ -48,6 +47,7 @@ const InfoLi = styled.li`
     margin-bottom: 2%;
     list-style-type: none;
     font-weight: 600;
+    font-size: 1rem;
 `
 
 const StyledImage = styled.img`

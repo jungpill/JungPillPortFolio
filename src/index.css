@@ -11,17 +11,7 @@ code {
 }
 
 @media(max-width: 1024px){
-  body {
-    font-size: 12px;
-  }
-
-  h1 {
-    font-size: 14px;
-  }
-}
-
-@media(max-width: 1024px){
-  body {
+  html {
     font-size: 12px;
   }
 
@@ -31,8 +21,8 @@ code {
 }
 
 @media(max-width: 768px){
-  body {
-    font-size: 12px;
+  html {
+    font-size: 8px;
   }
 
 }
