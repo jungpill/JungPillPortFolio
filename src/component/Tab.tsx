@@ -32,8 +32,8 @@ const TabContainer = styled.ul`
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 70px;
-    height: 250px;
+    width: 4.5rem;
+    min-height: 250px;
     right: 6%;
     top: 20%;
 
@@ -50,7 +50,7 @@ const Item = styled.li<{isActive: boolean}>`
     background-color: ${props => props.isActive ? 'white' : '#468baf'};
     color: ${props => props.isActive ? '#468baf' : 'white'};
     margin-bottom: 8%;
-    height: 35px;
+    height: 2rem;
     border-radius: 5px;
     font-size: 0.9rem;
     padding: 5px;
