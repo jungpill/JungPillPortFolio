@@ -115,6 +115,7 @@ const ProjectWrapper = styled.div`
     padding: 10px;
     justify-content: center;
     align-items: center;
+    margin-left: 1.5rem;
 
     @media(max-width: ${sizes.laptop}){
     align-items: flex-start;
@@ -123,17 +124,15 @@ const ProjectWrapper = styled.div`
 `
 
 const Content = styled.div`
-    display: flex;
+    display: grid;
     width: 100%;
     margin-top: 2rem;
     line-height: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; 
 
-    @media(max-width: ${sizes.laptop}){
-    align-items: flex-start;
-    justify-content: flex-start;
+    @media (max-width: ${sizes.laptop}) {
+        grid-template-columns: 1fr; 
     }
 `
 
@@ -141,7 +140,7 @@ const Card = styled.div`
     display: flex;
     margin: 1% 2%; 
     flex-direction: column;
-    width: 45%;
+    width: 90%;
     cursor: pointer;
 
     @media(max-width: ${sizes.laptop}){

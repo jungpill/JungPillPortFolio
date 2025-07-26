@@ -48,6 +48,9 @@ const HOME = () => {
             <Img src = {test} alt = '이미지 로드중'/>
             
             <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{ duration: 1 }}
             >
                 <Balloon>
                 할 수 있다 화이팅!!
@@ -84,23 +87,23 @@ const Balloon = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  position: absolute;
-  background: white;
-  color: black;
-  padding: 10px;
-  border-radius: 12px;
-  width: 10rem;
-  height: 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-  top: 44%;
-  right: 18%;
-  white-space: pre-wrap;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15),
-              0px -4px 10px rgba(0, 0, 0, 0.10),
-              4px 0px 10px rgba(0, 0, 0, 0.10),
-              -4px 0px 10px rgba(0, 0, 0, 0.10);
+    position: absolute;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 12px;
+    width: 10rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    top: 44%;
+    right: 18%;
+    white-space: pre-wrap;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15),
+                0px -4px 10px rgba(0, 0, 0, 0.10),
+                4px 0px 10px rgba(0, 0, 0, 0.10),
+                -4px 0px 10px rgba(0, 0, 0, 0.10);
 
   &::after {
     content: '';
