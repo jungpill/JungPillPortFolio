@@ -28,10 +28,7 @@ const MainContainer = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
-    background-color: #F2F2F2;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 10px 2% 10px 2%;
+    background-color: transparent;
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;

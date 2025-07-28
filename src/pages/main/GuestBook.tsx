@@ -99,19 +99,18 @@ const GuestBook = () => {
 export default GuestBook;
 
 const GuestBookContainer = styled(motion.div)`
-    position: relative;
-    top: -10%;
     display: flex;
-    margin-top: 3%;
-    height: 70%;
-    width: 100%;
+    width: 90%;
+    height: 90%;
     background-color: white;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    padding-bottom: 2rem;
-    border-radius: 10px;
     border: 2px solid skyblue;
+    border-radius: 20px;
+    padding: 5px;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 1%;
+    padding-bottom: .8rem;
+    overflow-y: scroll;
     
     &::-webkit-scrollbar {
     width: 0px;

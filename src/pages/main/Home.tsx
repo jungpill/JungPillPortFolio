@@ -64,16 +64,16 @@ export default HOME
 
 const BodyContainer = styled(motion.div)`
     display: flex;
-    margin-top: 1%;
-    width: 100%;
+    width: 90%;
     height: 90%;
-    border-radius: 10px;
     background-color: white;
-    align-items: center;
-    justify-content: center;
     border: 2px solid skyblue;
+    border-radius: 20px;
+    padding: 5px;
+    align-items: center;
     flex-direction: column;
-    padding-bottom: 1rem;
+    margin-left: 1%;
+    padding-bottom: .8rem;
 `
 
 const Img = styled.img`

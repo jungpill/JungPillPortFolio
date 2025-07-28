@@ -16,10 +16,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
                 <Header/>
                 <MyProfile/>
             </DottedLine>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '20%'}}/>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '25%'}}/>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '70%'}}/>
-            <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '75%'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '20%'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '25%'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '70%'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '75%'}}/>
             <BackGroundgray>
                 {children}
             </BackGroundgray>
@@ -63,6 +63,13 @@ const BackGroundgray = styled.div`
     height: 95%;
     width: 70%;
     border-radius: 5px;
+    background-color: #F2F2F2;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px 0 10px 0;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
 `
 
 const DottedLine = styled.div`
@@ -76,17 +83,4 @@ const DottedLine = styled.div`
     background-color: #F2F2F2;
     flex-direction: column;
 `
-
-const Test = styled.div`
-    display: flex;
-    border: 2px solid white;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    width: 85%;
-    height: 85%;
-    background-color: skyblue;
-`
-
 

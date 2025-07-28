@@ -87,17 +87,16 @@ export default Project
 
 const ProjectContainer = styled(motion.div)`
     display: flex;
-    width: 100%;
-    margin-top: 3%;
+    width: 90%;
     height: 90%;
     background-color: white;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    overflow-y: scroll;
-    padding-top: 5rem;
     border: 2px solid skyblue;
-    
+    border-radius: 20px;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 1%;
+    overflow-y: scroll;
+    padding: 1rem;
     &::-webkit-scrollbar {
     width: 0px;
   }
