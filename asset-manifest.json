@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PortFolio/static/css/main.d55d054a.css",
+    "main.css": "/PortFolio/static/css/main.b5cf354a.css",
     "main.js": "/PortFolio/static/js/main.f95852cc.js",
     "static/js/453.ed3810f9.chunk.js": "/PortFolio/static/js/453.ed3810f9.chunk.js",
     "static/media/사진 푸른배경.jpg": "/PortFolio/static/media/사진 푸른배경.e94ca21d8ee94dc4c9c3.jpg",
@@ -35,12 +35,12 @@
     "static/media/next.webp": "/PortFolio/static/media/next.ffd89cba980191cfacfc.webp",
     "static/media/play.webp": "/PortFolio/static/media/play.7bc202bf9569f4a7ea74.webp",
     "static/media/square.webp": "/PortFolio/static/media/square.6071e67117253f423b79.webp",
-    "main.d55d054a.css.map": "/PortFolio/static/css/main.d55d054a.css.map",
+    "main.b5cf354a.css.map": "/PortFolio/static/css/main.b5cf354a.css.map",
     "main.f95852cc.js.map": "/PortFolio/static/js/main.f95852cc.js.map",
     "453.ed3810f9.chunk.js.map": "/PortFolio/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d55d054a.css",
+    "static/css/main.b5cf354a.css",
     "static/js/main.f95852cc.js"
   ]
 }
