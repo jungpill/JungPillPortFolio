@@ -117,7 +117,7 @@ const Title = styled.div`
     font-weight: 600;
     line-height: 2rem;
     font-size: 1.2rem;
-    margin: 5% 0 2% 0;
+    margin: 5% 0 0 0;
     color: #007AFF;
 `
 
@@ -132,15 +132,21 @@ const Content = styled.div`
     width: 90%;
     margin-left: 2%;
     line-height: 2rem;
+    flex-wrap: wrap;
 `
 
 const Icon = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 3rem;
+    height: 2.5rem;
     border-radius: 10px;
     --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), 
                 var(--tw-ring-shadow, 0 0 #0000), 
                 var(--tw-shadow);
+
+    @media(min-width: 1920px){
+        width: 4rem;
+        height: 3rem;
+    }
 `
