@@ -16,10 +16,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
                 <Header/>
                 <MyProfile/>
             </DottedLine>
-                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '20%'}}/>
-                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '25%'}}/>
-                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '70%'}}/>
-                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '30%', top: '75%'}}/>
+                <img src = {Ling} style = {{position: 'absolute', left: '29.5%', top: '20%', width: '3rem', height: '3.7rem'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '29.5%', top: '25%',width: '3rem', height: '3.7rem'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '29.5%', top: '70%',width: '3rem', height: '3.7rem'}}/>
+                <img src = {Ling} width='50px' height='60px' style = {{position: 'absolute', left: '29.5%', top: '75%',width: '3rem', height: '3.7rem'}}/>
             <BackGroundgray>
                 {children}
             </BackGroundgray>

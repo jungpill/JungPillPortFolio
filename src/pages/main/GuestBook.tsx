@@ -161,7 +161,7 @@ const Text = styled.div`
     word-break: keep-all; /* 한글 줄바꿈을 더 자연스럽게 */
     white-space: normal; /* 공백을 정리하면서 줄바꿈 적용 */
     text-align: justify;
-    margin: 5% 0 0 2%;
+    margin: 3% 0 0 2%;
 `
 
 const MarginSpan = styled.span`

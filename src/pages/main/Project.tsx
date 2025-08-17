@@ -72,7 +72,7 @@ const Project = () => {
                         img={중독}
                         />
                         <Title>중독</Title>
-                        <Text>2025.04 ~ 진행중</Text>
+                        <Text>2025.06 ~ 진행중</Text>
                         <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
                     </Card>
                     {(projectType === '중독' && (<Modal children ={<Poisoning/>} />))}
@@ -97,6 +97,7 @@ const ProjectContainer = styled(motion.div)`
     margin-left: 1%;
     overflow-y: scroll;
     padding: 0.5rem;
+
     &::-webkit-scrollbar {
     width: 0px;
   }
@@ -115,7 +116,8 @@ const ProjectWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 1.5rem;
-
+    padding: 5rem;
+    margin-top: 1rem;
     @media(max-width: ${sizes.laptop}){
     align-items: flex-start;
     justify-content: flex-start;
@@ -125,7 +127,6 @@ const ProjectWrapper = styled.div`
 const Content = styled.div`
     display: grid;
     width: 100%;
-    margin-top: 2rem;
     line-height: 2rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem; 
