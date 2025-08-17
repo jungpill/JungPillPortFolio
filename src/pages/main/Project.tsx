@@ -137,14 +137,19 @@ const Content = styled.div`
 
 const Card = styled.div`
     display: flex;
-    margin: 1% 2%; 
+    padding: 1rem;
     flex-direction: column;
     width: 90%;
     cursor: pointer;
+    border-radius: 8px;
 
     @media(max-width: ${sizes.laptop}){
     width: 30%;
     margin-right: 100px;
+    }
+
+    &:hover{
+    background-color: #f0f0f0;
     }
 `
 

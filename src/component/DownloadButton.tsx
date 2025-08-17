@@ -49,7 +49,10 @@ const SubmitButton = styled.button`
    }
 
   &:hover {
-    background-color: #2a2d3f; // 살짝 더 밝게
+    background-color: #f0f0f0;
+    a {
+      color: #000;
+    }
   }
 
   &:active {

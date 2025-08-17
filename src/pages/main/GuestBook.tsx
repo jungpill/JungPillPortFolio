@@ -87,11 +87,11 @@ const GuestBook = () => {
                     )
                 }) : '아직 등록된 방명록이 없습니다.'}
             </GuestWrapper>
+            <CommentField
+            setGuestBookData={setGuestBookData}
+            guestBookData={guestBookData}
+            />
         </GuestBookContainer>
-        <CommentField
-        setGuestBookData={setGuestBookData}
-        guestBookData={guestBookData}
-        />
         </>
     )
 }
@@ -107,22 +107,25 @@ const GuestBookContainer = styled(motion.div)`
     border-radius: 20px;
     padding: 5px;
     align-items: center;
+    
     flex-direction: column;
     margin-left: 1%;
     padding-bottom: .8rem;
-    overflow-y: scroll;
+    position: relative;
     
-    &::-webkit-scrollbar {
-    width: 0px;
-  }
 `
 
 const GuestWrapper = styled.div`
     display: flex;
-    margin-left: 8%;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 70%;
+    overflow-y: auto;
+    align-items: center;
+
+    &::-webkit-scrollbar {
+    width: 0px;
+  }
 `
 
 const Header = styled.div`
@@ -137,6 +140,8 @@ const Header = styled.div`
 
 const RowWrapper =styled.div`
     display: flex;
+    width: 85%;
+    justify-content: center;
 `
 
 const ProfileImage = styled.img`
@@ -151,7 +156,7 @@ const Text = styled.div`
     font-weight: 600;
     line-height: 2rem;
     font-size: 1rem;
-    width: 65%;
+    width: 100%;
     word-wrap: break-word;
     word-break: keep-all; /* 한글 줄바꿈을 더 자연스럽게 */
     white-space: normal; /* 공백을 정리하면서 줄바꿈 적용 */

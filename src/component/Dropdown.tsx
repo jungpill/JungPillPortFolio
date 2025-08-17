@@ -88,6 +88,11 @@ const EmotionSelector = styled.div`
   align-items: center;
   gap: 5px;
   position: relative;
+
+  &:hover{
+    background-color: #f0f0f0;
+    border-radius: 8px;
+  }
 `;
 
 const Dropdown = styled(motion.ul)`

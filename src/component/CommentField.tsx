@@ -65,15 +65,17 @@ const CommentFieldContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 11%;
-    right: 20%;
-    width: 45%;
+    bottom: 3%;
+    width: 85%;
     background-color: #F2F2F2;
+    padding: 1rem;
 `
 
 const CommentArea = styled.textarea`
     width: 90%;
-    heightL 80px;
+    border-radius: 8px;
+    border: none;
+    padding: 0.75rem;
 `
 
 const SubmitButton = styled.button`
@@ -86,17 +88,20 @@ const SubmitButton = styled.button`
     margin-left: 1rem;
     background-color: white;
     border-radius: 5px;
+    border: none;
 `
 
 const RowWrapper = styled.div`
     display: flex;
-    
+    align-items: flex-end;
 `
 
 const VisitorInput = styled.input`
     width: 8rem;
     height: 1.2rem;
     margin-right: 1rem;
+    border-radius: 4px;
+    border: none;
 `
 
 

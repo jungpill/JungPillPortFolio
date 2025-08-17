@@ -69,7 +69,7 @@ const BodyContainer = styled(motion.div)`
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
-    padding: 5px;
+    padding: 1rem;
     align-items: center;
     flex-direction: column;
     margin-left: 1%;
