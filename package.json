@@ -37,7 +37,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://jungpill.github.io/PortFolio",
+  "homepage": "https://jungpill.github.io/JungPillPortFolio",
   "eslintConfig": {
     "extends": [
       "react-app",
