@@ -96,7 +96,7 @@ const ProjectContainer = styled(motion.div)`
     flex-direction: column;
     margin-left: 1%;
     overflow-y: scroll;
-    padding: 1rem;
+    padding: 0.5rem;
     &::-webkit-scrollbar {
     width: 0px;
   }

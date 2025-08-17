@@ -69,9 +69,10 @@ const BodyContainer = styled(motion.div)`
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
-    padding: 1rem;
+    padding: 0.5rem;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     margin-left: 1%;
     padding-bottom: .8rem;
 `
@@ -80,7 +81,6 @@ const Img = styled.img`
     width: 90%;
     height: 75%;
     margin-top: 2%; 
-    
 `
 
 const Balloon = styled.div`

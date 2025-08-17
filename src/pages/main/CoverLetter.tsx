@@ -58,7 +58,7 @@ const CoverLetterContainer = styled(motion.div)`
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
-    padding: 5px;
+    padding: 0.5rem;
     align-items: center;
     flex-direction: column;
     margin-left: 1%;

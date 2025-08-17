@@ -60,7 +60,7 @@ const BackGroundgray = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95%;
+    height: 98%;
     width: 70%;
     border-radius: 5px;
     background-color: #F2F2F2;
@@ -70,6 +70,7 @@ const BackGroundgray = styled.div`
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
+    padding: 0.75rem;
 `
 
 const DottedLine = styled.div`
@@ -78,8 +79,8 @@ const DottedLine = styled.div`
     border: 1px solid black;
     border-radius: 30px;
     width: 25%;
-    height: 95%;
-    padding: 10px;
+    height: 98%;
+    padding: 0.75rem;
     background-color: #F2F2F2;
     flex-direction: column;
 `
