@@ -5,6 +5,7 @@ import TypeScript from '../../source/webp/TypeScript.webp'
 import Zustand from '../../source/webp/Zustand.webp'
 import styledComponent from '../../source/webp/styledcomponents.webp'
 import React from '../../source/webp/React.webp'
+import chart_js from '../../source/chart.js.png'
 
 const Poisoning = () => {
 
@@ -16,7 +17,7 @@ const Poisoning = () => {
                 프로젝트명
             </Title>
             <Content>
-                Poisoning 
+                Addiction
             </Content>
             <Wrapper>
                 <Wrapper>
@@ -25,7 +26,7 @@ const Poisoning = () => {
                             개발인원
                         </Title>
                         <Content>
-                            3명
+                            6명
                         </Content>
                     </Column>
 
@@ -66,12 +67,34 @@ const Poisoning = () => {
             <Content>
                 <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
+            <Content>
+                <CustomTooltip title="Chart.js" position="bottom"><Icon src = {chart_js} alt = '이미지 로드중'/></CustomTooltip>
+            </Content>
             
             </Wrapper>
             <Hr/>
-            <Li style = {{marginTop: '50px'}}>
-                아직 개발이 진행중인 프로젝트 입니다.
+            <Content>
+                1.Oauth2 구현
+            </Content>
+            <Li>
+                구글, 카카오, 네이버 로그인 기능을 구현하였습니다
             </Li>
+            <br/>
+            <Content>
+                2.Chart.js를 이용한 데이터 시각화            
+            </Content>
+            <Li>
+                chart.js를 이용하여 재사용 가능한 차트 컴포넌트를 개발하고 쉽게 데이터 시각화를 구현하였습니다. 
+            </Li>
+
+            <br/>
+            <Content>
+                3.크로스 플랫폼을 통한 앱 개발
+            </Content>
+            <Li>
+                크로스 플랫폼을 통한 개발을 통해 개발 속도를 높이고 유지보수를 용이하게 하였습니다.
+            </Li>
+
         </PoisoningContainer>
     )
 }
@@ -136,10 +159,9 @@ const Hr = styled.hr`
 
 const Li = styled.li`
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: .8rem;
     line-height: 1.5rem;
     margin-left: .5rem;
     color: #22222280;
     margin-right: 3rem;
-    margin-top: 30%;    
-`   
+` 

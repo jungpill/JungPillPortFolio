@@ -10,6 +10,7 @@ import Zustand from '../../source/webp/Zustand.webp'
 import AntDesign from '../../source/webp/AntDesign.webp'
 import Jira from '../../source/webp/Jira.webp'
 import Confluence from '../../source/webp/Confluence.webp'
+import chart_js from '../../source/chart.js.png'
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
 import FramerMotion from '../../source/webp/framer-motion.webp'
@@ -59,6 +60,7 @@ const Profile = () => {
                 <CustomTooltip title="React Query" position="bottom" children={<Icon src={ReactQuery} alt = '이미지 로드중' loading="eager"/>} />
                 <CustomTooltip title="Styled Components" position="bottom" children={<Icon src={Styled} alt = '이미지 로드중' loading="eager"/>} />
                 <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion} alt = '이미지 로드중'/>}/>
+                <CustomTooltip title="chart.js" position="bottom" children={<Icon src={chart_js} alt = '이미지 로드중'/>}/>
                 <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} alt = '이미지 로드중'/>} />
                 <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} alt = '이미지 로드중'/>} />
                 <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} alt = '이미지 로드중'/>} />

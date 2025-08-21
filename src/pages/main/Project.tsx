@@ -13,6 +13,7 @@ import { useEffect,useState } from "react";
 import 중독 from '../../source/webp/중독.webp'
 import Poisoning from "../project/Poisoning";
 import { sizes } from "../../styles/BreakPoints";
+import 중독2 from '../../source/중독2.png';
 
 const Project = () => {
 
@@ -57,6 +58,16 @@ const Project = () => {
                     </Card>
                     {(projectType === '싹둑싹둑' && (<Modal children ={<Cut/>} />))}
 
+                    <Card onClick = {() => {setProjectType('중독')}}>
+                        <ImageCard
+                        img={중독}
+                        />
+                        <Title>중독</Title>
+                        <Text>2025.06 ~ 진행중</Text>
+                        <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
+                    </Card>
+                    {(projectType === '중독' && (<Modal children ={<Poisoning/>} />))}
+
                     <Card onClick = {() => {setProjectType('PortFolio')}}>
                         <ImageCard
                         img={PortFolilImg}
@@ -67,15 +78,6 @@ const Project = () => {
                     </Card>
                     {(projectType === 'PortFolio' && (<Modal children ={<PortFolio/>} />))}
 
-                    <Card onClick = {() => {setProjectType('중독')}}>
-                        <ImageCard
-                        img={중독}
-                        />
-                        <Title>중독</Title>
-                        <Text>2025.06 ~ 진행중</Text>
-                        <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
-                    </Card>
-                    {(projectType === '중독' && (<Modal children ={<Poisoning/>} />))}
                 </Content>
             </ProjectWrapper>
         </ProjectContainer>
