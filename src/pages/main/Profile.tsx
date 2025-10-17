@@ -40,6 +40,37 @@ const Profile = () => {
         });
     }, []);
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+            staggerChildren: 0.08, // 자식들 사이 시간 간격
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0,  },
+        show: { opacity: 1,},
+    };
+
+    const techList = [
+        { title: "JavaScript", icon: JavaScript },
+        { title: "TypeScript", icon: TypeScript },
+        { title: "React", icon: React },
+        { title: "Redux", icon: Redux },
+        { title: "Zustand", icon: Zustand },
+        { title: "React Query", icon: ReactQuery },
+        { title: "Styled Components", icon: Styled },
+        { title: "Framer Motion", icon: FramerMotion },
+        { title: "chart.js", icon: chart_js },
+        { title: "Ant Design", icon: AntDesign },
+        { title: "Confluence", icon: Confluence },
+        { title: "Jira", icon: Jira },
+        { title: "GitHub", icon: GitHub },
+    ];
+
     return(
         <ProfileContainer
         initial={{ opacity: 0, x: 40 }}
@@ -50,24 +81,34 @@ const Profile = () => {
                 <Title>
                     기술 스택 및 도구
                 </Title>
-                <Content>
-
-                <CustomTooltip title="JavaScript" position="bottom" children={<Icon src={JavaScript} alt = '이미지 로드중' loading="eager"/>} />
-                <CustomTooltip title="TypeScript" position="bottom" children={<Icon src={TypeScript} alt = '이미지 로드중' loading="eager"/>} />
-                <CustomTooltip title="React" position="bottom" children={<Icon src={React}alt = '이미지 로드중' loading="eager"/>} />
-                <CustomTooltip title="Redux" position="bottom" children={<Icon src={Redux} alt = '이미지 로드중' loading="eager"/>} />
-                <CustomTooltip title="Zustand" position="bottom" children={<Icon src={Zustand} alt = '이미지 로드중'/>} />
-                <CustomTooltip title="React Query" position="bottom" children={<Icon src={ReactQuery} alt = '이미지 로드중' loading="eager"/>} />
-                <CustomTooltip title="Styled Components" position="bottom" children={<Icon src={Styled} alt = '이미지 로드중' loading="eager"/>} />
-                <CustomTooltip title="FramerMotion" position="bottom" children={<Icon src={FramerMotion} alt = '이미지 로드중'/>}/>
-                <CustomTooltip title="chart.js" position="bottom" children={<Icon src={chart_js} alt = '이미지 로드중'/>}/>
-                <CustomTooltip title="Ant Design" position="bottom" children={<Icon src={AntDesign} alt = '이미지 로드중'/>} />
-                <CustomTooltip title="Confluence" position="bottom" children={<Icon src={Confluence} alt = '이미지 로드중'/>} />
-                <CustomTooltip title="Jira" position="bottom" children={<Icon src={Jira} alt = '이미지 로드중'/>} />
-                <CustomTooltip title="GitHub" position="bottom" children={<Icon src={GitHub} alt = '이미지 로드중'/>} />
                 
+                <Content
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="flex flex-wrap gap-4"
+                    >
+                    {techList.map((tech, index) => (
+                        <motion.div key={tech.title} variants={itemVariants}>
+                        <CustomTooltip
+                            title={tech.title}
+                            position="bottom"
+                            children={<Icon src={tech.icon} alt={tech.title} />}
+                        />
+                        </motion.div>
+                    ))}
                 </Content>
-                    
+                
+                <Title>
+                    경력
+                </Title>
+                <Content style = {{display: 'flex', flexDirection: 'column'}} >
+                <Text>(주) 투비유니콘</Text><br/>
+                프론트엔드 개발
+                2025.06 ~ 
+                </Content>
+
+
                 <Title>
                     교육
                 </Title>
@@ -129,12 +170,14 @@ const Text = styled.p`
     margin-bottom: -1.5rem;
 `
 
-const Content = styled.div`
+const Content = styled(motion.div)`
     display: flex;
     width: 90%;
     margin-left: 2%;
     line-height: 2rem;
     flex-wrap: wrap;
+    white-space: pre-line;
+
 `
 
 const Icon = styled.img`

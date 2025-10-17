@@ -9,7 +9,6 @@ import CommentField from "../../component/CommentField";
 import { useState, useEffect, useRef } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
-import Alert from "../../component/Alert";
 import { useGuestBookStore } from "../../zustand/useGuestBookStore";
 import dayjs from 'dayjs';
 
@@ -19,7 +18,7 @@ interface GuestbookEntry {
     password: string;
     content: string;
     date: string; 
-  }
+}
 
 const GuestBook = () => {
 
@@ -65,7 +64,6 @@ const GuestBook = () => {
             visible={isOpen}
             parenfRef={ref}
             /> 
-            {showAlert ? <Alert onClose={setShowAlert}/> : null}
             <GuestWrapper>
                 {guestBookData ? guestBookData.map((GuestBook,index) => {
                     return(

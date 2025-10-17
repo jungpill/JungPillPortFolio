@@ -6,20 +6,23 @@ import square from '../../src/source/webp/square.webp'
 import play from '../../src/source/webp/play.webp'
 import { useState } from "react";
 import { sizes } from "../styles/BreakPoints";
+import { useAlertStore } from "../zustand/useAlertStore";
 
 const MusicBar = () => {
 
-    const [active, setActive] = useState<boolean>(true);
+    const [active, setActive] = useState<boolean>(false);
+    const showSuccessAlert = useAlertStore((s) => s.showSuccess);
 
     const handleRemote = (e:React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLElement;
         const type = target.getAttribute('data-type');
         switch(type){
             case 'play':
-                setActive(false);
+                setActive(true);
+                showSuccessAlert('비밀번호가 일치하지 않습니다.')
                 break;
             case 'stop':
-                setActive(true);
+                setActive(false);
                 break;
             case 'square':
                 break;
@@ -37,7 +40,7 @@ const MusicBar = () => {
                 김종국 - 사랑스러워
             </TitleBox>
             <IconBox onClick = {handleRemote} >
-                <Icon data-type = 'play' src = {active ? play : stop} alt = '이미지 로드중'/>
+                <Icon data-type = {!active? 'play' : 'stop'} src = {!active ? play : stop} alt = '이미지 로드중'/>
                 <Icon data-type = 'square' src = {square} alt = '이미지 로드중'/>
                 <Icon data-type = 'next' src = {next} style = {{transform: 'rotate(180deg)'}} alt = '이미지 로드중'/>
                 <Icon data-type = 'back' src = {next} alt = '이미지 로드중'/>
@@ -55,11 +58,12 @@ const MusicBarContainer = styled(motion.div)`
     justify-content: center;
     flex-direction: column;
     width: 8rem;
-    height: 3.5rem;
+    height: 4rem;
     background-color: darkgray;
     right: 0.8%;
     top: 10%;
     font-size: 10px;
+    border-radius: 4px;
 
     @media(max-width: ${sizes.laptop}){
         right: 0;
@@ -76,11 +80,13 @@ const TitleBox = styled.div`
     width: 90%;
     border: 1px solid black;
     background-color: white;
+    border-radius: 4px;
 `
 
 const IconBox = styled.div`
     display: flex;
-    padding-top: 0.3px;
+    padding-top: 0.3rem;
+    gap: 5px;
 `
 
 const Icon = styled.img`
