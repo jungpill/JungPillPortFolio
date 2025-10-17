@@ -6,7 +6,7 @@ import GuestBookImage3 from '../../source/webp/GuestBookImage3.webp'
 import GuestBookImage4 from '../../source/webp/GuestBookImage4.webp'
 import GuestBookImage5 from '../..//source/webp/GuestBookImage5.webp'
 import CommentField from "../../component/CommentField";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
 import Alert from "../../component/Alert";
@@ -26,6 +26,7 @@ const GuestBook = () => {
     const { guestBookData, setGuestBookData } = useGuestBookStore();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [showAlert, setShowAlert] = useState<boolean>(false)
+    const ref = useRef<HTMLDivElement>(null);
 
     const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3,GuestBookImage5,GuestBookImage4]
 
@@ -53,14 +54,17 @@ const GuestBook = () => {
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.5 }}
         >
-            {isOpen ? 
+
+             
             <InputModal title={'삭제하시겠습니까?'} 
             eventHandler={(password:any) => {
             const index = Number(sessionStorage.getItem("deleteKey"));
             handleDelete(index, password);
             }} 
-            setIsOpen={setIsOpen}/> : 
-            null}
+            setIsOpen={setIsOpen}
+            visible={isOpen}
+            parenfRef={ref}
+            /> 
             {showAlert ? <Alert onClose={setShowAlert}/> : null}
             <GuestWrapper>
                 {guestBookData ? guestBookData.map((GuestBook,index) => {
@@ -75,7 +79,9 @@ const GuestBook = () => {
                             marginRight: '5px', 
                             cursor: 'pointer'
                             }} 
-                            onClick={() => {handleIsOpen(GuestBook.id)}}>
+                            onClick={() => {handleIsOpen(GuestBook.id)}}
+                            ref={ref}
+                            >
                             삭제
                         </span>
                         </Header>

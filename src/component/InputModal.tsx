@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect , RefObject} from "react";
 import styled from "styled-components";
 
 interface CancelOrderModalProps {
     eventHandler: (password: string) => void;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     title: string;
+    visible?: boolean;
+    parenfRef: RefObject<HTMLDivElement | null>;
 }
 
-const InputModal = ({ title,eventHandler, setIsOpen }: CancelOrderModalProps) => {
+const InputModal = ({ 
+  title,
+  eventHandler, 
+  setIsOpen,
+  visible,
+  parenfRef }: CancelOrderModalProps
+  ) => {
 
-    const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('')
+  const ref = useRef<HTMLDivElement>(null)
+
+  const handleClickOutside = (e: MouseEvent) => {
+    setIsOpen(false)
+    e.stopPropagation()
+  }
  
   return (
-        <ModalContainer>
-            <ModalBox>
-            <Title>{title}</Title>
+        <ModalContainer visible={visible} onClick={(e) => setIsOpen(false)}>
+            <ModalBox onClick={(e) => e.stopPropagation()}>
+            <TitleWrapper>
+                <Title>{title}</Title>
+            </TitleWrapper>
             <Input
             placeholder="비밀번호를 입력하세요"
             value={password}
@@ -31,7 +47,7 @@ const InputModal = ({ title,eventHandler, setIsOpen }: CancelOrderModalProps) =>
 
 export default InputModal;
 
-const ModalContainer = styled.div`
+const ModalContainer = styled.div<{visible?: boolean}>`
   position: fixed;
   top: 0;
   left: 0;
@@ -42,36 +58,53 @@ const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1002;
+  pointer-events: ${({ visible }) => (visible ? 'auto' : 'none')};
+
+  opacity: ${props => props.visible ? 1 : 0};
+  transition: opacity 0.6s ease;
 `;
 
 const ModalBox = styled.div`
   background: white;
-  padding: 30px 20px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-radius: 8px;
-  width: 300px;
-  text-align: center;
+  box-sizing: border-box;
+  width: 500px;
   z-index: 1002;
 `;
 
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+`
+
 const Title = styled.h2`
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 1.2rem;
   color: #333;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 8px;
+  padding: 15px 8px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: 20px;
-  width: 90%;
+  box-sizing: border-box;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  gap: 10px;
+  height: 2rem;
+  margin-top: 10px;
 `;
 
 const OkButton = styled.button`
@@ -81,6 +114,7 @@ const OkButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 87px;
 `;
 
 const CancelButton = styled.button`
@@ -90,4 +124,5 @@ const CancelButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 87px;
 `;
