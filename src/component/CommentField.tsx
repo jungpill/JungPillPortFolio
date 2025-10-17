@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { axiosInstance } from "../api/axios";
 import { useState } from "react";
+import { useAlertStore } from "../zustand/useAlertStore";
 
 interface SubmitType {
     readonly userId: string;
@@ -24,10 +25,12 @@ interface CommentFieldProps {
 const CommentField = ({ guestBookData,setGuestBookData }: CommentFieldProps) => {
 
     const [submitData, setSubmitData] = useState<SubmitType>({userId: '', password: '', content: ''});
+    const showSuccessAlert = useAlertStore((s) => s.showSuccess)
+    const showWarnAlert = useAlertStore((s) => s.showWarn);
 
     const handleSubmit = async() => {
         if(!submitData.content || !submitData.password || !submitData.userId) {
-            return alert('모든 정보를 입력해주세요')
+            return showWarnAlert('모든 정보를 입력해주세요.')
         }
         try{
             const response = await axiosInstance.post('/guestbook', {
@@ -37,6 +40,7 @@ const CommentField = ({ guestBookData,setGuestBookData }: CommentFieldProps) => 
             })
             setSubmitData({userId: '', password: '', content: ''})
             setGuestBookData([...guestBookData, response.data])
+            showSuccessAlert('방명록이 작성 되었습니다.')
         }catch(err){
             console.log(err)
         }

@@ -125,18 +125,19 @@ const GuestWrapper = styled.div`
     width: 100%;
     height: 70%;
     overflow-y: auto;
+    scrollbar-gutter: stable;
     align-items: center;
 
     &::-webkit-scrollbar {
-    width: 0px;
-  }
+        width: 0px;
+    }
 `
 
 const Header = styled.div`
     display: flex;
     align-items: center;
     padding: 5px;
-    margin-top: 5%;
+    margin-top: 2.5rem;
     font-size: .8rem;
     background-color: #F2F2F2;
     width: 85%;

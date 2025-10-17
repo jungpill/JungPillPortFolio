@@ -25,8 +25,8 @@ const Alert = () => {
     <Overlay type={type}>
       <ModalContainer>
         <Header>
-          {type === 'success' && <IoIosWarning color={'blue'} size={30}/>}
-            {type === 'warn' && <FaCheckCircle color={'red'} size={50} />}
+          {type === 'success' && <FaCheckCircle color={'#3B82F6'} size={30}/>}
+          {type === 'warn' && <IoIosWarning color={'red'} size={30} />}
         </Header>
         <Body>
           {message}

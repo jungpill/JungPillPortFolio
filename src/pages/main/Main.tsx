@@ -34,4 +34,8 @@ const MainContainer = styled.div`
     overflow-x: hidden;
     align-items: center;
     justify-content: center;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
 `

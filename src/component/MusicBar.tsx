@@ -12,6 +12,7 @@ const MusicBar = () => {
 
     const [active, setActive] = useState<boolean>(false);
     const showSuccessAlert = useAlertStore((s) => s.showSuccess);
+    const showWarnAlert = useAlertStore((s) => s.showWarn);
 
     const handleRemote = (e:React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLElement;
@@ -23,6 +24,7 @@ const MusicBar = () => {
                 break;
             case 'stop':
                 setActive(false);
+                showWarnAlert('비밀번호가 일치하지 않습니다.')
                 break;
             case 'square':
                 break;
