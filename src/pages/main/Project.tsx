@@ -13,7 +13,7 @@ import { useEffect,useState } from "react";
 import 중독 from '../../source/webp/중독.webp'
 import Poisoning from "../project/Poisoning";
 import { sizes } from "../../styles/BreakPoints";
-import 중독2 from '../../source/중독2.png';
+import React from "react";
 
 const Project = () => {
 
@@ -27,6 +27,8 @@ const Project = () => {
     }, []);
 
     const {projectType, setProjectType} = useProjectTypeStore();
+
+    const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
     
     return(
         <ProjectContainer
@@ -35,9 +37,15 @@ const Project = () => {
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.5 }}
         >
+        <Modal
+        // 보통 children은 이렇게 전달합니다:
+        // children={modalChildren}  // <- 이것도 가능하지만
+        >
+        {modalChildren}              {/* <- 이게 일반적 */}
+        </Modal>
             <ProjectWrapper>
                 <Content>
-                    <Card onClick = {() => {setProjectType('Jaychis')}}>
+                    <Card onClick = {() => {setModalChildren(<Jaychis/>)}}>
                         <ImageCard
                         img={JaychisImg}
                         />
@@ -45,7 +53,6 @@ const Project = () => {
                         <Text>2024.09 ~ 2025.01</Text>
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
-                    {(projectType === 'Jaychis' && (<Modal children ={<Jaychis/>} />))}
 
                     <Card onClick = {() => {setProjectType('싹둑싹둑')}}>
                         <ImageCard
@@ -56,7 +63,6 @@ const Project = () => {
                         <Text>판매자와 디자이너의 매칭을 통해 의류 구매 및 리폼을 동시에 진행 가능한 웹 플랫폼
                         </Text>
                     </Card>
-                    {(projectType === '싹둑싹둑' && (<Modal children ={<Cut/>} />))}
 
                     <Card onClick = {() => {setProjectType('중독')}}>
                         <ImageCard
@@ -66,7 +72,6 @@ const Project = () => {
                         <Text>2025.06 ~ 진행중</Text>
                         <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
                     </Card>
-                    {(projectType === '중독' && (<Modal children ={<Poisoning/>} />))}
 
                     <Card onClick = {() => {setProjectType('PortFolio')}}>
                         <ImageCard
@@ -76,7 +81,6 @@ const Project = () => {
                         <Text>2025.04 ~ 2025.04</Text>
                         <Text>포트폴리오를 웹으로 구현 </Text>
                     </Card>
-                    {(projectType === 'PortFolio' && (<Modal children ={<PortFolio/>} />))}
 
                 </Content>
             </ProjectWrapper>

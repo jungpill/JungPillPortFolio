@@ -1,10 +1,20 @@
-import { useRef,useEffect } from "react";
+import React,{ useRef,useEffect,Dispatch, SetStateAction,} from "react";
 import styled from "styled-components";
 import useOutsideClick from "../hook/UseOutSideClick";
 import close from '../../src/source/webp/close.webp'
 import useProjectTypeStore from "../zustand/UseProjectTypeStore";
 
-const Modal = ({children}:{readonly children: React.ReactNode}) => {
+type ModalProps = {
+  children: React.ReactNode | null;
+  setModalChildren: React.Dispatch<
+    React.SetStateAction<React.ReactNode | null>
+  >;
+};
+
+const Modal = ({
+    children,
+    setModalChildren
+    }:ModalProps) => {
 
     const ref = useRef<HTMLDivElement>(null);
     const {setProjectType} = useProjectTypeStore()
@@ -17,7 +27,7 @@ const Modal = ({children}:{readonly children: React.ReactNode}) => {
     })
 
     return(
-        <ModalContainer>
+        <ModalContainer visible={children !== null}>
             <ModalWrapper ref = {ref}>
                 <img src = {close} width='30px' height='30px' style={{marginLeft: 'auto', cursor: 'pointer'}} onClick={() => {setProjectType(null)}} alt = '이미지 로드중' />
                 {children}
@@ -28,7 +38,7 @@ const Modal = ({children}:{readonly children: React.ReactNode}) => {
 
 export default Modal;
 
-const ModalContainer = styled.div`
+const ModalContainer = styled.div<{visible: boolean}>`
     position: absolute;
     z-index: 1000;
     display: flex;
@@ -39,6 +49,11 @@ const ModalContainer = styled.div`
     left: 0;
     justify-content: center;
     align-items: center;
+
+    pointer-events: ${props => props.visible  ? 'auto' : 'none'};
+
+    opacity: ${props => props.visible ? 1 : 0};
+    transition: opacity 0.6s ease;
 `
 
 const ModalWrapper = styled.div`    

@@ -58,7 +58,7 @@ const ModalContainer = styled.div<{visible?: boolean}>`
   justify-content: center;
   align-items: center;
   z-index: 1002;
-  pointer-events: ${({ visible }) => (visible ? 'auto' : 'none')};
+  pointer-events: ${props => props.visible  ? 'auto' : 'none'};
 
   opacity: ${props => props.visible ? 1 : 0};
   transition: opacity 0.6s ease;
