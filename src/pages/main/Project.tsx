@@ -38,10 +38,9 @@ const Project = () => {
         transition={{ duration: 0.5 }}
         >
         <Modal
-        // 보통 children은 이렇게 전달합니다:
-        // children={modalChildren}  // <- 이것도 가능하지만
+        setModalChildren={setModalChildren}
         >
-        {modalChildren}              {/* <- 이게 일반적 */}
+            {modalChildren}
         </Modal>
             <ProjectWrapper>
                 <Content>
@@ -54,7 +53,7 @@ const Project = () => {
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
 
-                    <Card onClick = {() => {setProjectType('싹둑싹둑')}}>
+                    <Card onClick = {() => {setModalChildren(<Cut/>)}}>
                         <ImageCard
                         img={싹둑싹둑Img}
                         />
@@ -64,7 +63,7 @@ const Project = () => {
                         </Text>
                     </Card>
 
-                    <Card onClick = {() => {setProjectType('중독')}}>
+                    <Card onClick = {() => {setModalChildren(<Poisoning/>)}}>
                         <ImageCard
                         img={중독}
                         />
@@ -73,7 +72,7 @@ const Project = () => {
                         <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
                     </Card>
 
-                    <Card onClick = {() => {setProjectType('PortFolio')}}>
+                    <Card onClick = {() => {setModalChildren(<PortFolio/>)}}>
                         <ImageCard
                         img={PortFolilImg}
                         />

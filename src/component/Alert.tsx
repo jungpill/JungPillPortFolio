@@ -22,7 +22,7 @@ const Alert = () => {
   },[type])
 
   return (
-    <Overlay type={type}>
+    <Overlay $type={type}>
       <ModalContainer>
         <Header>
           {type === 'success' && <FaCheckCircle color={'#3B82F6'} size={30}/>}
@@ -40,18 +40,18 @@ const Alert = () => {
 export default Alert;
 
 
-const Overlay = styled.div<{type:AlertType}>`
+const Overlay = styled.div<{ $type: AlertType }>`
   position: fixed;
-  top: ${(props) => props.type !== null ? '40px' : '0px'}; 
-  left: 0; 
-  right: 0; 
+  top: ${({ $type }) => ($type !== null ? '40px' : '0px')};
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1002;
 
   pointer-events: none;
-  opacity: ${(props) => props.type !== null ? 1 : 0};
+  opacity: ${({ $type }) => ($type !== null ? 1 : 0)};
   transition: opacity 0.6s, top 0.6s ease;
 `;
 

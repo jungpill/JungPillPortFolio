@@ -17,7 +17,6 @@ const Modal = ({
     }:ModalProps) => {
 
     const ref = useRef<HTMLDivElement>(null);
-    const {setProjectType} = useProjectTypeStore()
     useOutsideClick({ref:ref})
 
     useEffect(() => {
@@ -27,9 +26,18 @@ const Modal = ({
     })
 
     return(
-        <ModalContainer visible={children !== null}>
-            <ModalWrapper ref = {ref}>
-                <img src = {close} width='30px' height='30px' style={{marginLeft: 'auto', cursor: 'pointer'}} onClick={() => {setProjectType(null)}} alt = '이미지 로드중' />
+        <ModalContainer visible={children !== null} onClick={() => setModalChildren(null)}>
+            <ModalWrapper ref = {ref} onClick={(e) => e.stopPropagation()} visible={children !== null}>
+                <img 
+                src = {close} 
+                width='30px' 
+                height='30px' 
+                style={{ 
+                    cursor: 'pointer',
+                    opacity: children ? 1 :  0
+                }} 
+                onClick={() => {setModalChildren(null)}} alt = '이미지 로드중'
+                 />
                 {children}
             </ModalWrapper>
         </ModalContainer>
@@ -53,13 +61,14 @@ const ModalContainer = styled.div<{visible: boolean}>`
     pointer-events: ${props => props.visible  ? 'auto' : 'none'};
 
     opacity: ${props => props.visible ? 1 : 0};
-    transition: opacity 0.6s ease;
+    transition: opacity 0.5s ease;
 `
 
-const ModalWrapper = styled.div`    
+const ModalWrapper = styled.div<{visible: boolean}>`    
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     background: white;
     height: 80%;
     width: 40%;
