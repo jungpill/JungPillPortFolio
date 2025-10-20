@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/JungPillPortFolio/static/css/main.b5cf354a.css",
-    "main.js": "/JungPillPortFolio/static/js/main.efd697aa.js",
+    "main.js": "/JungPillPortFolio/static/js/main.98a3873f.js",
     "static/js/453.117b0875.chunk.js": "/JungPillPortFolio/static/js/453.117b0875.chunk.js",
     "static/media/사진 푸른배경.jpg": "/JungPillPortFolio/static/media/사진 푸른배경.e94ca21d8ee94dc4c9c3.jpg",
     "static/media/PortFoilo.webp": "/JungPillPortFolio/static/media/PortFoilo.fb80417d1c99850cb4e1.webp",
@@ -36,11 +36,11 @@
     "static/media/play.webp": "/JungPillPortFolio/static/media/play.7bc202bf9569f4a7ea74.webp",
     "static/media/square.webp": "/JungPillPortFolio/static/media/square.6071e67117253f423b79.webp",
     "main.b5cf354a.css.map": "/JungPillPortFolio/static/css/main.b5cf354a.css.map",
-    "main.efd697aa.js.map": "/JungPillPortFolio/static/js/main.efd697aa.js.map",
+    "main.98a3873f.js.map": "/JungPillPortFolio/static/js/main.98a3873f.js.map",
     "453.117b0875.chunk.js.map": "/JungPillPortFolio/static/js/453.117b0875.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5cf354a.css",
-    "static/js/main.efd697aa.js"
+    "static/js/main.98a3873f.js"
   ]
 }
