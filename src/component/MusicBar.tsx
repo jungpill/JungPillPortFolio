@@ -6,10 +6,12 @@ import square from '../../src/source/webp/square.webp'
 import play from '../../src/source/webp/play.webp'
 import { useState } from "react";
 import { sizes } from "../styles/BreakPoints";
+import WarnModal from "./WarnModal";
 
 const MusicBar = () => {
 
     const [active, setActive] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const handleRemote = (e:React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLElement;
@@ -17,11 +19,10 @@ const MusicBar = () => {
         switch(type){
             case 'play':
                 setActive(true);
-                
+                setIsOpen(true)
                 break;
             case 'stop':
                 setActive(false);
-               
                 break;
             case 'square':
                 break;
@@ -33,8 +34,17 @@ const MusicBar = () => {
         }
     }
 
+    const handleClose = () => {
+        setIsOpen(false)
+        setActive(false)
+    }
+
     return(
         <MusicBarContainer>
+            <WarnModal
+            visible={isOpen}
+            close={handleClose}
+            />
             <TitleBox>
                 김종국 - 사랑스러워
             </TitleBox>
@@ -80,6 +90,7 @@ const TitleBox = styled.div`
     border: 1px solid black;
     background-color: white;
     border-radius: 4px;
+    font-weight: 600;
 `
 
 const IconBox = styled.div`

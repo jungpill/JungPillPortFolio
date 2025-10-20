@@ -123,6 +123,7 @@ const Title = styled.div`
     margin-top: 1rem;
     color: #22222280;
     margin-right: 3rem;
+    margin-bottom: 6px;
 `
 
 const Content = styled.div`
@@ -138,6 +139,7 @@ const Wrapper = styled.div`
 const Column = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 6px;
 `
 
 const Icon = styled.img`
