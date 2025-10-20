@@ -230,6 +230,7 @@ const Li = styled.li`
   margin-right: 3rem;
   color: black;
   list-style: none;
+  color: #22222280;
 
   &::before {
     content: '•';
