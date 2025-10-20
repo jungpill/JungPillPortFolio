@@ -47,15 +47,15 @@ const ModalWrapper = styled.div<{visible: boolean}>`
     flex-direction: column;
     justify-content: center;
     background: white;
-    width: 480px;
+    width: 440px;
     border-radius: 10px;
     padding: 20px 28px;
-    gap: 16px;
+    gap: 12px;
 `
 
 const Title = styled.h2`
     display: flex;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     align-items: center;
     gap: 6px;
@@ -63,9 +63,8 @@ const Title = styled.h2`
 `
 
 const Des = styled.div`
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #000;
-
 `
 
 const Footer = styled.div`
