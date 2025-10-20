@@ -4,51 +4,94 @@ import stop from '../../src/source/webp/stop.webp'
 import next from '../../src/source/webp/next.webp'
 import square from '../../src/source/webp/square.webp'
 import play from '../../src/source/webp/play.webp'
-import { useState } from "react";
+import { useState,useEffect, useRef } from "react";
 import { sizes } from "../styles/BreakPoints";
+import { bgmMap, tracks } from "../source/music";
 
-const MusicBar = () => {
 
-    const [active, setActive] = useState<boolean>(false);
+const MusicBar: React.FC = () => {
+  const [active, setActive] = useState(false);     // 재생 여부
+  const [index, setIndex] = useState(0);           // 현재 트랙 인덱스
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-    const handleRemote = (e:React.MouseEvent<HTMLDivElement>) => {
-        const target = e.target as HTMLElement;
-        const type = target.getAttribute('data-type');
-        switch(type){
-            case 'play':
-                setActive(true);
-                
-                break;
-            case 'stop':
-                setActive(false);
-               
-                break;
-            case 'square':
-                break;
-            case 'next':
-                break;
-            case 'back':
-                break;
-                
-        }
+  const current = tracks[index];
+
+  const nextIndex = () => (index + 1) % tracks.length;
+  const prevIndex = () => (index - 1 + tracks.length) % tracks.length;
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.src = current.src; // 트랙 바뀌면 src 갱신
+    if (active) {
+      audio
+        .play()
+        .catch(() => setActive(false)); // 자동재생 차단 등 예외 대비
+    } else {
+      audio.pause();
     }
+    // 트랙 바뀔 때는 처음부터
+    audio.currentTime = 0;
+  }, [index, active, current.src]);
 
-    return(
-        <MusicBarContainer>
-            <TitleBox>
-                김종국 - 사랑스러워
-            </TitleBox>
-            <IconBox onClick = {handleRemote} >
-                <Icon data-type = {!active? 'play' : 'stop'} src = {!active ? play : stop} alt = '이미지 로드중'/>
-                <Icon data-type = 'square' src = {square} alt = '이미지 로드중'/>
-                <Icon data-type = 'next' src = {next} style = {{transform: 'rotate(180deg)'}} alt = '이미지 로드중'/>
-                <Icon data-type = 'back' src = {next} alt = '이미지 로드중'/>
-            </IconBox>
-        </MusicBarContainer>
-    )
-}
+  const handleRemote = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    const type = target.getAttribute("data-type");
+    switch (type) {
+      case "play":
+        setActive(true);
+        break;
+      case "stop":
+        setActive(false);
+        break;
+      case "square": {
+        // 현재 트랙 처음으로
+        const audio = audioRef.current;
+        if (audio) {
+          audio.currentTime = 0;
+          if (!active) setActive(true);
+        }
+        break;
+      }
+      case "next":
+        setIndex(nextIndex());
+        break;
+      case "back":
+        setIndex(prevIndex());
+        break;
+      default:
+        break;
+    }
+  };
 
-export default MusicBar;
+  return (
+    <MusicBarContainer>
+      <TitleBox>
+        {current.artist} - {current.title}
+      </TitleBox>
+
+      <IconBox onClick={handleRemote}>
+        <Icon data-type={!active ? "play" : "stop"} src={!active ? play : stop} alt="재생/일시정지" />
+        <Icon data-type="square" src={square} alt="처음으로" />
+        <Icon data-type="next" src={next} style={{ transform: "rotate(180deg)" }} alt="이전" />
+        <Icon data-type="back" src={next} alt="다음" />
+      </IconBox>
+
+      <audio
+        ref={audioRef}
+        preload="none"
+        onEnded={() => {
+          // 트랙 끝나면 자동으로 다음
+          setIndex(nextIndex());
+          // active가 true이면 다음 곡도 이어서 재생됨 (useEffect에서 처리)
+        }}
+      />
+    </MusicBarContainer>
+  );
+};
+
+export default MusicBar
 
 const MusicBarContainer = styled(motion.div)`
     position: absolute;
