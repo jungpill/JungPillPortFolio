@@ -105,7 +105,7 @@ const Balloon = styled.div`
     font-weight: 500;
     text-align: center;
     top: 44%;
-    right: 18%;
+    right: 10%;
     white-space: pre-wrap;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15),
                 0px -4px 10px rgba(0, 0, 0, 0.10),

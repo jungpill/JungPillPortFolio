@@ -183,6 +183,7 @@ const Title = styled.div`
     font-size: 1rem;
     line-height: 1rem;
     margin-top: 1rem;
+    margin-bottom: 6px;
     color: #22222280;
     margin-right: 3rem;
 `
@@ -200,6 +201,7 @@ const Wrapper = styled.div`
 const Column = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 6px;
 `
 
 const Icon = styled.img`
@@ -230,6 +232,7 @@ const Li = styled.li`
   margin-right: 3rem;
   color: black;
   list-style: none;
+  color: #22222280;
 
   &::before {
     content: '•';
