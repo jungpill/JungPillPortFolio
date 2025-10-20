@@ -10,6 +10,13 @@ const Alert = () => {
   const clear = useAlertStore((s) => s.clear) 
   const message= useAlertStore((s) => s.message)
 
+  console.log("react-icons check:", 
+    <>
+     <FaCheckCircle color={'#3B82F6'} size={30}/>
+    <IoIosWarning color={'red'} size={30} /></>
+    
+  );
+
   useEffect(() => {
     if(type === null) return
 

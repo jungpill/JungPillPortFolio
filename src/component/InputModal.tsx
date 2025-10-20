@@ -103,26 +103,27 @@ const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  height: 2rem;
   margin-top: 10px;
 `;
 
 const OkButton = styled.button`
   background-color: #1e90ff;
   color: white;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   width: 87px;
+  box-sizing: border--box;
 `;
 
 const CancelButton = styled.button`
   background-color: #f44336;
   color: white;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   width: 87px;
+  box-sizing: border--box;
 `;

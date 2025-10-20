@@ -11,6 +11,7 @@ import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
 import { useGuestBookStore } from "../../zustand/useGuestBookStore";
 import dayjs from 'dayjs';
+import { useAlertStore } from "../../zustand/useAlertStore";
 
 interface GuestbookEntry {
     id: number;
@@ -28,14 +29,16 @@ const GuestBook = () => {
     const ref = useRef<HTMLDivElement>(null);
 
     const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3,GuestBookImage5,GuestBookImage4]
+    const warnAlert = useAlertStore((p) => p.showWarn)
+    const successAlert = useAlertStore((p) => p.showSuccess)
 
     const handleDelete = async (index: number, password: string) => {
         try{
             const response = await axiosInstance.patch(`/guestbook/${index}`, {password: password})
             setGuestBookData(guestBookData.filter((item) => item.id !== index))
+            successAlert('삭제되었습니다.')
         }catch(err){
-            setShowAlert(true)
-            console.log(err)
+            warnAlert('비밀번호가 올바르지 않습니다.');
         }
         finally{setIsOpen(false)}
     }
@@ -53,7 +56,6 @@ const GuestBook = () => {
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.5 }}
         >
-
              
             <InputModal title={'삭제하시겠습니까?'} 
             eventHandler={(password:any) => {
