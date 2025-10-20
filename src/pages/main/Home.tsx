@@ -45,7 +45,7 @@ const HOME = () => {
                 </motion.span>
             ))}
             </motion.div>
-            <Img src = {test} alt = '이미지 로드중'/>
+            <Img src = {test}/>
             
             <motion.div
             initial={{opacity: 0}}
@@ -75,9 +75,16 @@ const BodyContainer = styled(motion.div)`
     justify-content: center;
     margin-left: 1%;
     padding-bottom: .8rem;
+    position: relative;
 `
 
 const Img = styled.img`
+    width: 90%;
+    height: 75%;
+    margin-top: 2%; 
+`
+
+const NonImg = styled.div`
     width: 90%;
     height: 75%;
     margin-top: 2%; 

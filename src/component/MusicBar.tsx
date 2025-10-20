@@ -6,7 +6,6 @@ import square from '../../src/source/webp/square.webp'
 import play from '../../src/source/webp/play.webp'
 import { useState } from "react";
 import { sizes } from "../styles/BreakPoints";
-import { useAlertStore } from "../zustand/useAlertStore";
 
 const MusicBar = () => {
 
