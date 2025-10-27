@@ -67,9 +67,6 @@ const Poisoning = () => {
             <Content>
                 <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent} alt = '이미지 로드중'/></CustomTooltip>
             </Content>
-            <Content>
-                <CustomTooltip title="Chart.js" position="bottom"><Icon src = {chart_js} alt = '이미지 로드중'/></CustomTooltip>
-            </Content>
             
             </Wrapper>
             <Hr/>
@@ -81,10 +78,10 @@ const Poisoning = () => {
             </Li>
             <br/>
             <Content>
-                2.Chart.js를 이용한 데이터 시각화            
+                2.데이터 시각화            
             </Content>
             <Li>
-                chart.js를 이용하여 재사용 가능한 차트 컴포넌트를 개발하고 쉽게 데이터 시각화를 구현하였습니다. 
+                차트 라이브러리를 이용하여 재사용 가능한 차트 컴포넌트를 개발하고 쉽게 데이터 시각화를 구현하였습니다. 
             </Li>
 
             <br/>

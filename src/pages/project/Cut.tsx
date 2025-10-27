@@ -115,13 +115,7 @@ const Cut = () => {
                 4.Zustand를 통한 전역 상태관리
             </Content>
             <Li>
-            프로젝트의 규모가 크지 않아 복잡한 상태 관리나 다단계 상태 변화가 필요한 상황이 아니었기에  Redux나 Recoil보다는 보일러 플레이트 코드가 적고 가벼운 Zustand가 더 적합하다고 판단하였습니다.
-            </Li>
-            <Li>
-                동적 로딩을 통한 메인번들 사이즈 감소, Tree Shaking를 통한 불필요한 코드 제거 
-            </Li>
-            <Li>
-                Font Swap속성을 통한 렌더링 완료시 폰트 적용 
+            프로젝트의 규모가 크지 않아 복잡한 상태 관리나 다단계 상태 변화가 필요한 상황이 아니었기에  Redux나 Recoil보다는 보일러 플레이트 코드가 적고 가벼운 Zustand를 사용하였습니다.
             </Li>
             <br/>
 
@@ -162,7 +156,7 @@ const Title = styled.div`
 const Content = styled.div`
     font-weight: 700;
     font-size: .9rem;
-    color: black
+    color: black;
 `
 
 const Wrapper = styled.div`

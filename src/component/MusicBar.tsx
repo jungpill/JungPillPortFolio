@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import stop from "../source/webp/stop.webp";
@@ -14,38 +14,36 @@ const MusicBar = () => {
   const [isOpen, setIsOpen] = useState(false);      
   const [hasShownModal, setHasShownModal] = useState(false);
   const [index, setIndex] = useState(0);             
-
+  const advancingRef = useRef(false);
+  
   const audioRef = useRef<HTMLAudioElement>(null);
   const current = tracks[index];
 
   const handleRemote = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement;
-    const type = target.getAttribute("data-type");
+  const target = e.target as HTMLElement;
+  const type = target.getAttribute("data-type");
 
-    switch (type) {
-      case "play":
-        if (!hasShownModal) {
-          setIsOpen(true);
-        } else {
-          setActive(true);
-        }
-        break;
-      case "stop":
-        setActive(false);
-        break;
-      case "square":
-        if (audioRef.current) audioRef.current.currentTime = 0;
-        break;
-      case "next":
-        setIndex((prev) => (prev + 1) % tracks.length);
-        break;
-      case "back":
-        setIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
-        break;
-      default:
-        break;
-    }
-  };
+  switch (type) {
+    case "play":
+      if (!hasShownModal) setIsOpen(true);
+      else setActive(true);
+      break;
+    case "stop":
+      setActive(false);
+      break;
+    case "square":
+      if (audioRef.current) audioRef.current.currentTime = 0;
+      break;
+    case "next":
+      goNext();
+      break;
+    case "back":
+      goBack();
+      break;
+    default:
+      break;
+  }
+};
 
   const handleClose = () => {
     setIsOpen(false);
@@ -58,12 +56,27 @@ const MusicBar = () => {
   };
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
+  const audio = audioRef.current;
+  if (!audio) return;
 
-    if (active) audio.play().catch(() => setActive(false));
-    else audio.pause();
-  }, [active, index]);
+  audio.currentTime = 0;                      // 인덱스 변경 시 초기화
+  if (active) audio.play().catch(() => setActive(false));
+  else audio.pause();
+}, [active, index]);
+
+  const goNext = useCallback(() => {
+  if (advancingRef.current) return;          // 중복 방지
+  advancingRef.current = true;
+  setIndex((prev) => (prev + 1) % tracks.length);
+  setTimeout(() => { advancingRef.current = false; }, 120); // 아주 짧게만
+}, []);
+
+const goBack = useCallback(() => {
+  if (advancingRef.current) return;
+  advancingRef.current = true;
+  setIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
+  setTimeout(() => { advancingRef.current = false; }, 120);
+}, []);
 
   return (
     <MusicBarContainer>
@@ -90,7 +103,11 @@ const MusicBar = () => {
         <Icon data-type="back" src={next} alt="다음" />
       </IconBox>
 
-      <audio ref={audioRef} src={current.src} onEnded={() => setIndex((i) => (i + 1) % tracks.length)} />
+      <audio
+        ref={audioRef}
+        src={current.src}
+        onEnded={goNext}
+      />
     </MusicBarContainer>
   );
 };
