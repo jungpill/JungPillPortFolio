@@ -10,30 +10,20 @@ const Alert = () => {
   const clear = useAlertStore((s) => s.clear) 
   const message= useAlertStore((s) => s.message)
 
-  console.log("react-icons check:", 
-    <>
-     <FaCheckCircle color={'#3B82F6'} size={30}/>
-    <IoIosWarning color={'red'} size={30} /></>
-    
-  );
-
-  useEffect(() => {
-    if(type === null) return
-
-    const id = setTimeout(() => {
-      clear()
+  useEffect(() => { 
+    if(type === null) return 
+    const id = setTimeout(() => { 
+      clear() 
     },2500)
-
-    return () => clearTimeout(id);
-
+     return () => clearTimeout(id); 
   },[type])
 
   return (
     <Overlay $type={type}>
-      <ModalContainer>
+      <ModalContainer $type={type}>
         <Header>
-          {type === 'success' && <FaCheckCircle color={'#3B82F6'} size={30}/>}
-          {type === 'warn' && <IoIosWarning color={'red'} size={30} />}
+          {type === 'success' && <FaCheckCircle color={'#3B82F6'} size={20}/>}
+          {type === 'warn' && <IoIosWarning color={'red'} size={20} />}
         </Header>
         <Body>
           {message}
@@ -62,7 +52,7 @@ const Overlay = styled.div<{ $type: AlertType }>`
   transition: opacity 0.6s, top 0.6s ease;
 `;
 
-const ModalContainer = styled.div`
+const ModalContainer = styled.div<{ $type: AlertType }>`
   display: flex;
   background: white;
   padding: 24px;
@@ -71,20 +61,17 @@ const ModalContainer = styled.div`
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   gap: 14px;
   align-items: center;
+  background: #33383F;
 `;
 
 const Header = styled.div`
   display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-  font-weight: bold;
   align-items: center;
 `;
 
 const Body = styled.div`
   font-size: 14px;
-  color: #555;
+  color: #fff;
   align-items: center;
-  font-size: 1rem;
   font-weight: 600;
 `;

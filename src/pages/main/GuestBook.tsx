@@ -56,7 +56,6 @@ const GuestBook = () => {
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.5 }}
         >
-             
             <InputModal title={'삭제하시겠습니까?'} 
             eventHandler={(password:any) => {
             const index = Number(sessionStorage.getItem("deleteKey"));
@@ -64,7 +63,6 @@ const GuestBook = () => {
             }} 
             setIsOpen={setIsOpen}
             visible={isOpen}
-            parenfRef={ref}
             /> 
             <GuestWrapper>
                 {guestBookData ? guestBookData.map((GuestBook,index) => {

@@ -6,27 +6,24 @@ interface CancelOrderModalProps {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     title: string;
     visible?: boolean;
-    parenfRef: RefObject<HTMLDivElement | null>;
 }
 
 const InputModal = ({ 
   title,
   eventHandler, 
   setIsOpen,
-  visible,
-  parenfRef }: CancelOrderModalProps
+  visible,}: CancelOrderModalProps
   ) => {
 
   const [password, setPassword] = useState('')
-  const ref = useRef<HTMLDivElement>(null)
 
-  const handleClickOutside = (e: MouseEvent) => {
+  const handleClose = () => {
+    setPassword('')
     setIsOpen(false)
-    e.stopPropagation()
   }
  
   return (
-        <ModalContainer visible={visible} onClick={(e) => setIsOpen(false)}>
+        <ModalContainer visible={visible} onClick={handleClose}>
             <ModalBox onClick={(e) => e.stopPropagation()}>
             <TitleWrapper>
                 <Title>{title}</Title>
@@ -38,7 +35,7 @@ const InputModal = ({
             />
             <ButtonGroup>
             <OkButton onClick = {() => {eventHandler(password)}}>확인</OkButton>
-            <CancelButton onClick={() => {setIsOpen(false)}}>아니오</CancelButton>
+            <CancelButton onClick={handleClose}>아니오</CancelButton>
             </ButtonGroup>
             </ModalBox>
         </ModalContainer>
@@ -85,13 +82,13 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h2`
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 15px 8px;
+  padding: 12px 8px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -113,7 +110,7 @@ const OkButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 87px;
+  width: 78px;
   box-sizing: border--box;
 `;
 
@@ -124,6 +121,6 @@ const CancelButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 87px;
+  width: 78px;
   box-sizing: border--box;
 `;
