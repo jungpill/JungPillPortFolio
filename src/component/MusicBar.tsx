@@ -10,77 +10,81 @@ import WarnModal from "./WarnModal";
 import { sizes } from "../styles/BreakPoints";
 
 const MusicBar = () => {
-  const [active, setActive] = useState(false);       
-  const [isOpen, setIsOpen] = useState(false);      
+  const [active, setActive] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [hasShownModal, setHasShownModal] = useState(false);
-  const [index, setIndex] = useState(0);             
+  const [index, setIndex] = useState(0);
   const advancingRef = useRef(false);
-  
+
   const audioRef = useRef<HTMLAudioElement>(null);
   const current = tracks[index];
 
   const handleRemote = (e: React.MouseEvent<HTMLDivElement>) => {
-  const target = e.target as HTMLElement;
-  const type = target.getAttribute("data-type");
+    const target = e.target as HTMLElement;
+    const type = target.getAttribute("data-type");
 
-  switch (type) {
-    case "play":
-      if (!hasShownModal) setIsOpen(true);
-      else setActive(true);
-      break;
-    case "stop":
-      setActive(false);
-      break;
-    case "square":
-      if (audioRef.current) audioRef.current.currentTime = 0;
-      break;
-    case "next":
-      goNext();
-      break;
-    case "back":
-      goBack();
-      break;
-    default:
-      break;
-  }
-};
-
-  const handleClose = () => {
-    setIsOpen(false);
+    switch (type) {
+      case "play":
+        if (!hasShownModal) setIsOpen(true);
+        else setActive(true);
+        break;
+      case "stop":
+        setActive(false);
+        break;
+      case "square":
+        if (audioRef.current) audioRef.current.currentTime = 0;
+        break;
+      case "next":
+        goNext();
+        break;
+      case "back":
+        goBack();
+        break;
+      default:
+        break;
+    }
   };
 
+  const handleClose = () => setIsOpen(false);
+
   const handleConfirm = () => {
-    setHasShownModal(true); // 이후엔 모달 안 뜸
+    setHasShownModal(true);
     setIsOpen(false);
-    setActive(true);        // 실제 재생 시작
+    setActive(true);
   };
 
   useEffect(() => {
-  const audio = audioRef.current;
-  if (!audio) return;
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  audio.currentTime = 0;                      // 인덱스 변경 시 초기화
-  if (active) audio.play().catch(() => setActive(false));
-  else audio.pause();
-}, [active, index]);
+    audio.currentTime = 0; // 인덱스 변경 시 초기화
+    if (active) {
+      audio.play().catch(() => setActive(false));
+    } else {
+      audio.pause();
+    }
+  }, [active, index]);
 
   const goNext = useCallback(() => {
-  if (advancingRef.current) return;          // 중복 방지
-  advancingRef.current = true;
-  setIndex((prev) => (prev + 1) % tracks.length);
-  setTimeout(() => { advancingRef.current = false; }, 120); // 아주 짧게만
-}, []);
+    if (advancingRef.current) return; // 중복 방지
+    advancingRef.current = true;
+    setIndex((prev) => (prev + 1) % tracks.length);
+    setTimeout(() => {
+      advancingRef.current = false;
+    }, 120);
+  }, [/* tracks가 동적으로 바뀌면 여기에 tracks.length 넣기 */]);
 
-const goBack = useCallback(() => {
-  if (advancingRef.current) return;
-  advancingRef.current = true;
-  setIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
-  setTimeout(() => { advancingRef.current = false; }, 120);
-}, []);
+  const goBack = useCallback(() => {
+    if (advancingRef.current) return;
+    advancingRef.current = true;
+    setIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
+    setTimeout(() => {
+      advancingRef.current = false;
+    }, 120);
+  }, [/* tracks가 동적으로 바뀌면 여기에 tracks.length 넣기 */]);
 
   return (
     <MusicBarContainer>
-      {/* ⚠️ 모달 */}
       <WarnModal visible={isOpen} close={handleClose} confirm={handleConfirm} />
 
       <TitleBox>
@@ -94,20 +98,18 @@ const goBack = useCallback(() => {
           alt="재생/정지"
         />
         <Icon data-type="square" src={square} alt="처음으로" />
+
+        {/* ▼ 여기 수정: 왼쪽(이전) 버튼은 back, 오른쪽(다음) 버튼은 next */}
         <Icon
-          data-type="next"
+          data-type="back"
           src={next}
           style={{ transform: "rotate(180deg)" }}
           alt="이전"
         />
-        <Icon data-type="back" src={next} alt="다음" />
+        <Icon data-type="next" src={next} alt="다음" />
       </IconBox>
 
-      <audio
-        ref={audioRef}
-        src={current.src}
-        onEnded={goNext}
-      />
+      <audio ref={audioRef} src={current.src} onEnded={goNext} />
     </MusicBarContainer>
   );
 };
