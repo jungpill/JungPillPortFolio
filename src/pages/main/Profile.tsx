@@ -11,6 +11,8 @@ import AntDesign from '../../source/webp/AntDesign.webp'
 import Jira from '../../source/webp/Jira.webp'
 import Confluence from '../../source/webp/Confluence.webp'
 import chart_js from '../../source/chart.js.png'
+import Aws from '../../source/aws.png'
+import Gcp from '../../source/gcp.png'
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
 import FramerMotion from '../../source/webp/framer-motion.webp'
@@ -32,6 +34,8 @@ const Profile = () => {
             Jira,
             Confluence,
             FramerMotion,
+            Aws,
+            Gcp
         ];
     
         images.forEach((src) => {
@@ -69,6 +73,8 @@ const Profile = () => {
         { title: "Confluence", icon: Confluence },
         { title: "Jira", icon: Jira },
         { title: "GitHub", icon: GitHub },
+        { title: 'Aws', icon: Aws},
+        { title: 'Gcp', icon: Gcp}
     ];
 
     return(
