@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {useState, useEffect} from 'react'
 import { axiosInstance } from "../../api/axios";
-import { useGuestBookStore,} from "../../zustand/useGuestBookStore";
 
 const MyProfileHeader = () => {
 
