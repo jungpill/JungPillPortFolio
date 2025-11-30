@@ -26,9 +26,18 @@ const MyProfileHeader = () => {
         }
     }
 
+    const postVisitor = async() => {
+        try{
+            await axiosInstance.post('/visitor-ip-log')
+        }catch(err){
+            console.error(err)
+        }
+    }
+
     useEffect(() => {
         Getvisitor();
-        getGuestBookData()
+        getGuestBookData();
+        postVisitor();
     },[])
 
     return(
