@@ -25,7 +25,6 @@ const GuestBook = () => {
 
     const { guestBookData, setGuestBookData } = useGuestBookStore();
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [showAlert, setShowAlert] = useState<boolean>(false)
     const ref = useRef<HTMLDivElement>(null);
 
     const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3,GuestBookImage5,GuestBookImage4]
@@ -47,6 +46,20 @@ const GuestBook = () => {
         sessionStorage.setItem('deleteKey', e)
         setIsOpen(true)
     }
+
+    console.log(guestBookData);
+
+    useEffect(() => {
+        const fetchGuestBookData = async () => {
+            try {
+                const response = await axiosInstance.get('/guestbook');
+            } catch (error) {
+                console.error('Error fetching guest book data:', error);
+            }
+        }
+
+        fetchGuestBookData();
+    },[])
 
     return(
         <>

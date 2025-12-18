@@ -8,7 +8,7 @@ import GuestBook from "./GuestBook";
 
 const Main = () => {
 
-    const {type, setType} = useTypeStore()
+    const {type} = useTypeStore()
 
     return(
     <MainContainer>

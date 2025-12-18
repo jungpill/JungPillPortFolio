@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import {useState, useEffect} from 'react'
 import { axiosInstance } from "../../api/axios";
+import { useGuestBookStore } from "../../zustand/useGuestBookStore";
 
 const MyProfileHeader = () => {
+
+    const setGuestBookData = useGuestBookStore((p) => p.setGuestBookData)
 
     const [visitor, setVisitor] = useState({
         today: '',
@@ -21,6 +24,7 @@ const MyProfileHeader = () => {
     const getGuestBookData = async () => {
         try{
             const response = await axiosInstance.get('guestbook')
+            setGuestBookData(response.data)
         }catch(err){
             console.error(err)
         }
