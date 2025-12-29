@@ -4,7 +4,6 @@ import JaychisImg from '../../source/webp/JaychisImg.webp';
 import { motion } from "framer-motion";
 import Modal from "../../component/Modal";
 import Jaychis from "../project/Jaychis";
-import useProjectTypeStore from "../../zustand/UseProjectTypeStore";
 import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
 import PortFolilImg from '../../source/webp/PortFoilo.webp'
 import Cut from "../project/Cut";
@@ -25,8 +24,6 @@ const Project = () => {
             img.src = src;
         });
     }, []);
-
-    const {projectType, setProjectType} = useProjectTypeStore();
 
     const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
     

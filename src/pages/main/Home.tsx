@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { motion } from "framer-motion";
 import test from '../../source/test.gif'
 import { useEffect } from 'react';
-import test2 from '../../source/test2.png'
 
 const HOME = () => {
 
