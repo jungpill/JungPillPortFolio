@@ -1,8 +1,7 @@
-import React,{ useRef,useEffect,Dispatch, SetStateAction,} from "react";
+import React,{ useRef,useEffect} from "react";
 import styled from "styled-components";
 import useOutsideClick from "../hook/UseOutSideClick";
 import close from '../../src/source/webp/close.webp'
-import useProjectTypeStore from "../zustand/UseProjectTypeStore";
 
 type ModalProps = {
   children: React.ReactNode | null;
@@ -23,7 +22,7 @@ const Modal = ({
         const image = close
         const img = new Image()
         img.src = image
-    })
+    },[])
 
     return(
         <ModalContainer visible={children !== null} onClick={() => setModalChildren(null)}>

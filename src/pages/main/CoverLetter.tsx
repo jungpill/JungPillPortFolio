@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 const CoverLetter = () => {
 
-
     return(
         <CoverLetterContainer
         initial={{ opacity: 0, x: 40 }}

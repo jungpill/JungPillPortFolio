@@ -6,7 +6,6 @@ import { sizes } from "../styles/BreakPoints";
 const Tab = () => {
     
     const {type, setType} = useTabStore()
-    const [isActive, setisActive] = useState(false)
 
     const handleTypeChange = (event: React.MouseEvent<HTMLUListElement>) => {
         const target = (event.target as HTMLElement).closest("li");
