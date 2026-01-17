@@ -5,7 +5,6 @@ import TypeScript from '../../source/webp/TypeScript.webp'
 import Zustand from '../../source/webp/Zustand.webp'
 import styledComponent from '../../source/webp/styledcomponents.webp'
 import React from '../../source/webp/React.webp'
-import chart_js from '../../source/chart.js.png'
 
 const Poisoning = () => {
 

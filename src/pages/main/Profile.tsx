@@ -10,9 +10,9 @@ import Zustand from '../../source/webp/Zustand.webp'
 import AntDesign from '../../source/webp/AntDesign.webp'
 import Jira from '../../source/webp/Jira.webp'
 import Confluence from '../../source/webp/Confluence.webp'
-import chart_js from '../../source/chart.js.png'
-import Aws from '../../source/aws.png'
-import Gcp from '../../source/gcp.png'
+import chart_js from '../../source/webp/chart.js.webp'
+import Aws from '../../source/webp/aws.webp'
+import Gcp from '../../source/webp/gcp.webp'
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
 import FramerMotion from '../../source/webp/framer-motion.webp'

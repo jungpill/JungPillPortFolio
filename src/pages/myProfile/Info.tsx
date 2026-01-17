@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import call from '../../source/icons8-전화-30.png'
-import email from '../../source/icons8-gmail-logo-30.png'
-import home from '../../source/icons8-집-50.png'
-import github from '../../source/icons8-github의-30.png'
+import call from '../../source/webp/icons8-전화-30.webp'
+import email from '../../source/webp/icons8-gmail-logo-30.webp'
+import home from '../../source/webp/icons8-집-50.webp'
+import github from '../../source/webp/icons8-github의-30.webp'
 import { useEffect } from "react";
 
 const Info = () => {
