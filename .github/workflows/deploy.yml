@@ -2,63 +2,30 @@ name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches: [main]
-
-concurrency:
-  group: gh-pages-${{ github.ref }}
-  cancel-in-progress: true
-
-permissions:
-  contents: write
+    branches:
+      - main 
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      CI: "false"                # CRA 경고로 빌드 실패하는 경우 방지(우선 통과 목적)
-      NODE_OPTIONS: "--max_old_space_size=4096"  # 메모리 부족(OOM) 방지용
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: npm
-
-      - name: Versions
-        run: |
-          set -euxo pipefail
-          node -v
-          npm -v
+          node-version: 18  # 필요에 따라 버전 조정
 
       - name: Install dependencies
-        run: |
-          set -euxo pipefail
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install --legacy-peer-deps
-          fi
+        run: npm install
 
-      - name: Build
-        run: |
-          set -euxo pipefail
-          npm run build
+      - name: Build project
+        run: npm run build
 
-      - name: Verify build output
-        run: |
-          set -euxo pipefail
-          test -d build
-          ls -al build | head -n 50
-
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          publish_branch: gh-pages
-          force_orphan: true
-          commit_message: "Deploy: ${{ github.sha }}"
