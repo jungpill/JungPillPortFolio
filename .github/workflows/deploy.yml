@@ -14,18 +14,16 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
-      - run: npm i -g npm@9
-      - run: npm ci
-  
 
       - name: Install dependencies
         run: npm install
