@@ -15,44 +15,50 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      # CRA는 CI=true일 때 경고를 에러로 취급해 빌드 실패하는 케이스가 있습니다.
-      # 경고 때문에 실패한다면 아래 줄이 해결책이 됩니다.
-      CI: "false"
+      CI: "false"                # CRA 경고로 빌드 실패하는 경우 방지(우선 통과 목적)
+      NODE_OPTIONS: "--max_old_space_size=4096"  # 메모리 부족(OOM) 방지용
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
-      - name: Show versions
+      - name: Versions
         run: |
+          set -euxo pipefail
           node -v
           npm -v
 
       - name: Install dependencies
         run: |
+          set -euxo pipefail
           if [ -f package-lock.json ]; then
             npm ci
           else
-            npm install
+            npm install --legacy-peer-deps
           fi
 
-      - name: Build project
-        run: npm run build
+      - name: Build
+        run: |
+          set -euxo pipefail
+          npm run build
 
       - name: Verify build output
         run: |
-          ls -al
-          ls -al build
+          set -euxo pipefail
+          test -d build
+          ls -al build | head -n 50
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          publish_branch: gh-pages
+          force_orphan: true
           commit_message: "Deploy: ${{ github.sha }}"
