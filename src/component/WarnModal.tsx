@@ -63,8 +63,9 @@ const Title = styled.h2`
 `
 
 const Des = styled.div`
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #000;
+    font-weight: 500;
 `
 
 const Footer = styled.div`
@@ -85,6 +86,7 @@ export const ConfirmButton = styled.button`
     border-radius: 6px;
     white-space: nowrap;
     cursor: pointer;
+    font-weight: 500;
 `
 export const CancleButton = styled.button`
     padding: 12px 8px;
@@ -97,4 +99,5 @@ export const CancleButton = styled.button`
     white-space: nowrap;
     border: none;
     cursor: pointer;
+    font-weight: 500;
 `
