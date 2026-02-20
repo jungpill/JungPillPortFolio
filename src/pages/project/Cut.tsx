@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import 싹둑싹둑 from '../../source/webp/싹둑싹둑.webp'
-import React from '../../source/webp/React.webp'
-import Zustand from '../../source/webp/Zustand.webp'
-import Tail from '../../source/webp/Tailwind.webp' 
-import Antd from '../../source/webp/AntDesign.webp'
+import 싹둑싹둑 from '../../assets/webp/싹둑싹둑.webp'
+import React from '../../assets/webp/React.webp'
+import Zustand from '../../assets/webp/Zustand.webp'
+import Tail from '../../assets/webp/Tailwind.webp' 
+import Antd from '../../assets/webp/AntDesign.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import Javascript from '../../source/webp/JavaSCript.webp'
-import ReactQuery from '../../source/webp/react-query.webp'
+import Javascript from '../../assets/webp/JavaSCript.webp'
+import ReactQuery from '../../assets/webp/react-query.webp'
 
 const Cut = () => {
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../../source/사진 푸른배경.jpg'
+import image from '../../assets/사진 푸른배경.jpg'
 import { useEffect } from "react";
 
 const ProfileImage = () => {

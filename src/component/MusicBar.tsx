@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import stop from "../source/webp/stop.webp";
-import square from "../source/webp/square.webp";
-import next from '../source/webp/next.webp'
-import play from '../source/webp/play.webp'
-import { bgmMap, tracks } from "../source/music";
+import stop from "../assets/webp/stop.webp";
+import square from "../assets/webp/square.webp";
+import next from '../assets/webp/next.webp'
+import play from '../assets/webp/play.webp'
+import { bgmMap, tracks } from "../assets/music";
 import WarnModal from "./WarnModal";
 import { sizes } from "../styles/BreakPoints";
 

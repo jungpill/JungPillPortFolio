@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import 제이치스 from '../../source/webp/Jaychis.webp'
-import React from '../../source/webp/React.webp'
-import Redux from '../../source/webp/Redux.webp'
-import Styled from '../../source/webp/styledcomponents.webp' 
-import Antd from '../../source/webp/AntDesign.webp'
+import 제이치스 from '../../assets/webp/Jaychis.webp'
+import React from '../../assets/webp/React.webp'
+import Redux from '../../assets/webp/Redux.webp'
+import Styled from '../../assets/webp/styledcomponents.webp' 
+import Antd from '../../assets/webp/AntDesign.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import TypeScript from '../../source/webp/TypeScript.webp'
+import TypeScript from '../../assets/webp/TypeScript.webp'
 import { useEffect } from "react";
 
 const Jaychis = () => {

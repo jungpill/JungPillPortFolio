@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
-import JaychisImg from '../../source/webp/JaychisImg.webp';
+import JaychisImg from '../../assets/webp/JaychisImg.webp';
 import { motion } from "framer-motion";
 import Modal from "../../component/Modal";
 import Jaychis from "../project/Jaychis";
-import 싹둑싹둑Img from '../../source/webp/싹둑싹둑.webp'
-import PortFolilImg from '../../source/webp/PortFoilo.webp'
+import 싹둑싹둑Img from '../../assets/webp/싹둑싹둑.webp'
+import PortFolilImg from '../../assets/webp/PortFoilo.webp'
 import Cut from "../project/Cut";
 import PortFolio from "../project/PortFolio";
 import { useEffect,useState } from "react";
-import 중독 from '../../source/webp/중독.webp'
+import 중독 from '../../assets/webp/중독.webp'
 import Poisoning from "../project/Poisoning";
 import { sizes } from "../../styles/BreakPoints";
 import React from "react";

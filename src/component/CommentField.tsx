@@ -39,7 +39,7 @@ const CommentField = () => {
         setIsLoading(true);
 
         try{
-            const response = await axiosInstance.post('/guestbook', {submitData})
+            const response = await axiosInstance.post('/guestbook', submitData)
             setSubmitData({userId: '', password: '', content: ''})
             setGuestBookData((prev) => [...prev, response.data])
             showSuccessAlert('방명록이 작성 되었습니다.')
@@ -98,6 +98,7 @@ const SubmitButton = styled.button`
     background-color: white;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 `
 
 const RowWrapper = styled.div`

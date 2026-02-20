@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import GuestBookImage1 from '../../source/webp/GuestBookImage.webp'
-import GuestBookImage2 from '../../source/webp/GuestBookImage2.webp'
-import GuestBookImage3 from '../../source/webp/GuestBookImage3.webp'
-import GuestBookImage4 from '../../source/webp/GuestBookImage4.webp'
-import GuestBookImage5 from '../..//source/webp/GuestBookImage5.webp'
+import GuestBookImage1 from '../../assets/webp/GuestBookImage.webp'
+import GuestBookImage2 from '../../assets/webp/GuestBookImage2.webp'
+import GuestBookImage3 from '../../assets/webp/GuestBookImage3.webp'
+import GuestBookImage4 from '../../assets/webp/GuestBookImage4.webp'
+import GuestBookImage5 from '../..//assets/webp/GuestBookImage5.webp'
 import CommentField from "../../component/CommentField";
 import { useState, useEffect, useRef } from "react";
 import { axiosInstance } from "../../api/axios";
@@ -13,21 +13,19 @@ import { useGuestBookStore } from "../../zustand/useGuestBookStore";
 import dayjs from 'dayjs';
 import { useAlertStore } from "../../zustand/useAlertStore";
 
-interface GuestbookEntry {
-    id: number;
-    userId: string;
-    password: string;
-    content: string;
-    date: string; 
-}
-
 const GuestBook = () => {
 
     const { guestBookData, setGuestBookData } = useGuestBookStore();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const ref = useRef<HTMLDivElement>(null);
 
-    const image = [GuestBookImage1,GuestBookImage2,GuestBookImage3,GuestBookImage5,GuestBookImage4]
+    const image = [
+        GuestBookImage1,
+        GuestBookImage2,
+        GuestBookImage3,
+        GuestBookImage5,
+        GuestBookImage4
+    ]
     const warnAlert = useAlertStore((p) => p.showWarn)
     const successAlert = useAlertStore((p) => p.showSuccess)
 
@@ -46,20 +44,6 @@ const GuestBook = () => {
         sessionStorage.setItem('deleteKey', e)
         setIsOpen(true)
     }
-
-    console.log(guestBookData);
-
-    useEffect(() => {
-        const fetchGuestBookData = async () => {
-            try {
-                const response = await axiosInstance.get('/guestbook');
-            } catch (error) {
-                console.error('Error fetching guest book data:', error);
-            }
-        }
-
-        fetchGuestBookData();
-    },[])
 
     return(
         <>
@@ -104,7 +88,7 @@ const GuestBook = () => {
                     )
                 }) : '아직 등록된 방명록이 없습니다.'}
             </GuestWrapper>
-            <CommentField            />
+            <CommentField/>
         </GuestBookContainer>
         </>
     )
@@ -126,7 +110,6 @@ const GuestBookContainer = styled(motion.div)`
     margin-left: 1%;
     padding-bottom: .8rem;
     position: relative;
-    
 `
 
 const GuestWrapper = styled.div`

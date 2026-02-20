@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import FramerMotion from '../../source/webp/framer-motion.webp'
-import React from '../../source/webp/React.webp'
-import Zustand from '../../source/webp/Zustand.webp'
-import styledComponent from '../../source/webp/styledcomponents.webp'
+import FramerMotion from '../../assets/webp/framer-motion.webp'
+import React from '../../assets/webp/React.webp'
+import Zustand from '../../assets/webp/Zustand.webp'
+import styledComponent from '../../assets/webp/styledcomponents.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import TpyeScript from '../../source/webp/TypeScript.webp'
-import PortFolioImg from '../../source/webp/PortFoilo.webp'
+import TpyeScript from '../../assets/webp/TypeScript.webp'
+import PortFolioImg from '../../assets/webp/PortFoilo.webp'
 
 const PortFolio = () => {
 

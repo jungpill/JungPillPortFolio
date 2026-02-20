@@ -1,21 +1,22 @@
 import styled from "styled-components";
-import JavaScript from '../../source/webp/JavaSCript.webp'
-import TypeScript from '../../source/webp/TypeScript.webp'
-import React from '../../source/webp/React.webp'
-import Redux from '../../source/webp/Redux.webp'
-import Styled from '../../source/webp/styledcomponents.webp'
-import ReactQuery from '../../source/webp/react-query.webp'
-import GitHub from '../../source/webp/icons8-github의-30.webp'
-import Zustand from '../../source/webp/Zustand.webp'
-import AntDesign from '../../source/webp/AntDesign.webp'
-import Jira from '../../source/webp/Jira.webp'
-import Confluence from '../../source/webp/Confluence.webp'
-import chart_js from '../../source/webp/chart.js.webp'
-import Aws from '../../source/webp/aws.webp'
-import Gcp from '../../source/webp/gcp.webp'
+import JavaScript from '../../assets/webp/JavaSCript.webp'
+import TypeScript from '../../assets/webp/TypeScript.webp'
+import React from '../../assets/webp/React.webp'
+import Redux from '../../assets/webp/Redux.webp'
+import Styled from '../../assets/webp/styledcomponents.webp'
+import ReactQuery from '../../assets/webp/react-query.webp'
+import GitHub from '../../assets/webp/icons8-github의-30.webp'
+import Zustand from '../../assets/webp/Zustand.webp'
+import AntDesign from '../../assets/webp/AntDesign.webp'
+import Jira from '../../assets/webp/Jira.webp'
+import Confluence from '../../assets/webp/Confluence.webp'
+import chart_js from '../../assets/webp/chart.js.webp'
+import Aws from '../../assets/webp/aws.webp'
+import Gcp from '../../assets/webp/gcp.webp'
 import { motion } from "framer-motion";
 import CustomTooltip from "../../component/CustomTooltip";
-import FramerMotion from '../../source/webp/framer-motion.webp'
+import FramerMotion from '../../assets/webp/framer-motion.webp'
+import Next from '../../assets/webp/icon_next.webp'
 import { useEffect, useState } from "react";
 
 const Profile = () => {
@@ -35,7 +36,8 @@ const Profile = () => {
             Confluence,
             FramerMotion,
             Aws,
-            Gcp
+            Gcp,
+            Next
         ];
     
         images.forEach((src) => {
@@ -60,9 +62,10 @@ const Profile = () => {
     };
 
     const techList = [
+        { title: "React", icon: React },
+        {title: "Next.js", icon: Next},
         { title: "JavaScript", icon: JavaScript },
         { title: "TypeScript", icon: TypeScript },
-        { title: "React", icon: React },
         { title: "Redux", icon: Redux },
         { title: "Zustand", icon: Zustand },
         { title: "React Query", icon: ReactQuery },
@@ -110,10 +113,9 @@ const Profile = () => {
                 </Title>
                 <Content style = {{display: 'flex', flexDirection: 'column'}} >
                 <Text>(주) 투비유니콘</Text><br/>
-                프론트엔드 개발
-                2025.06 ~ 
+                프론트엔드 개발 <br/>
+                2025.06 ~ 재직중
                 </Content>
-
 
                 <Title>
                     교육

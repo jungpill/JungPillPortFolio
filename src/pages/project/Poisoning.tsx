@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import 중독 from '../../source/webp/중독.webp'
+import 중독 from '../../assets/webp/중독.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import TypeScript from '../../source/webp/TypeScript.webp'
-import Zustand from '../../source/webp/Zustand.webp'
-import styledComponent from '../../source/webp/styledcomponents.webp'
-import React from '../../source/webp/React.webp'
+import TypeScript from '../../assets/webp/TypeScript.webp'
+import Zustand from '../../assets/webp/Zustand.webp'
+import styledComponent from '../../assets/webp/styledcomponents.webp'
+import React from '../../assets/webp/React.webp'
 
 const Poisoning = () => {
 
