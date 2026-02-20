@@ -8,14 +8,22 @@ export interface GuestBookProps {
     readonly password: string;
 }
 
+type GuestBookUpdater =
+  | GuestBookProps[]
+  | ((prev: GuestBookProps[]) => GuestBookProps[]);
+
 interface GuestBookStore {
     guestBookData: GuestBookProps[];
-    setGuestBookData: (newData: GuestBookProps[]) => void;
+    setGuestBookData: (updater: GuestBookUpdater) => void;
   }
 
 export const useGuestBookStore = create<GuestBookStore>((set) => ({
     guestBookData: [],
-    setGuestBookData: (newData) => set({ guestBookData: newData })
+    setGuestBookData: (updater) =>
+    set((state) => ({
+      guestBookData:
+        typeof updater === "function" ? updater(state.guestBookData) : updater,
+    })),
 }))
 
 

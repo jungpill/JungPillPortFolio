@@ -104,10 +104,7 @@ const GuestBook = () => {
                     )
                 }) : '아직 등록된 방명록이 없습니다.'}
             </GuestWrapper>
-            <CommentField
-            setGuestBookData={setGuestBookData}
-            guestBookData={guestBookData}
-            />
+            <CommentField            />
         </GuestBookContainer>
         </>
     )

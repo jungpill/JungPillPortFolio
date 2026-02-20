@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { axiosInstance } from "../api/axios";
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { useAlertStore } from "../zustand/useAlertStore";
+import { useGuestBookStore } from "../zustand/useGuestBookStore";
 
 interface SubmitType {
     readonly userId: string;
@@ -9,7 +10,7 @@ interface SubmitType {
     readonly content: string;
 }
 
-interface GuestbookEntry {
+export interface GuestbookEntry {
     id: number;
     userId: string;
     password: string;
@@ -17,32 +18,35 @@ interface GuestbookEntry {
     date: string; 
   }
 
-interface CommentFieldProps {
-    setGuestBookData: (data: GuestbookEntry[]) => void;
-    guestBookData: GuestbookEntry[];
-  }
+const CommentField = () => {
 
-const CommentField = ({ guestBookData,setGuestBookData }: CommentFieldProps) => {
-
-    const [submitData, setSubmitData] = useState<SubmitType>({userId: '', password: '', content: ''});
+    const [submitData, setSubmitData] = useState<SubmitType>({
+        userId: '', 
+        password: '', 
+        content: ''
+    });
     const showSuccessAlert = useAlertStore((s) => s.showSuccess)
     const showWarnAlert = useAlertStore((s) => s.showWarn);
+    const setGuestBookData = useGuestBookStore((s) => s.setGuestBookData);
+    const guestBookData = useGuestBookStore((s) => s.guestBookData);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async() => {
         if(!submitData.content || !submitData.password || !submitData.userId) {
             return showWarnAlert('모든 정보를 입력해주세요.')
         }
+        if (isLoading) return;
+        setIsLoading(true);
+
         try{
-            const response = await axiosInstance.post('/guestbook', {
-                "userId": submitData.userId,
-                "password": submitData.password,
-                "content": submitData.content
-            })
+            const response = await axiosInstance.post('/guestbook', {submitData})
             setSubmitData({userId: '', password: '', content: ''})
-            setGuestBookData([...guestBookData, response.data])
+            setGuestBookData((prev) => [...prev, response.data])
             showSuccessAlert('방명록이 작성 되었습니다.')
         }catch(err){
             console.log(err)
+        }finally{
+            setIsLoading(false);
         }
     }
 
