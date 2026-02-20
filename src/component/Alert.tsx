@@ -22,8 +22,8 @@ const Alert = () => {
     <Overlay $type={type}>
       <ModalContainer $type={type}>
         <Header>
-          {type === 'success' && <FaCheckCircle color={'#3B82F6'} size={20}/>}
-          {type === 'warn' && <IoIosWarning color={'red'} size={20} />}
+          {type === 'success' && <FaCheckCircle color={'#3B82F6'} size={30}/>}
+          {type === 'warn' && <IoIosWarning color={'red'} size={30} />}
         </Header>
         <Body>
           {message}
@@ -39,7 +39,6 @@ export default Alert;
 
 const Overlay = styled.div<{ $type: AlertType }>`
   position: fixed;
-  top: ${({ $type }) => ($type !== null ? '40px' : '0px')};
   left: 0;
   right: 0;
   display: flex;
@@ -48,8 +47,10 @@ const Overlay = styled.div<{ $type: AlertType }>`
   z-index: 1002;
 
   pointer-events: none;
+  transform: ${({ $type }) => ($type !== null ? 'translateY(40px)' : 'translateY(16px)')};
   opacity: ${({ $type }) => ($type !== null ? 1 : 0)};
-  transition: opacity 0.6s, top 0.6s ease;
+  transition: transform 0.5s ease, opacity 0.7s ease;
+  will-change: transform, opacity;
 `;
 
 const ModalContainer = styled.div<{ $type: AlertType }>`
@@ -57,7 +58,7 @@ const ModalContainer = styled.div<{ $type: AlertType }>`
   background: white;
   padding: 24px;
   border-radius: 8px;
-  width: 400px;
+  width: 480px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   gap: 14px;
   align-items: center;

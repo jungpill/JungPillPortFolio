@@ -45,6 +45,7 @@ const CommentField = () => {
             showSuccessAlert('방명록이 작성 되었습니다.')
         }catch(err){
             console.log(err)
+            showWarnAlert('방명록 작성에 실패하였습니다. 잠시 후 다시 시도해주세요.')
         }finally{
             setIsLoading(false);
         }
