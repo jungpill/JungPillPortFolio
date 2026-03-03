@@ -5,7 +5,7 @@ import stop from "../assets/webp/stop.webp";
 import square from "../assets/webp/square.webp";
 import next from '../assets/webp/next.webp'
 import play from '../assets/webp/play.webp'
-import { bgmMap, tracks } from "../assets/music";
+import { tracks } from "../assets/music";
 import WarnModal from "./WarnModal";
 import { sizes } from "../styles/BreakPoints";
 

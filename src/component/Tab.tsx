@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import useTabStore from "../zustand/UseTypeStore";
-import { useState } from "react";
+import useTabStore from "../store/UseTypeStore";
 import { sizes } from "../styles/BreakPoints";
 
 const Tab = () => {

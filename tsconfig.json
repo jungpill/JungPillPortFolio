@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../next-portfolio/src/component/myProfile"  ]
 }

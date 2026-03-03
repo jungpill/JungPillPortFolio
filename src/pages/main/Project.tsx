@@ -8,7 +8,7 @@ import 싹둑싹둑Img from '../../assets/webp/싹둑싹둑.webp'
 import PortFolilImg from '../../assets/webp/PortFoilo.webp'
 import Cut from "../project/Cut";
 import PortFolio from "../project/PortFolio";
-import { useEffect,useState } from "react";
+import { useState } from "react";
 import 중독 from '../../assets/webp/중독.webp'
 import Poisoning from "../project/Poisoning";
 import { sizes } from "../../styles/BreakPoints";
@@ -16,14 +16,6 @@ import React from "react";
 
 const Project = () => {
 
-    useEffect(() => {
-        const images = [JaychisImg, 싹둑싹둑Img, PortFolilImg, 중독];
-
-        images.forEach((src) => {
-            const img = new Image();
-            img.src = src;
-        });
-    }, []);
 
     const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
     

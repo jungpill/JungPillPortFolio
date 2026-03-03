@@ -6,12 +6,12 @@ import GuestBookImage3 from '../../assets/webp/GuestBookImage3.webp'
 import GuestBookImage4 from '../../assets/webp/GuestBookImage4.webp'
 import GuestBookImage5 from '../..//assets/webp/GuestBookImage5.webp'
 import CommentField from "../../component/CommentField";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
-import { useGuestBookStore } from "../../zustand/useGuestBookStore";
+import { useGuestBookStore } from "../../store/useGuestBookStore";
 import dayjs from 'dayjs';
-import { useAlertStore } from "../../zustand/useAlertStore";
+import { useAlertStore } from "../../store/useAlertStore";
 
 const GuestBook = () => {
 

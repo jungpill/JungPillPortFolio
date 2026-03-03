@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HOME from "./Home";
-import useTypeStore from "../../zustand/UseTypeStore";
+import useTypeStore from "../../store/UseTypeStore";
 import Profile from "./Profile";
 import CoverLetter from "./CoverLetter";
 import Project from './Project'
